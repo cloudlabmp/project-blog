@@ -21,19 +21,19 @@ tags:
 
 Life has been pretty busy lately, and I wanted to take a moment to reflect on everything that's been happening, both personally and professionally. Between work, learning, and personal projects, there's been a lot of change, growth, and, of course, challenges. Here’s a quick update on what’s been going on!
 
-## 1. Diving into More Documentation & Blogging
+## Diving into More Documentation & Blogging
 
 I’ve finally committed to properly documenting my projects, which is something I’ve been meaning to do for a long time. Setting up this MkDocs blog has been a great way to consolidate my knowledge and keep track of key projects. Writing things down not only helps me, but I hope it also proves useful for others facing similar challenges in IT and cloud infrastructure.
 
-## 2. Balancing Work & Learning
+## Balancing Work & Learning
 
 It’s always a challenge to balance ongoing work responsibilities with continuous learning, but I’ve been making an effort to carve out time for personal development. I’ve been exploring more around automation, security best practices, and optimizing cloud environments. I also want to dedicate more time to hands-on learning, especially in areas I haven't had much real-world exposure to yet.
 
-## 3. Personal Life & Wellbeing
+## Personal Life & Wellbeing
 
 Outside of tech, I’ve been trying to make sure I don’t let work take over everything. Getting outside, cycling, running, and birdwatching have been great ways to disconnect and recharge. It’s a reminder that productivity isn’t just about doing more—it’s also about maintaining balance and staying motivated.
 
-## 4. What’s Next?
+## What’s Next?
 
 Looking ahead, I want to:
 

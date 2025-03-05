@@ -8,6 +8,7 @@ authors:
   - matthew
   - team
   - squidfunk
+  - james
 description: "Enhance your MkDocs blog with themes, plugins, and customization options."
 categories:
   - MkDocs
@@ -22,6 +23,8 @@ tags:
 # Customizing Your MkDocs Blog
 
 Once you've set up your MkDocs blog, it's time to personalize it. In this post, I'll cover various customizations, including **social media sharing hooks, changing the blog icon and favicon, adding authors, and using tags**. These modifications will make your blog more interactive and visually appealing.
+
+All of the steps covered in this guide are available in the [MKDocs Documentation](https://squidfunk.github.io/mkdocs-material/getting-started/) or via the superb video tutorials created by [James Willett](https://youtu.be/pPEUhfTZswc?si=AjoyIaM5Ig7MZdgo)
 
 ## Adding Social Media Sharing Hooks
 
@@ -163,6 +166,63 @@ tags:
   - technology
   - learning
 ```
+
+## Enabling Comments on Blog Posts
+
+If you want to enable comments on blog posts, edit `overrides/partials/comments.html` and use a service like Disqus:
+
+```html
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = document.title;
+  };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://your-disqus-name.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+```
+
+Enable comments in `mkdocs.yml`:
+
+```yaml
+extra:
+  comments: true
+```
+
+Restart MkDocs and test:
+
+```sh
+mkdocs serve
+```
+
+## Understanding Your MkDocs Project Structure
+
+Once you have created an MkDocs project and added the components listed in the two posts in this series, you'll see a folder structure similar to this:
+
+```
+project-blog/
+├── docs/                 # Documentation files (Markdown content)
+│   ├── index.md          # Homepage of your site
+│   ├── tags.md           # Tags page for blog posts
+│   ├── authors.yml       # Defines author metadata
+│   ├── posts/            # Blog post storage
+│   │   ├── firstpost.md  
+│   │   ├── secondpost.md  
+│   │   ├── thirdpost.md  
+├── hooks/                # Custom MkDocs hooks (like social media sharing)
+├── overrides/            # Custom HTML overrides for Material theme
+│   ├── partials/comments.html  # Comment system (if enabled)
+├── mkdocs.yml            # Configuration file for MkDocs
+├── requirements.txt       # Python dependencies
+├── .gitignore             # Files to exclude from Git
+```
+
+This structure keeps content organized, making it easy to scale your documentation or blog.
 
 ## Deploying Updates
 
