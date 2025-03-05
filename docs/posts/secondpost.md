@@ -35,7 +35,7 @@ Before we begin, ensure you have the following installed:
 
 First, install MkDocs using `pip`:
 
-```sh
+```py
 pip install mkdocs
 ```
 
@@ -68,7 +68,7 @@ repo_url: https://github.com/yourusername/my-blog
 
 You can also add a theme (e.g., `material`):
 
-```sh
+```py
 pip install mkdocs-material
 ```
 
@@ -83,7 +83,7 @@ theme:
 
 To preview your blog locally, run:
 
-```sh
+```py
 mkdocs serve
 ```
 
