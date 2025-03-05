@@ -1,9 +1,8 @@
 site_name: Matty P Blog
 site_description: A blog about stuff
-site_url: https://sitename.example
-
 theme:
   name: material
+  custom_dir: overrides
   palette:
     # Light Mode
     - scheme: default
@@ -39,6 +38,19 @@ plugins:
         as_creation: date.created
         as_update: date.updated
       use_git: false  # Added to prevent the warning
+
+  - git-committers:
+      enabled: true
+      repository: cloudlabmp/project-blog
+      branch: main
+      token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
+
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: false
+      enable_creation_date: true
+      enabled: true
+
 
 extra:
   social:

@@ -4,12 +4,11 @@ import re
 
 x_intent = "https://x.com/intent/tweet"
 fb_sharer = "https://www.facebook.com/sharer/sharer.php"
-include = re.compile(r"blog/[1-9].*")
 
 def on_page_markdown(markdown, **kwargs):
     page = kwargs['page']
     config = kwargs['config']
-    if not include.match(page.url):
+    if page.meta.get('template') != 'blog-post.html':
         return markdown
 
     page_url = config.site_url+page.url
