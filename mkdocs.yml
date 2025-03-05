@@ -1,0 +1,60 @@
+site_name: Matty P Blog
+site_description: A blog about stuff
+site_url: https://sitename.example
+
+theme:
+  name: material
+  palette:
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: deep orange
+      accent: deep purple
+
+plugins:
+  - search
+  - blog:
+      blog_dir: .
+      authors_file: authors.yml
+      archive_date_format: yyyy
+      archive_url_date_format: yyyy
+      post_url_format: "{slug}"
+
+  - tags:
+      tags_file: tags.md
+      
+  - rss:
+      match_path: "posts/.*"
+      date_from_meta:
+        as_creation: date.created
+        as_update: date.updated
+      use_git: false  # Added to prevent the warning
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cloudlabmp
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/matthew-pollock-76831920/
+
+hooks:
+  - hooks/socialmedia.py
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+copyright: Copyright &copy; 2025 Matthew Pollock

@@ -1,0 +1,16 @@
+authors:
+  matthew:
+    name: Matthew Pollock
+    description: Creator
+    avatar: https://avatars.githubusercontent.com/u/110421070?s=400&v=4
+    url: https://profile.pollockweb.com
+  team:
+    name: MKDocs Team 
+    description: Creator
+    avatar: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/logo.svg
+    url: https://www.mkdocs.org
+  squidfunk:
+    name: squidfunk
+    description: Creator
+    avatar: https://avatars.githubusercontent.com/u/142247?s=400&v=4
+    url: https://squidfunk.github.io
