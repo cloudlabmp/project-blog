@@ -13,7 +13,6 @@ categories:
 tags:
   - technology
   - life
-  - life
 ---
 
 # Life Update: New Projects & Reflections

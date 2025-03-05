@@ -1,8 +1,18 @@
-site_name: Matthew Pollock's Tech Blog
+site_name: mpcloudlab
 site_description: A blog about stuff
 theme:
   name: material
   custom_dir: overrides
+  logo: assets/icons/logo-32x32.png
+  favicon: assets/icons/favicon.ico
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - content.code.select
+    - content.code.copy
+
   palette:
     # Light Mode
     - scheme: default
@@ -19,6 +29,7 @@ theme:
         name: Dark mode
       primary: deep orange
       accent: deep purple
+
 
 plugins:
   - search
@@ -51,7 +62,6 @@ plugins:
       enable_creation_date: true
       enabled: true
 
-
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -63,6 +73,7 @@ hooks:
   - hooks/socialmedia.py
 
 markdown_extensions:
+  - admonition
   - attr_list
   - md_in_html
   - pymdownx.emoji:
@@ -75,5 +86,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 
 copyright: Copyright &copy; 2025 Matthew Pollock

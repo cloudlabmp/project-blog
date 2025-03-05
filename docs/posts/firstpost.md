@@ -11,8 +11,6 @@ categories:
   - Tech
 authors:
   - matthew
-  - team
-  - squidfunk
 tags:
   - technology
   - learning

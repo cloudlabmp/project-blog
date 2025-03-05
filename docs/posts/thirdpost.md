@@ -21,77 +21,150 @@ tags:
 
 # Customizing Your MkDocs Blog
 
-Once you've set up your MkDocs blog, it's time to personalize it. In this post, I'll cover some ways to customize your blog, including themes, plugins, and additional features to enhance its appearance and functionality.
+Once you've set up your MkDocs blog, it's time to personalize it. In this post, I'll cover various customizations, including **social media sharing hooks, changing the blog icon and favicon, adding authors, and using tags**. These modifications will make your blog more interactive and visually appealing.
 
-## 1. Changing the Theme
+## Adding Social Media Sharing Hooks
 
-MkDocs comes with a default theme, but you can install and use a more visually appealing one like **Material for MkDocs**:
+To allow users to share your blog posts easily, you can create a `socialmedia.py` hook. This script appends sharing buttons to each post.
+
+### **Create the Hook File**
+
+Inside your project, create a folder named `hooks/` if it doesn't already exist, and then add a file called `socialmedia.py`:
 
 ```sh
-pip install mkdocs-material
+mkdir hooks
+nano hooks/socialmedia.py
 ```
 
-Then update your `mkdocs.yml` file:
+### **Add the Social Media Sharing Code**
+
+Paste the following into `socialmedia.py`:
+
+```python
+from textwrap import dedent
+import urllib.parse
+import re
+
+x_intent = "https://x.com/intent/tweet"
+fb_sharer = "https://www.facebook.com/sharer/sharer.php"
+include = re.compile(r"posts/.*")
+
+def on_page_markdown(markdown, **kwargs):
+    page = kwargs['page']
+    config = kwargs['config']
+    if not include.match(page.url):
+        return markdown
+
+    page_url = config.site_url + page.url
+    page_title = urllib.parse.quote(page.title + '\n')
+
+    return markdown + dedent(f"""
+    [Share on :simple-x:]({x_intent}?text={page_title}&url={page_url}){{ .md-button }}
+    [Share on :simple-facebook:]({fb_sharer}?u={page_url}){{ .md-button }}
+    """)
+```
+
+### **Enable the Hook in `mkdocs.yml`**
+
+Modify `mkdocs.yml` to include the hook:
 
 ```yaml
-theme:
-  name: material
-  palette:
-    primary: indigo
-    accent: pink
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - search.suggest
-    - search.highlight
+hooks:
+  - hooks/socialmedia.py
 ```
 
-## 2. Adding Plugins
+This will append social media sharing buttons to your posts.
 
-Plugins add functionality to MkDocs. Here are a few useful ones:
+## Changing the Blog Icon and Favicon
 
-- **Search** (built-in): Improves search functionality.
-- **mkdocs-table-reader-plugin**: Reads table data from CSV files.
-- **mkdocs-minify-plugin**: Minifies CSS and JavaScript to improve performance.
+Updating your blog’s favicon and site icon enhances branding.
 
-To install plugins:
+### **Prepare the Icons**
 
-```sh
-pip install mkdocs-minify-plugin
+Save your icons in `docs/images/` as:
+
+- `favicon.ico` (16x16 or 32x32 pixels)
+- `logo.png` (recommended 512x512 pixels)
+
+### **Update `mkdocs.yml`**
+
+```yaml
+extra:
+  logo: images/logo.png
+  favicon: images/favicon.ico
 ```
 
-Then add them to `mkdocs.yml`:
+### **Restart the Server**
+
+Run `mkdocs serve` to preview the changes.
+
+## Adding Authors
+
+To attribute posts to different authors, create an `authors.yml` file.
+
+### **Create `authors.yml`**
+
+In the root of your project, create a file named `authors.yml`:
+
+```yaml
+matthew:
+  name: "Matthew Pollock"
+  email: "matthew@example.com"
+  website: "https://matthewblog.com"
+
+tteam:
+  name: "Blog Team"
+  website: "https://teamwebsite.com"
+
+squidfunk:
+  name: "SquidFunk"
+  website: "https://squidfunk.github.io/"
+```
+
+### **Link Authors to Posts**
+
+Modify each post’s metadata:
+
+```yaml
+authors:
+  - matthew
+  - team
+```
+
+## Adding Tags
+
+Tags help categorize your blog posts.
+
+### **Create `tags.md`**
+
+Create a `docs/tags.md` file. Below are the tags used in this blog:
+
+```yml
+# Tags
+tags:
+  - technology
+  - learning
+```
+
+### **Enable Tags in `mkdocs.yml`**
+
+Modify `mkdocs.yml`:
 
 ```yaml
 plugins:
-  - search
-  - minify
+  - tags:
+      tags_file: tags.md
 ```
 
-## 3. Customizing the Homepage
-
-Modify `docs/index.md` to personalize the homepage:
-
-```md
-# Welcome to My Blog!
-
-🚀 Sharing insights on IT, cloud, automation, and troubleshooting.
-```
-
-## 4. Enhancing Navigation
-
-Structure your blog by defining pages in `mkdocs.yml`:
+Now, you can tag posts like this:
 
 ```yaml
-nav:
-  - Home: index.md
-  - Blog:
-      - First Post: first-post.md
-      - Second Post: second-post.md
-  - About: about.md
+tags:
+  - technology
+  - learning
 ```
 
-## 5. Deploying Updates
+## Deploying Updates
 
 Whenever you make changes, redeploy your site:
 
@@ -101,10 +174,10 @@ mkdocs gh-deploy
 
 ## Conclusion
 
-With themes, plugins, and structured navigation, you can make your MkDocs blog more engaging and user-friendly. Stay tuned for more tips on optimizing your documentation site!
+With these customizations, your MkDocs blog will be more interactive and visually engaging. Stay tuned for more tips!
 
 ---
 
-📌 *Published on:* `2025-03-04`  
-🔄 *Updated on:* `2025-03-05`  
+📌 *Published on:* `2024-06-06`
+🔄 *Updated on:* `2025-03-05`
 ⏳ *Read time:* 5 min
