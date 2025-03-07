@@ -16,22 +16,22 @@ theme:
     - content.code.copy
 
   palette:
-    # Light Mode
+    # Dark Mode (Forced as Default)
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+      primary: deep orange
+      accent: deep purple
+
+    # Light Mode (Optional)
     - scheme: default
       toggle:
         icon: material/weather-night
-        name: Light mode
+        name: Switch to dark mode
       primary: blue
       accent: deep orange
 
-    # Dark Mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Dark mode
-      primary: deep orange
-      accent: deep purple
 
 plugins:
   - search
