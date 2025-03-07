@@ -1,7 +1,7 @@
 authors:
   matthew:
     name: Matthew Pollock
-    description: Creator
+    description: Blog Creator
     avatar: https://avatars.githubusercontent.com/u/110421070?s=400&v=4
     url: https://profile.pollockweb.com
   team:
@@ -16,6 +16,16 @@ authors:
     url: https://squidfunk.github.io
   james:
     name: James Willett
-    description: Creator
+    description: Course Content Creator
     avatar: https://avatars.githubusercontent.com/u/6908294?v=4
     url: https://youtube.com/@james-willett?sub_confirmation=1
+  andrew:
+    name: Andrew Brown (ExamPro)
+    description: Course Content Creator
+    avatar: https://avatars.githubusercontent.com/u/7776?v=4
+    url: https://exampro.co
+  derek:
+    name: Derek Morgan (MTC)
+    description: Course Content Creator
+    avatar: https://avatars.githubusercontent.com/u/79756941?s=200&v=4
+    url: https://morethancertified.com/

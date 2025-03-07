@@ -33,6 +33,8 @@ theme:
 
 plugins:
   - search
+  - glightbox:
+      zoomable: true
   - blog:
       blog_dir: .
       authors_file: authors.yml
@@ -61,7 +63,7 @@ plugins:
       fallback_to_build_date: false
       enable_creation_date: true
       enabled: true
-
+  
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -85,7 +87,11 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
 
