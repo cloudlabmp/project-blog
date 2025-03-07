@@ -25,7 +25,8 @@ theme:
       accent: deep orange
 
     # Dark Mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Dark mode
