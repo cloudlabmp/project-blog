@@ -1,4 +1,6 @@
 site_name: mpcloudlab
+site_url: https://cloudlabmp.github.io/project-blog/
+site_author: Matthew Pollock
 site_description: A blog about stuff
 theme:
   name: material

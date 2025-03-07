@@ -11,7 +11,7 @@ def on_page_markdown(markdown, **kwargs):
     if page.meta.get('template') != 'blog-post.html':
         return markdown
 
-    page_url = config.site_url+page.url
+    page_url = (config.site_url or "")+page.url
     page_title = urllib.parse.quote(page.title+'\n')
 
     return markdown + dedent(f"""
