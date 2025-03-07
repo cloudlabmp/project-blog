@@ -30,7 +30,6 @@ theme:
       primary: deep orange
       accent: deep purple
 
-
 plugins:
   - search
   - glightbox:
