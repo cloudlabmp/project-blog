@@ -556,11 +556,11 @@ Here are the links to the module content:
 
 ### Complete Process
 
-1️⃣ **Set up a GitHub repo** for your notes.
-2️⃣ **Manually collect** MSLearn hyperlinks as you study.
-3️⃣ **Use ChatGPT** to summarize module-by-module.
-4️⃣ **Validate third-party questions** with official docs.
-5️⃣ **Store and search** your notes in GitHub for quick reference.
+1️⃣ **Set up a GitHub repo** for your notes.  
+2️⃣ **Manually collect** MSLearn hyperlinks as you study.  
+3️⃣ **Use ChatGPT** to summarize module-by-module.  
+4️⃣ **Validate third-party questions** with official docs.  
+5️⃣ **Store and search** your notes in GitHub for quick reference.  
 
 ---
 
