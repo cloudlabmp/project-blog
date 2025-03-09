@@ -1,5 +1,6 @@
 ---
 title: "Welcome to My Blog!"
+date: 2025-03-09
 description: "An introduction to my blog and what to expect."
 categories:
   - Introduction
