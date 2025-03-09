@@ -1,8 +1,5 @@
 ---
 title: "Welcome to My Blog!"
-date:
-  created: 2023-03-22
-  updated: 2025-03-05
 description: "An introduction to my blog and what to expect."
 categories:
   - Introduction
@@ -24,7 +21,7 @@ This blog is a place where I'll be documenting my projects, sharing insights, an
 
 ## Why This Blog?
 
-I've started this blog as a centralized knowledge base for my work and learning experiences. Rather than storing documentation across different platforms, I'll be using **MkDocs** to keep everything structured and easily accessible.
+I've started this blog as a centralized knowledge base for my work and learning experiences. Rather than storing documentation across different platforms, I'll be using **MkDocs** to create my content, and **GitHub** to keep everything structured and easily accessible.
 
 ## What to Expect
 
@@ -43,5 +40,3 @@ I'll be updating this blog regularly with useful content, so stay tuned! If you 
 Thanks for stopping by, and I hope you find this blog useful! 🚀
 
 ---
-
-📌 *Published on:* `2025-03-04`
