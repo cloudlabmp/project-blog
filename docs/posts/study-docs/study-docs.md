@@ -2,6 +2,7 @@
 title: "How I used ChatGPT to create AZ-400 exam prep notes from MSLearn"
 date:
   created: 2025-03-09
+  updated: 2025-03-09
 authors:
   - matthew
 description: "My experience using AI and GitHub to streamline study notes for Microsoft certification exams."

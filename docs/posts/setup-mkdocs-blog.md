@@ -1,6 +1,8 @@
 ---
 title: "Setting Up MkDocs for Your Blog"
-date: 2025-03-09
+date:
+  created: 2025-03-02
+  updated: 2025-03-02
 authors:
   - matthew
   - james

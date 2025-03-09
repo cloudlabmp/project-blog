@@ -1,6 +1,8 @@
 ---
 title: "Customizing Your MkDocs Blog"
-date: 2025-03-09
+date:
+  created: 2025-03-03
+  updated: 2025-03-03
 authors:
   - matthew
   - team
