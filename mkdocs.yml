@@ -1,20 +1,19 @@
 site_name: mpcloudlab
 site_url: https://cloudlabmp.github.io/project-blog/
 site_author: Matthew Pollock
-site_description: A blog about stuff
+site_description: A blog about tech stuff
 theme:
   name: material
   custom_dir: overrides
-  logo: assets/icons/logo-32x32.png
+  logo: assets/icons/logo-48x48.png
   favicon: assets/icons/favicon.ico
-
   features:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
     - content.code.select
     - content.code.copy
-
+    
   palette:
     # Dark Mode (Forced as Default)
     - scheme: slate
@@ -32,7 +31,6 @@ theme:
       primary: blue
       accent: deep orange
 
-
 plugins:
   - search
   - glightbox:
@@ -40,9 +38,9 @@ plugins:
   - blog:
       blog_dir: .
       authors_file: authors.yml
-      archive_date_format: yyyy
-      archive_url_date_format: yyyy
-      post_url_format: "{slug}"
+      archive_date_format: dd MMMM YYYY
+      archive_url_date_format: ddMMYY
+      post_url_format: "{slug}" 
 
   - tags:
       tags_file: tags.md
@@ -72,6 +70,8 @@ extra:
       link: https://github.com/cloudlabmp
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/matthew-pollock-76831920/
+    - icon: fontawesome/solid/globe
+      link: https://profile.pollockweb.com
 
 hooks:
   - hooks/socialmedia.py
@@ -83,6 +83,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -96,5 +99,8 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+  
+extra_css:
+    - stylesheets/extra.css
 
 copyright: Copyright &copy; 2025 Matthew Pollock
