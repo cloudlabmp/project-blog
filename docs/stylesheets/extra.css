@@ -10,4 +10,73 @@
     height: 110%;
     width: 110%;
   }
-  
+
+  /* Style the announcement bar */
+.md-banner {
+  background-color: #080700; /* Background color */
+  color: #fefcfc; /* Text color */
+  text-align: center;
+}
+
+/* Style the content within the announcement bar */
+.announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Style the text */
+.announcement-content p {
+  margin: 0;
+}
+
+/* Style the images (logos) */
+.announcement-content img {
+  height: 20px;
+  transition: transform 0.3s;
+}
+
+.announcement-content img:hover {
+  transform: scale(1.1);
+}
+
+/* Ensure the footer is structured properly */
+.custom-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  width: 100%;
+  background: var(--md-default-bg-color);
+  border-top: 1px solid var(--md-default-fg-color--light);
+}
+
+/* Left side - Copyright text */
+.custom-footer-left {
+  text-align: left;
+  font-size: 1.3em;
+  color: var(--md-default-fg-color);
+}
+
+/* Right side - Social icons */
+.custom-footer-right {
+  display: flex;
+  gap: 15px;
+}
+
+.custom-footer-right a {
+  font-size: 2.5em;
+  color: var(--md-default-fg-color);
+  transition: transform 0.2s ease-in-out;
+}
+
+.custom-footer-right a:hover {
+  transform: scale(1.2);
+  color: #673AB7; /* Deep Purple */
+}
+
+/* Add padding to the bottom of the page */
+.md-content {
+  padding-bottom: 20px;
+}

@@ -1,8 +1,8 @@
 ---
 title: "Life Update: Projects, Learning, and the Usual Balancing Act"
 date:
-  created: 2025-03-04
-  updated: 2025-03-04
+  created: 2025-02-04
+  updated: 2025-02-04
 authors:
   - matthew
 read_time: 4

@@ -2,6 +2,9 @@ site_name: mpcloudlab
 site_url: https://cloudlabmp.github.io/project-blog/
 site_author: Matthew Pollock
 site_description: A blog about tech stuff
+repo_url: https://github.com/cloudlabmp/project-blog
+repo_name: "cloudlabmp/project-blog"
+
 theme:
   name: material
   custom_dir: overrides
@@ -13,6 +16,7 @@ theme:
     - navigation.sections
     - content.code.select
     - content.code.copy
+    - announce.dismiss
     
   palette:
     # Dark Mode (Forced as Default)

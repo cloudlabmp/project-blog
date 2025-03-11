@@ -1,0 +1,21 @@
+<head>
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+
+  {% extends "base.html" %}
+
+  {% block announce %}
+    <div class="announcement-content">
+      <p>Welcome to my blog! Connect with me:</p>
+      <a href="https://www.linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="Personal Website">
+        <i class="fas fa-globe fa-2x"></i>
+      </a>
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub">
+        <i class="fab fa-github fa-2x"></i>
+      </a><!-- Add more icons as needed -->
+    </div>
+  {% endblock %}
