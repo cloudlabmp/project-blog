@@ -51,7 +51,7 @@ We first created a **PowerShell script** to:
 # Define variables
 $UninstallExePath = "C:\Program Files (x86)\PaperCut MF Client\unins000.exe"
 $MsiProductCode = "{5B4B80DE-34C4-11E9-9CA9-F53BB8A68831}"  # Replace with actual Product Code
-$LogFile = "C:\ProgramData\AXA-Custom-Intune-Scripts\Papercut-Uninstall.log"
+$LogFile = "C:\ProgramData\Custom-Intune-Scripts\Papercut-Uninstall.log"
 $InstallPath = "C:\Program Files (x86)\PaperCut MF Client"
 
 # Function to log output
