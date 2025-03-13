@@ -11,9 +11,9 @@ read_time: 15
 description: "Step-by-step guide on setting up a GitOps pipeline using Terraform, AWS, and GitHub Actions."
 
 categories:
-  - terraform
-  - iac
-  - gitops
+  - Terraform
+  - IaC
+  - GitOps
 tags:
   - technology
   - iac

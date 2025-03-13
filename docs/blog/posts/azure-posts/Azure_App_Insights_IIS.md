@@ -39,10 +39,10 @@ To effectively monitor your IIS-based application, you need to configure Azure A
 
 Before proceeding, ensure you have:
 
-- 🔹 **An active Azure Subscription** with permissions to create and manage resources.
-- 🔹 **A Log Analytics Workspace (LAW)** to store collected telemetry data.
-- 🔹 **Azure Monitor Agent (AMA)** installed on your IIS VMs.
-- 🔹 **Necessary permissions** to create Data Collection Rules (DCRs) and Data Collection Endpoints (DCEs).
+- **An active Azure Subscription** with permissions to create and manage resources.
+- **A Log Analytics Workspace (LAW)** to store collected telemetry data.
+- **Azure Monitor Agent (AMA)** installed on your IIS VMs.
+- **Necessary permissions** to create Data Collection Rules (DCRs) and Data Collection Endpoints (DCEs).
 
 ### **Create a Log Analytics Workspace**
 

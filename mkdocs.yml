@@ -5,19 +5,26 @@ site_description: A blog about tech stuff
 repo_url: https://github.com/cloudlabmp/project-blog
 repo_name: "cloudlabmp/project-blog"
 
+nav:
+  - Blog:
+      - Tags: blog/tags.md
+      - Posts: blog/index.md
+  - Projects: projects.md
+
 theme:
   name: material
   custom_dir: overrides
   logo: assets/icons/logo-48x48.png
   favicon: assets/icons/favicon.ico
   features:
+    - navigation.indexes
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
     - content.code.select
     - content.code.copy
     - announce.dismiss
-    
+
   palette:
     # Dark Mode (Forced as Default)
     - scheme: slate
@@ -39,15 +46,19 @@ plugins:
   - search
   - glightbox:
       zoomable: true
+  
   - blog:
-      blog_dir: .
+      blog_dir: blog
+      blog_toc: true
+      categories_toc: true
+      archive_toc: true
       authors_file: authors.yml
-      archive_date_format: dd MMMM YYYY
-      archive_url_date_format: ddMMYY
-      post_url_format: "{slug}" 
+      archive: true
+      archive_name: Posts
+      post_url_format: "{slug}"
 
   - tags:
-      tags_file: tags.md
+      tags_file: blog/tags.md
       
   - rss:
       match_path: "posts/.*"
