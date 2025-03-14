@@ -80,3 +80,12 @@
 .md-content {
   padding-bottom: 20px;
 }
+
+.avatar-left {
+    width: 103px;  /* Adjust the size as needed */
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;  /* Ensures the image covers the area without distortion */
+    display: block;
+    margin: 0 left;     /* Centers the image horizontally */
+}

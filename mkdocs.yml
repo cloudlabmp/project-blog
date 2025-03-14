@@ -1,5 +1,5 @@
 site_name: mpcloudlab
-site_url: https://cloudlabmp.github.io/project-blog/
+site_url: https://cloudlabmp.github.io/project-blog
 site_author: Matthew Pollock
 site_description: A blog about tech stuff
 repo_url: https://github.com/cloudlabmp/project-blog
@@ -7,9 +7,11 @@ repo_name: "cloudlabmp/project-blog"
 
 nav:
   - Blog:
-      - Tags: blog/tags.md
       - Posts: blog/index.md
-  - Projects: projects.md
+      - Tags: blog/tags.md
+  - Learn: learn.md
+  - About: about.md
+  - Work: work.md
 
 theme:
   name: material
