@@ -2,7 +2,7 @@
 
 ![Profile Picture](https://avatars.githubusercontent.com/u/110421070?s=400&v=4){.avatar-left}
 
-### Cloud & IT Infrastructure Lead: AX Ltd (Dec 2024 - Present)
+### **Cloud & IT Infrastructure Lead: AX Ltd (Dec 2024 - Present)**
 
 - **Cloud Operations:** Manage and optimize Azure and AWS environments, ensuring secure, scalable, and cost-efficient infrastructure to support business operations.
 - **Identity & Security:** Maintain secure identity systems with Azure AD, including MFA, Conditional Access Policies, and Privileged Identity Management, while enhancing endpoint protection using Microsoft Defender for Endpoint and Intune.
@@ -12,14 +12,14 @@
 - **Strategic Planning:** Drive innovation by identifying opportunities for technology adoption, cloud optimization, and application modernization. Support organizational efficiency by integrating DevOps practices, including CI/CD pipelines using Azure DevOps and GitHub Actions, to streamline deployments and improve workflows.
 - **Collaboration & Mentorship:** Partner with teams across the organization to align IT strategy with business goals and provide mentorship to enhance team expertise and innovation.
 
-### IT Infrastructure Manager: AX Ltd (Jan 2017 - Dec 2024)
+### **IT Infrastructure Manager: AX Ltd (Jan 2017 - Dec 2024)**
 
 - Directed a full-scale cloud migration to Microsoft Azure, decommissioning primary and secondary data centres, significantly reducing physical IT infrastructure, and lowering operational costs.
 - Managed and mentored a team of five infrastructure engineers, delivering key projects, including SD-WAN deployment, network modernization, virtualization platform refreshes, and datacentre relocations, improving cost efficiency, resilience, and performance.
 - Designed and implemented infrastructure for new remote depot sites, reducing deployment times while ensuring seamless integration with existing systems.
 - Optimized vendor relationships and licensing agreements, reducing annual costs while maintaining compliance and service quality.
 
-### Senior IT Infrastructure Engineer: AX Ltd (Nov 2011 - Dec 2024)
+### **Senior IT Infrastructure Engineer: AX Ltd (Nov 2011 - Dec 2024)**
 
 - Designed and executed multiple Microsoft Exchange migrations and domain controller refreshes, achieving improved performance, reliability, and a reduction in hardware requirements.
 - Implemented and optimized Azure AD services, including MFA, Conditional Access policies, and Privileged Identity Management, ensuring secure identity management across hybrid environments.
@@ -27,7 +27,7 @@
 - Spearheaded security enhancements, introducing email hygiene solutions, refining Active Directory Group Policies, and improving governance to strengthen the organization's overall security posture.
 - Delivered advanced infrastructure monitoring and troubleshooting processes, leveraging automation to reduce incident resolution times and improving system reliability.
 
-## Skills & Competencies
+## **Skills & Competencies**
 
 - **Microsoft Azure:** Azure AD, Intune, PIM, Security Center, Sentinel, Monitor, Automation, Backup, ASR, Key Vault, Policy, Arc, Bastion.
 - **Azure Applications:** Application Gateway, Load Balancer, WAF, App Service, Application Proxy.
