@@ -82,6 +82,7 @@ plugins:
       enabled: true
   
 extra:
+  homepage: https://cloudlabmp.github.io/project-blog/welcome-to-my-blog/
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cloudlabmp
@@ -89,6 +90,7 @@ extra:
       link: https://linkedin.com/in/matthew-pollock-76831920/
     - icon: fontawesome/solid/globe
       link: https://profile.pollockweb.com
+    
 
 hooks:
   - hooks/socialmedia.py
