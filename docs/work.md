@@ -52,6 +52,3 @@
 
 - [Email](mailto:matt.pollock@outlook.com)
 - [LinkedIn](http://uk.linkedin.com/pub/matthew-pollock/20/319/768)
-- [Projects](index_projects.md)
-- [Profile](index.md)
-- [Blog](https://cloudlabmp.github.io/project-blog/)
