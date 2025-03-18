@@ -30,6 +30,7 @@ In our [previous posts](link-to-previous-post), we built the frontend and backen
 When I first started this challenge, I manually ran `terraform apply` every time I made a change. This quickly became tedious and error-prone. As a cloud engineer, I wanted to demonstrate a professional approach to infrastructure management by implementing proper CI/CD pipelines.
 
 Automating deployments offers several key benefits:
+
 - **Consistency**: Every deployment follows the same process
 - **Efficiency**: No more manual steps or waiting around
 - **Safety**: Automated tests catch issues before they reach production
@@ -59,13 +60,15 @@ Here's a visual representation of our CI/CD pipelines:
 ```
 
 We'll set up separate workflows for:
+
 1. **Frontend deployment**: Updates the S3 website content and invalidates CloudFront
-2. **Backend deployment**: Runs Terraform to update our API infrastructure 
+2. **Backend deployment**: Runs Terraform to update our API infrastructure
 3. **Smoke tests**: Verifies that both components are working correctly after deployment
 
 ## Setting Up GitHub Repositories 📁
 
 For this challenge, I've created two repositories:
+
 - `cloud-resume-frontend`: Contains HTML, CSS, JavaScript, and frontend deployment workflows
 - `cloud-resume-backend`: Contains Terraform configuration, Lambda code, and backend deployment workflows
 
@@ -74,6 +77,7 @@ For this challenge, I've created two repositories:
 Here's how I've organized my repositories:
 
 **Frontend Repository**:
+
 ```
 cloud-resume-frontend/
 ├── .github/
@@ -92,6 +96,7 @@ cloud-resume-frontend/
 ```
 
 **Backend Repository**:
+
 ```
 cloud-resume-backend/
 ├── .github/
@@ -122,9 +127,10 @@ cloud-resume-backend/
 
 ## Securing AWS Authentication in GitHub Actions 🔒
 
-Before setting up our workflows, we need to address a critical security concern: **how to securely authenticate GitHub Actions with AWS**. 
+Before setting up our workflows, we need to address a critical security concern: **how to securely authenticate GitHub Actions with AWS**.
 
 In the past, many tutorials recommended storing AWS access keys as GitHub Secrets. This approach works but has significant security drawbacks:
+
 - Long-lived credentials are a security risk
 - Credential rotation is manual and error-prone
 - Access is typically overly permissive
@@ -281,6 +287,7 @@ jobs:
 ```
 
 This workflow:
+
 1. Authenticates using OIDC
 2. Syncs website files to the S3 bucket
 3. Invalidates the CloudFront cache
@@ -548,6 +555,7 @@ jobs:
 ```
 
 This workflow is more complex and includes:
+
 1. Running Python tests for the Lambda function
 2. Validating Terraform syntax and formatting
 3. Planning Terraform changes (with PR comments for review)
@@ -717,6 +725,7 @@ This workflow scans our code for security vulnerabilities and coding problems.
 ### 3. Branch Protection Rules
 
 I've set up branch protection rules for the `main` branch in both repositories:
+
 - Require pull request reviews before merging
 - Require status checks to pass before merging
 - Require signed commits

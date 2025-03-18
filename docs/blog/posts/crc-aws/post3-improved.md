@@ -60,6 +60,7 @@ Before diving into the Terraform code, I want to share my thought process on Dyn
 2. **Visitor log approach**: A more detailed table that logs each visit with timestamps
 
 I chose the second approach for a few reasons:
+
 - It allows for more detailed analytics in the future
 - It provides a history of visits that can be queried
 - It demonstrates a more realistic use case for DynamoDB
@@ -136,6 +137,7 @@ resource "aws_dynamodb_table_item" "counter_init" {
 ```
 
 I've implemented several enhancements:
+
 - Point-in-time recovery for data protection
 - TTL for automatic cleanup of old records
 - Server-side encryption for security
@@ -410,6 +412,7 @@ resource "aws_lambda_function" "options_handler" {
 ```
 
 I've implemented several security and operational improvements:
+
 - Least privilege IAM policies
 - X-Ray tracing for performance monitoring
 - Proper CORS handling with a dedicated OPTIONS handler
@@ -602,6 +605,7 @@ resource "aws_route53_record" "api" {
 ```
 
 The API Gateway configuration includes several enhancements:
+
 - CloudWatch logging and metrics
 - Rate limiting and throttling to prevent abuse
 - Custom domain for a professional API endpoint
@@ -824,6 +828,7 @@ if __name__ == '__main__':
 ```
 
 This test suite covers:
+
 - Successful API calls
 - Error handling
 - CORS OPTIONS request handling
@@ -850,6 +855,7 @@ curl -X OPTIONS https://api.yourdomain.com/count \
 ```
 
 For Postman:
+
 1. Create a new GET request to your API endpoint (`https://api.yourdomain.com/count`)
 2. Send the request and verify you get a 200 response with a JSON body
 3. Create a new OPTIONS request to test CORS

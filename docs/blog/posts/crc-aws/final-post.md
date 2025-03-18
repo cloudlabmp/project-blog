@@ -158,6 +158,7 @@ While this solution is relatively inexpensive, it's good practice to set up AWS 
 ### 3. Monitoring and Alerting
 
 I've set up CloudWatch alarms for:
+
 - API errors exceeding normal thresholds
 - Unusual traffic patterns that might indicate abuse
 - Lambda function failures

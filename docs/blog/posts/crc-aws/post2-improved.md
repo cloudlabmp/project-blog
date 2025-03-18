@@ -456,6 +456,7 @@ resource "aws_s3_bucket_policy" "cloudfront_access" {
 ```
 
 I've implemented several security enhancements:
+
 - Using origin access control for CloudFront
 - Restricting the content to specific geographic regions
 - Setting TLS to more modern protocols
