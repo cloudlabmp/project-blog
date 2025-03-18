@@ -1,5 +1,6 @@
 ---
 title: "Cloud Resume Challenge with Terraform: Building the Backend API"
+draft: true
 date:
   created: 2025-03-19
   updated: 2025-03-19

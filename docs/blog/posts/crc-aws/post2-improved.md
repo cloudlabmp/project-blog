@@ -1,5 +1,6 @@
 ---
 title: "Cloud Resume Challenge with Terraform: Deploying the Static Website"
+draft: true
 date:
   created: 2025-03-18
   updated: 2025-03-18
@@ -34,7 +35,7 @@ Let's look at the specific architecture we'll implement for our frontend:
 ┌───────────┐     ┌────────────┐     ┌──────────┐     ┌────────────┐
 │           │     │            │     │          │     │            │
 │  Route 53 ├─────► CloudFront ├─────►    S3    │     │    ACM     │
-│           │     │            │     │          │     │ Certificate │
+│           │     │            │     │          │     │ Certificate│
 └───────────┘     └────────────┘     └──────────┘     └────────────┘
       ▲                                    ▲                 │
       │                                    │                 │

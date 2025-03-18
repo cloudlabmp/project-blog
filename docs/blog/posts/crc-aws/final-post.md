@@ -1,5 +1,6 @@
 ---
 title: "Cloud Resume Challenge with Terraform: Final Reflections & Future Directions"
+draft: true
 date:
   created: 2025-03-21
   updated: 2025-03-21
@@ -38,8 +39,8 @@ The final architecture we've created looks like this:
 ```
 ┌───────────┐    ┌──────────┐    ┌──────────┐    ┌────────────┐
 │           │    │          │    │          │    │            │
-│  Route 53 ├────► CloudFront├────►   S3     │    │    ACM     │
-│           │    │          │    │          │    │ Certificate │
+│  Route 53 ├────► CloudFront├────►   S3    │    │     ACM    │
+│           │    │          │    │          │    │ Certificate│
 └───────────┘    └──────────┘    └──────────┘    └────────────┘
                       │                                  
                       ▼                                  

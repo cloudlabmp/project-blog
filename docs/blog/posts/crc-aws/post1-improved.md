@@ -1,5 +1,6 @@
 ---
 title: "Cloud Resume Challenge with Terraform: Introduction & Setup"
+draft: true
 date:
   created: 2025-03-17
   updated: 2025-03-17
@@ -56,8 +57,8 @@ Let's visualize the architecture we'll be building throughout this series:
 ```
 ┌───────────┐    ┌──────────┐    ┌──────────┐    ┌────────────┐
 │           │    │          │    │          │    │            │
-│  Route 53 ├────► CloudFront├────►   S3     │    │    ACM     │
-│           │    │          │    │          │    │ Certificate │
+│  Route 53 ├────►CloudFront├────►   S3     │    │    ACM     │
+│           │    │          │    │          │    │ Certificate│
 └───────────┘    └──────────┘    └──────────┘    └────────────┘
                                                         
                       │                                  
