@@ -1,6 +1,6 @@
 ---
 title: "Cloud Resume Challenge with Terraform: Deploying the Static Website"
-draft: true
+draft: false
 date:
   created: 2025-03-18
   updated: 2025-03-18

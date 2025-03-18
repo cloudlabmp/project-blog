@@ -1,6 +1,6 @@
 ---
 title: "Cloud Resume Challenge with Terraform: Introduction & Setup"
-draft: true
+draft: false
 date:
   created: 2025-03-17
   updated: 2025-03-17
