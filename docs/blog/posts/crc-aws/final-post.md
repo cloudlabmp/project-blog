@@ -11,6 +11,7 @@ categories:
   - Terraform
   - DevOps
   - Career Development
+  - Cloud Resume Challenge
 tags:
   - cloud-resume-challenge
   - terraform

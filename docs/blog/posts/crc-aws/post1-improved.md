@@ -10,6 +10,7 @@ categories:
   - AWS
   - Terraform
   - DevOps
+  - Cloud Resume Challenge
 tags:
   - cloud
   - terraform

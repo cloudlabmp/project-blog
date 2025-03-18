@@ -11,6 +11,7 @@ categories:
   - Terraform
   - DevOps
   - CI/CD
+  - Cloud Resume Challenge
 tags:
   - github-actions
   - terraform

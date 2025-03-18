@@ -10,6 +10,7 @@ categories:
   - AWS
   - Terraform
   - Serverless
+  - Cloud Resume Challenge
 tags:
   - lambda
   - api-gateway

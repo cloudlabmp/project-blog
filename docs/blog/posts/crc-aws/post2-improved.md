@@ -10,6 +10,7 @@ categories:
   - AWS
   - Terraform
   - Web Hosting
+  - Cloud Resume Challenge
 tags:
   - s3
   - cloudfront
