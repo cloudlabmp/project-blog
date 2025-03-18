@@ -1,4 +1,4 @@
-# Matthew Pollock - Profile
+# Profile
 
 ### Hi, I'm Matthew Pollock. 👋
 
