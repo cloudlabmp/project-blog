@@ -54,39 +54,7 @@ This series assumes **basic knowledge of Terraform** and will focus on **highlig
 
 Let's visualize the architecture we'll be building throughout this series:
 
-```
-┌───────────┐    ┌──────────┐    ┌──────────┐    ┌────────────┐
-│           │    │          │    │          │    │            │
-│  Route 53 ├────►CloudFront├────►   S3     │    │    ACM     │
-│           │    │          │    │          │    │ Certificate│
-└───────────┘    └──────────┘    └──────────┘    └────────────┘
-                                                        
-                      │                                  
-                      ▼                                  
-               ┌──────────────┐                          
-               │              │                          
-               │ API Gateway  │                          
-               │              │                          
-               └──────────────┘                          
-                      │                                  
-                      ▼                                  
-               ┌──────────────┐     ┌──────────────┐    
-               │              │     │              │    
-               │    Lambda    ├─────►   DynamoDB   │    
-               │              │     │              │    
-               └──────────────┘     └──────────────┘    
-                      │                                  
-                      │                                  
-         ┌────────────┴────────────┐                    
-         │                         │                    
-         ▼                         ▼                    
-┌─────────────────┐      ┌──────────────────┐          
-│                 │      │                  │          
-│  GitHub Actions │      │   GitHub Actions │          
-│  (Frontend CI)  │      │   (Backend CI)   │          
-│                 │      │                  │          
-└─────────────────┘      └──────────────────┘          
-```
+![Basic Project Diagram](CRCArchitecture.png)
 
 ### **AWS Services Used** ☁️
 

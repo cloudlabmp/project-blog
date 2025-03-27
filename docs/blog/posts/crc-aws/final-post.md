@@ -36,38 +36,7 @@ Over the course of this blog series, we've successfully completed the Cloud Resu
 
 The final architecture we've created looks like this:
 
-```
-┌───────────┐    ┌──────────┐    ┌──────────┐    ┌────────────┐
-│           │    │          │    │          │    │            │
-│  Route 53 ├────► CloudFront├────►   S3    │    │     ACM    │
-│           │    │          │    │          │    │ Certificate│
-└───────────┘    └──────────┘    └──────────┘    └────────────┘
-                      │                                  
-                      ▼                                  
-               ┌──────────────┐                          
-               │              │                          
-               │ API Gateway  │                          
-               │              │                          
-               └──────────────┘                          
-                      │                                  
-                      ▼                                  
-               ┌──────────────┐     ┌──────────────┐    
-               │              │     │              │    
-               │    Lambda    ├─────►   DynamoDB   │    
-               │              │     │              │    
-               └──────────────┘     └──────────────┘    
-                      │                                  
-                      │                                  
-         ┌────────────┴────────────┐                    
-         │                         │                    
-         ▼                         ▼                    
-┌─────────────────┐      ┌──────────────────┐          
-│                 │      │                  │          
-│  GitHub Actions │      │   GitHub Actions │          
-│  (Frontend CI)  │      │   (Backend CI)   │          
-│                 │      │                  │          
-└─────────────────┘      └──────────────────┘          
-```
+![Basic Project Diagram](CRCArchitecture.png)
 
 The most valuable aspect of this project is that we've built a **completely automated, production-quality cloud solution**. Every component is defined as code, enabling us to track changes, rollback if needed, and redeploy the entire infrastructure with minimal effort.
 
