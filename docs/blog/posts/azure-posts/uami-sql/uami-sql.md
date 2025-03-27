@@ -18,6 +18,7 @@ tags:
   - security
   - identity
 ---
+
 # Replacing SQL Credentials with User Assigned Managed Identity (UAMI) in Azure SQL Managed Instance
 
 Storing SQL usernames and passwords in application configuration files is still common practice — but it poses a significant security risk. As part of improving our cloud security posture, I recently completed a project to eliminate plain text credentials from our app connection strings by switching to **Azure User Assigned Managed Identity (UAMI)** authentication for our **SQL Managed Instance**.
@@ -27,6 +28,7 @@ In this post, I’ll walk through how to:
 - Securely connect to Azure SQL Managed Instance without using usernames or passwords
 - Use a **User Assigned Managed Identity (UAMI)** for authentication
 - Test this connection using the new Go-based `sqlcmd` CLI
+- Update real application code to remove SQL credentials
 
 ---
 
@@ -63,7 +65,7 @@ For this project, we used a **User Assigned Managed Identity (UAMI)** to allow o
 
 To follow this guide, you’ll need:
 
-- An **Azure SQL Managed Instance** with AAD authentication enabled
+- An **Azure SQL Managed Instance** with Microsoft Entra (AAD) authentication enabled
 - A **User Assigned Managed Identity** (UAMI)
 - An **Azure VM or App Service** to host your app (or test client)
 - The **Go-based `sqlcmd` CLI** installed  
@@ -73,19 +75,20 @@ To follow this guide, you’ll need:
 
 ## 🔧 Setting Up the User Assigned Managed Identity (UAMI)
 
-Before you can connect to Azure SQL using UAMI, you'll need to:
+Before connecting to Azure SQL using UAMI, ensure the following steps are completed:
 
-- Create the identity
-- Assign it to the correct VM(s)
-- Grant it access in Azure SQL
+- Create the UAMI
+- Assign the UAMI to the Virtual Machine(s)
+- Configure Microsoft Entra authentication on the SQL Managed Instance
+- Grant SQL access to the UAMI
 
-You can do this via **Azure CLI** or the **Azure Portal** — both options are shown below.
+These steps can be completed via **Azure CLI**, **PowerShell**, or the **Azure Portal**.
 
 ---
 
 ### 🛠️ Step 1: Create the User Assigned Managed Identity (UAMI)
 
-#### ✅ Option 1: Using Azure CLI
+#### ✅ CLI
 
 ```bash
 az identity create \
@@ -94,24 +97,62 @@ az identity create \
   --location <region>
 ```
 
-Save the **Client ID** and **Object ID** from the output — you'll need them later.
+Save the **Client ID** and **Object ID** — you’ll need them later.
 
-#### ✅ Option 2: Using Azure Portal
+#### ✅ Portal
 
-1. Go to **Azure Portal** → Search for **Managed Identities**
+1. Go to **Azure Portal** → Search **Managed Identities**
 2. Click **+ Create**
-3. Select the **Subscription** and **Resource Group**
-4. Enter a **Name** (e.g., `my-sql-uami`)
-5. Choose a **Region** (same as your workload VM ideally)
-6. Click **Review + Create** → **Create**
-
-After it's created, click into the identity to view the **Client ID** and **Object ID** under the **Overview** blade.
+3. Choose Subscription, Resource Group, and Region
+4. Name the identity (e.g., `my-sql-uami`)
+5. Click **Review + Create**
 
 ---
 
-### 📜 Step 2: (Optional) Assign Azure Role to the UAMI
+### 🖇️ Step 2: Assign the UAMI to a Virtual Machine
 
-> ✅ *This step is only optional if you're using the UAMI strictly for Azure SQL access. However, if your SQL client or tooling (e.g., Azure CLI running on a VM) needs to retrieve tokens via the Azure Instance Metadata Service, the UAMI must have at least Reader access on the resource it's authenticating against — typically the SQL Managed Instance.*
+Attach the UAMI to:
+
+- The VM(s) running your application code
+- The VM used to test the connection
+
+#### ✅ CLI
+
+```bash
+az vm identity assign \
+  --name my-vm-name \
+  --resource-group my-rg \
+  --identities my-sql-uami
+```
+
+#### ✅ Portal
+
+1. Go to **Virtual Machines** → Select your VM
+2. Click **Identity** under **Settings**
+3. Go to the **User assigned** tab
+4. Click **+ Add** → Select the UAMI
+5. Click **Add**
+
+---
+
+### 🔑 Step 3: Configure SQL Managed Instance for Microsoft Entra Authentication
+
+1. **Set an Entra Admin**:
+   - Go to your SQL MI → **Azure AD admin** blade
+   - Click **Set admin** and choose a user or group
+   - Save changes
+
+2. **Ensure Directory Reader permissions**:
+   - Your SQL MI’s managed identity needs **Directory Reader** access
+   - You can assign this role via Entra ID > Roles and administrators > Directory Readers
+
+More details: [Configure Entra authentication](https://learn.microsoft.com/azure/azure-sql/database/authentication-aad-configure)
+
+---
+
+### 📜 Step 4: (Optional) Assign Azure Role to the UAMI
+
+> This may be needed if the identity needs to access Azure resource metadata or use Azure CLI from the VM.
 
 #### ✅ CLI
 
@@ -124,52 +165,25 @@ az role assignment create \
 
 #### ✅ Portal
 
-1. Go to **Managed Identities** → Select your UAMI
-2. Go to **Azure role assignments** → **+ Add role assignment**
-3. Choose **Role** (e.g., Reader)
-4. Scope to the correct **Subscription / Resource Group**
+1. Go to the UAMI → **Azure role assignments**
+2. Click **+ Add role assignment**
+3. Choose role (e.g., Reader)
+4. Set scope
 5. Click **Save**
 
 ---
 
-### 🖇️ Step 3: Assign the UAMI to a Virtual Machine
+## 🔑 Step 5: Grant SQL Access to the UAMI
 
-Attach the UAMI to:
-
-- The VM(s) running your application code
-- The VM you’ll use to test the connection with `sqlcmd`
-
-#### ✅ CLI
-
-```bash
-az vm identity assign \
-  --identities my-sql-uami \
-  --name my-vm-name \
-  --resource-group my-rg
-```
-
-#### ✅ Portal
-
-1. Go to **Virtual Machines** → Select your VM
-2. In the **Settings** section, click **Identity**
-3. Switch to the **User assigned** tab
-4. Click **+ Add** → Select your **Managed Identity**
-5. Click **Add**
-
-Once assigned, the identity will appear in the list on the VM’s identity blade. You can now use it from that VM to authenticate to Azure SQL using `sqlcmd` or your application code.
-
----
-
-## 🔑 Step 4: Grant SQL Access to the UAMI
-
-Connect to your SQL Managed Instance using SSMS or `sqlcmd` with an admin account, then run:
+Once the UAMI is assigned to the VM and Entra auth is enabled on SQL MI, log in with an admin and run:
 
 ```sql
 CREATE USER [<client-id>] FROM EXTERNAL PROVIDER;
 ALTER ROLE db_datareader ADD MEMBER [<client-id>];
+ALTER ROLE db_datawriter ADD MEMBER [<client-id>];
 ```
 
-You can also use a friendly name (recommended):
+Or use a friendly name:
 
 ```sql
 CREATE USER [my-app-identity] FROM EXTERNAL PROVIDER;
@@ -178,9 +192,7 @@ ALTER ROLE db_datareader ADD MEMBER [my-app-identity];
 
 ---
 
-## 🧪 Step 5: Test the Connection Using `sqlcmd`
-
-With the UAMI assigned to your VM, test the connection like this:
+## 🧪 Step 6: Test the Connection Using `sqlcmd`
 
 ```bash
 sqlcmd \
@@ -190,49 +202,49 @@ sqlcmd \
   -U <client-id-of-uami>
 ```
 
-Replace:
-
-- `<your-sql-mi>` with the FQDN of your SQL Managed Instance
-- `<client-id-of-uami>` with your UAMI’s Azure **Client ID**
-
-### ✅ Example
-
-```bash
-sqlcmd \
-  -S <your-sql-mi-name>.database.windows.net \
-  -d <your-database-name> \
-  --authentication-method ActiveDirectoryManagedIdentity \
-  -U <your-uami-client-id>
-```
-
-If successful, you’ll see the `1>` prompt where you can run SQL queries.
+If successful, you’ll see the `1>` prompt where you can execute SQL queries.
 
 ---
 
-## 📊 Step 6: Update Application Code or Connection Logic
+## 📊 Step 7: Update Application Code
 
-Depending on your app platform (VM, App Service, container, etc.), the app will now use the attached UAMI when connecting to SQL.
+Update your app to use the UAMI for authentication.
 
-> Important: Your database client must support **AAD access tokens** or **MSI authentication**.
+Example connection string for UAMI in C#:
 
-For example, in .NET Core, use `DefaultAzureCredential()` from the Azure Identity library to acquire a token automatically from the UAMI.
+```csharp
+string connectionString = @"Server=tcp:<your-sql-mi>.database.windows.net;" +
+                          "Authentication=Active Directory Managed Identity;" +
+                          "Encrypt=True;" +
+                          "User Id=<your-uami-client-id>;" +
+                          "Database=<your-db-name>;";
+```
+
+> Make sure your code uses `Microsoft.Data.SqlClient` with AAD token support.
+
+Or retrieve and assign the token programmatically:
+
+```csharp
+var credential = new DefaultAzureCredential();
+var token = await credential.GetTokenAsync(new TokenRequestContext(
+    new[] { "https://database.windows.net/" }));
+
+var connection = new SqlConnection("Server=<your-sql-mi>; Database=<your-db-name>; Encrypt=True;");
+connection.AccessToken = token.Token;
+```
 
 ---
 
 ## 🔒 Security Benefits
 
-By moving to Managed Identity authentication:
-
-- 🔐 **No credentials stored** in config files or secret stores
-- 🔁 **No password rotation** or key vault integration required
-- 🛡️ **Stronger alignment** with zero trust and cloud-first security models
+- 🔐 No credentials stored
+- 🔁 No password rotation
+- 🛡️ Entra-integrated access control and auditing
 
 ---
 
 ## ✅ Summary
 
-We successfully replaced legacy SQL credentials with a secure, identity-based approach using **User Assigned Managed Identity** — improving both the security and maintainability of our app connections to Azure SQL.
+By switching to User Assigned Managed Identity, we removed credentials from connection strings and aligned SQL access with best practices for cloud identity and security.
 
----
-
-Let me know if you'd like the full testing script or CI/CD steps to roll this into your pipeline. Comments or feedback welcome!
+Comments and feedback welcome!
