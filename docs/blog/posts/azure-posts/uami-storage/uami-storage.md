@@ -245,3 +245,4 @@ Replacing AzCopy SAS tokens with UAMI is one of those small wins that pays divid
 Let me know if you'd like a variant of this that works from Azure Automation or a hybrid worker!
 
 ---
+.
