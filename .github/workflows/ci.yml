@@ -27,4 +27,6 @@ jobs:
             mkdocs-material-
       - run: pip install -r requirements.txt
       - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --remote-name blog.pollockweb.com --force
+      - name: Add CNAME
+        run: echo "blog.pollockweb.com" > ./site/CNAME
+      - run: mkdocs gh-deploy --force 
