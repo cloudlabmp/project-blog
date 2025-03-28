@@ -340,4 +340,4 @@ I hope this series has been helpful in your own cloud journey. Feel free to reac
 
 This post concludes our Cloud Resume Challenge with Terraform series. Thanks for following along!
 
-Want to see the Cloud Resume Challenge in action? Visit [my resume website](https://resume.example.com) and check out the [GitHub repositories](https://github.com/example/cloud-resume-challenge) for the complete code.
+Want to see the Cloud Resume Challenge in action? Visit [my resume website](https://resume.example.com) and check out the [GitHub repositories](https://profile.pollockweb.com) for the complete code.
