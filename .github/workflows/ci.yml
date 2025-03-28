@@ -30,4 +30,4 @@ jobs:
       - run: mkdocs build
       - name: Add CNAME file
         run: echo "blog.pollockweb.com" > site/CNAME
-      - run: mkdocs gh-deploy
+      - run: mkdocs gh-deploy --force
