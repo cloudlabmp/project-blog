@@ -29,5 +29,5 @@ jobs:
       - run: pip install mkdocs-material
       - run: mkdocs build
       - name: Add CNAME file
-        run: echo "blog.pollockweb.com" > project-blog/CNAME
+        run: echo "blog.pollockweb.com" > site/CNAME
       - run: mkdocs gh-deploy --force
