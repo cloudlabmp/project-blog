@@ -134,7 +134,7 @@ The GPO updates several registry values:
 | `TimeZoneKeyName`          | REG_SZ      | Specifies the named Windows Time Zone (e.g. "GMT Standard Time") |
 | `Bias`                     | REG_DWORD   | Offset from UTC in minutes (0 for GMT) |
 | `StandardBias`             | REG_DWORD   | Typically 0 |
-| `DaylightBias`             | REG_DWORD   | Usually `0xFFFFFFFF` (minus 60 minutes) |
+| `DaylightBias`             | REG_DWORD   | Usually `0xFFFFFFC4` (minus 60 minutes) |
 | `DynamicDaylightTimeDisabled` | REG_DWORD | Set to `0` to allow dynamic DST |
 | `DisableAutoDaylightTimeSet` | REG_DWORD | Set to `0` to enable auto DST |
 | `RealTimeIsUniversal`      | REG_DWORD   | Set to `1` if your hardware clock is UTC-based (optional) |
