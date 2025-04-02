@@ -112,7 +112,7 @@ Write-Host "`nAudit complete. Results saved to $OutputCsv" -ForegroundColor Gree
 
 Instead of relying on registry modifications, we now use a **Scheduled Task deployed via Group Policy**.
 
-### ✅ Task Overview:
+### ✅ Task Overview
 
 - **Trigger:** At Startup
 - **Action:** Run `powershell.exe`
