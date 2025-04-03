@@ -90,6 +90,9 @@ extra:
       link: https://linkedin.com/in/matthew-pollock-76831920/
     - icon: fontawesome/solid/globe
       link: https://profile.pollockweb.com
+  analytics:
+    provider: google
+    property: G-800NGKWBYL
     
 
 hooks:
