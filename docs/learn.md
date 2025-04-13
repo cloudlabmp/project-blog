@@ -14,6 +14,11 @@ This is where I document my hands-on training, technical experiments, and person
 
 ---
 
+## 📚 AI Courses
+
+- [GenAI Essentials - ExamPro](https://www.exampro.co/exp-genai-01)
+
+
 ## 📚 DevOps Courses
 
 - [Microsoft DevOps Engineer (AZ-400) - James Lee](https://learn.cantrill.io/courses/enrolled/2155473)
