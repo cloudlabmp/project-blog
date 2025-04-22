@@ -1,6 +1,6 @@
 # Learn 📖
 
-Welcome to my learning page!   
+Welcome to my learning page!
 This is where I document my hands-on training, technical experiments, and personal projects—both work-related and those I explore in my own time. I’m a firm believer in lifelong learning, constantly refining my skills and tackling new challenges across Azure, AWS, DevOps, and beyond. This space is a reflection of that journey—practical, focused, and always evolving. Take a look around!
 
 ---
@@ -14,7 +14,15 @@ This is where I document my hands-on training, technical experiments, and person
 
 ---
 
-## 📚 AI Courses
+## 💰 FinOps Courses
+
+- [Introduction to FinOps](https://learn.finops.org/introduction-to-finops)
+
+## 🐙 GitHub Courses
+
+- [Exam Pro - GitHub Actions](https://www.exampro.co/github-actions)
+
+## 🤖 AI Courses
 
 - [GenAI Essentials - ExamPro](https://www.exampro.co/exp-genai-01)
 
@@ -25,7 +33,7 @@ This is where I document my hands-on training, technical experiments, and person
 - [Learn DevOps: Docker, Kubernetes, Terraform, and Azure DevOps](https://www.udemy.com/course/devops-with-docker-kubernetes-and-azure-devops/)
 - [AWS Certified DevOps Engineer - Professional - Adrian Cantrill](https://learn.cantrill.io/p/aws-certified-devops-engineer-professional)
 - [AWS Certified DevOps Engineer - Professional 2023 - DOP-C02 - Stéphane Maarek](https://www.udemy.com/course/aws-certified-devops-engineer-professional-hands-on/)
-- [AWS Certified Developer - Associate - Adrian Cantrill](https://learn.cantrill.io/p/aws-certified-developer-associate) 
+- [AWS Certified Developer - Associate - Adrian Cantrill](https://learn.cantrill.io/p/aws-certified-developer-associate)
 
 ## 🐳 Docker Courses
 
