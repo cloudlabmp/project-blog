@@ -428,6 +428,8 @@ Write-Host "Script completed at $(Get-Date)" -ForegroundColor Cyan
 Write-Host "Total runtime: $((Get-Date) - $scriptStart)" -ForegroundColor Gray
 ```
 
+</details>
+
 **Discovery results:**
 
 * **35 VMs** from the original MSP schedule (our planned list)
@@ -619,6 +621,8 @@ Write-Host "`n=== TAGGING SUMMARY ===" -ForegroundColor Cyan
 Write-Host "Successfully tagged: $totalSuccess VMs" -ForegroundColor Green
 Write-Host "Failed to tag: $totalFailed VMs" -ForegroundColor Red
 ```
+
+</details>
 
 ### 🧹 Handle the Stragglers
 
@@ -868,6 +872,8 @@ Write-Host ""
 Write-Host "Script completed at $(Get-Date)" -ForegroundColor Cyan
 Write-Host "Total runtime: $((Get-Date) - $scriptStart)" -ForegroundColor Gray
 ```
+
+</details>
 
 > **Key insight:** I grouped VMs by function and criticality, not just by convenience. Domain controllers got spread across different days, dev/test systems joined the existing Saturday morning window, and production applications were distributed for business continuity.
 
