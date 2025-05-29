@@ -1,5 +1,5 @@
 ---
-title: ""Bringing Patch Management In-House: Migrating from MSP to Azure Update Manager"
+title: "Bringing Patch Management In-House: Migrating from MSP to Azure Update Manager"
 description: "A real-world walkthrough of migrating VM patching from a third-party provider to Azure Update Manager using PowerShell, tagging, and policy automation."
 author: Matt Pollock
 date: 2025-05-29
@@ -16,7 +16,7 @@ With our MSP contract winding down, the time had come to bring VM patching *back
 
 Enter [Azure Update Manager](https://learn.microsoft.com/en-us/azure/update-manager/overview) — the modern, agentless way to manage patching schedules across your Azure VMs. Add a bit of PowerShell, sprinkle in some Azure Policy, and you've got yourself a scalable, policy-driven solution that's more visible, auditable, and way more maintainable.
 
-Here's how I made the switch — and managed to avoid a patching panic..
+Here's how I made the switch — and managed to avoid a patching panic.
 
 ---
 
