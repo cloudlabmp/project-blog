@@ -125,6 +125,8 @@ foreach ($day in $dayMap.Keys) {
 }
 ```
 
+</details>
+
 > ⚠️ *Don't forget: duration format is ISO 8601, not "2 hours" — and start time has to match the day it's tied to.*
 
 [Learn more about New-AzMaintenanceConfiguration](https://learn.microsoft.com/en-us/powershell/module/az.maintenance/new-azmaintenanceconfiguration)
