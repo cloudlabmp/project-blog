@@ -1146,10 +1146,9 @@ $tagSummary.GetEnumerator() | Sort-Object Name | ForEach-Object {
 
 After two full weeks of operation:
 
-* **47 VMs** successfully transitioned to Azure Update Manager
+* **90+ VMs** successfully transitioned to Azure Update Manager
 * **100% patch compliance** maintained
 * **Zero business-hours incidents** related to patching
-* **Estimated annual savings:** £15,000+ (no more MSP patching fees)
 * **Visibility improvement:** Real-time patch status vs. weekly email reports
 
 [Monitor updates in Azure Update Manager](https://learn.microsoft.com/en-us/azure/update-manager/monitor-updates)
