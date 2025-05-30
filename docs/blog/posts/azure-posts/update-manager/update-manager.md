@@ -10,9 +10,9 @@ tags: [Azure Update Manager, PowerShell, Azure Policy, VM Patching, FinOps]
 
 # 🔄 Bringing Patch Management In-House: Migrating from MSP to Azure Update Manager
 
-> It's all fun and games until the MSP contract expires and you realise 90 odd VMs still need their patching schedules sorted…
+> It's all fun and games until the MSP contract expires and you realise 90 VMs still need their patching schedules sorted…
 
-With our MSP contract winding down, the time had come to bring VM patching *back in house*. Our third-party provider had been handling it with their own tooling, which would obviously be no longer be used when the service contract expired.
+With our MSP contract winding down, the time had come to bring VM patching *back in house*. Our third-party provider had been handling it with their own tooling, which would no longer be used when the service contract expired.
 
 Enter [Azure Update Manager](https://learn.microsoft.com/en-us/azure/update-manager/overview) — the modern, agentless way to manage patching schedules across your Azure VMs. Add a bit of PowerShell, sprinkle in some Azure Policy, and you've got yourself a scalable, policy-driven solution that's more visible, auditable, and way more maintainable.
 
@@ -51,7 +51,7 @@ You'll need:
 
 First order of business: collect the patching summary data from the MSP — which, helpfully, came in the form of multiple weekly CSV exports.
 
-I uploaded the files into ChatGPT and had it wrangle the mess into a structured format. The result was a clear categorisation of VMs based on the day and time they were typically patched — a solid foundation to work from.
+I used GenAI to wrangle the mess into a structured format. The result was a clear categorisation of VMs based on the day and time they were typically patched — a solid foundation to work from.
 
 ---
 
@@ -60,7 +60,7 @@ I uploaded the files into ChatGPT and had it wrangle the mess into a structured 
 This is the foundation of Update Manager — define your recurring patch windows.
 
 <details>
-<summary>Click to expand: **Create Maintenance Configurations Script**</summary>
+<summary>Click to expand: Create Maintenance Configurations (Sample Script)</summary>
 
 ```powershell
 # Azure Update Manager - Create Weekly Maintenance Configurations
@@ -145,9 +145,10 @@ Update-AzMaintenanceConfiguration -ResourceGroupName "rg-maintenance-uksouth-001
 # Verify the change
 $updatedConfig = Get-AzMaintenanceConfiguration -ResourceGroupName "rg-maintenance-uksouth-001" -Name "contoso-maintenance-config-vms-sun"
 Write-Host "Sunday window now: $($updatedConfig.Duration) duration" -ForegroundColor Green
+
 ```
 
-> Better to have time and not need it than need it and trigger a post-patch incident.
+[Learn more about Update-AzMaintenanceConfiguration](https://learn.microsoft.com/en-us/powershell/module/az.maintenance/update-azmaintenanceconfiguration?view=azps-14.0.0&viewFallbackFrom=azps-13.5.0)
 
 ---
 
@@ -158,8 +159,8 @@ Armed with CSV exports of the latest patching summaries, I got AI to do the grun
 **What I did:**
 
 1. **Exported MSP data:** Weekly CSV reports showing patch installation timestamps for each VM
-2. **Uploaded to ChatGPT** with various iterative prompts, starting the conversation with this:
-   > "Attached is an export summary of the current patching activity form our incumbent MSP who currently look after the patching of the vm's in Azure
+2. **Used Gen AI** with various iterative prompts, starting the conversation with this:
+   > "Attached is an export summary of the current patching activity from our incumbent MSP who currently look after the patching of the VM's in Azure
 I need you to review timestamps and work out which maintenance window each vm is currently in, and then match that to the appropriate maintenance config that we have just created.
 If there are mis matches in new and current schedule then we may need to tweak the settings of the new configs"
 
@@ -186,7 +187,7 @@ Before diving into bulk tagging, I needed to understand what we were working wit
 **First, let's see what VMs we have:**
 
 <details>
-<summary>Click to expand: **Discover Untagged VMs Script**</summary>
+<summary>Click to expand: Discover Untagged VMs (Sample Script)</summary>
 
 ```powershell
 # Discover Untagged VMs Script for Azure Update Manager
@@ -436,9 +437,9 @@ Write-Host "Total runtime: $((Get-Date) - $scriptStart)" -ForegroundColor Gray
 
 * **35 VMs** from the original MSP schedule (our planned list)
 * **12 additional VMs** not in the MSP schedule (the "stragglers")
-* **Total: 47 VMs** needing Update Manager tags
+* **Total: 90 VMs** needing Update Manager tags
 
-> **Key insight:** The MSP wasn't managing everything. Several dev/test VMs and a few production systems were missing from their schedule entirely.
+> **Key insight:** The MSP wasn't managing everything. Several dev/test VMs and a few production systems were missing from their schedule.
 
 ---
 
@@ -455,7 +456,7 @@ Each tag serves a specific purpose:
 * `Updates` — Identifies VMs managed by Azure Update Manager
 
 <details>
-<summary>Click to expand: **Multi-Subscription Azure Update Manager VM Tagging Script**</summary>
+<summary>Click to expand: Multi-Subscription Azure Update Manager VM Tagging (Sample Script)</summary>
 
 ```powershell
 # Multi-Subscription Azure Update Manager VM Tagging Script
@@ -631,11 +632,11 @@ Write-Host "Failed to tag: $totalFailed VMs" -ForegroundColor Red
 For the 12 VMs not in the original MSP schedule, I used intelligent assignment based on their function:
 
 <details>
-<summary>Click to expand: **Tagging Script for Remaining Untagged VMs**</summary>
+<summary>Click to expand: Tagging Script for Remaining Untagged VMs (Sample Script)</summary>
 
 ```powershell
 # Intelligent VM Tagging Script for Remaining Untagged VMs
-# This script analyzes and tags the 26 remaining VMs based on workload patterns and load balancing
+# This script analyzes and tags the remaining VMs based on workload patterns and load balancing
 
 $scriptStart = Get-Date
 
@@ -768,10 +769,10 @@ foreach ($groupName in $vmGroups.Keys) {
         
         # Determine subscription ID from name
         $subscriptionId = switch ($vmInfo.Sub) {
-            "Contoso-Production" { (Get-AzSubscription -SubscriptionName "Production").Id }
-            "Contoso-DevTest" { (Get-AzSubscription -SubscriptionName "DevTest").Id }
-            "Contoso-Identity" { (Get-AzSubscription -SubscriptionName "Identity").Id }
-            "Contoso-DMZ" { (Get-AzSubscription -SubscriptionName "Contoso-DMZ").Id }
+            "Production" { (Get-AzSubscription -SubscriptionName "Production").Id }
+            "DevTest" { (Get-AzSubscription -SubscriptionName "DevTest").Id }
+            "Identity" { (Get-AzSubscription -SubscriptionName "Identity").Id }
+            "DMZ" { (Get-AzSubscription -SubscriptionName "DMZ").Id }
         }
         
         # Create appropriate tags based on maintenance window
@@ -891,8 +892,10 @@ You'll need two specific built-in policies assigned at the subscription (or mana
 
 **What it does:** This policy ensures your VMs have the necessary configurations to participate in Azure Update Manager. It automatically:
 
+* Installs the Azure Update Manager extension on Windows VMs
+* Registers required resource providers
 * Configures the VM to report its update compliance status
-* Sets the patch orchestration mode to "Customer Managed Schedules" where needed
+* Sets the patch orchestration mode appropriately
 
 > **Why this matters:** Without this policy, VMs won't appear in Update Manager scopes even if they're tagged correctly. The policy handles all the "plumbing" automatically.
 
@@ -1146,10 +1149,9 @@ $tagSummary.GetEnumerator() | Sort-Object Name | ForEach-Object {
 
 After two full weeks of operation:
 
-* **90+ VMs** successfully transitioned to Azure Update Manager
-* **100% patch compliance** maintained
-* **Zero business-hours incidents** related to patching
-* **Visibility improvement:** Real-time patch status vs. weekly email reports
+* **Better control:** Direct management of patch schedules and policies  
+* **Increased visibility:** Real-time compliance dashboards vs. periodic reports
+* **Reduced complexity:** Native Azure tooling vs. third-party solutions
 
 [Monitor updates in Azure Update Manager](https://learn.microsoft.com/en-us/azure/update-manager/monitor-updates)
 
