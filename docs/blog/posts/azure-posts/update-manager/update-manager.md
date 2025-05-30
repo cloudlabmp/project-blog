@@ -12,7 +12,7 @@ tags: [Azure Update Manager, PowerShell, Azure Policy, VM Patching, FinOps]
 
 > It's all fun and games until the MSP contract expires and you realise 90 odd VMs still need their patching schedules sorted…
 
-With our MSP contract winding down, the time had come to bring VM patching *back in house*. Our third-party provider had been handling it with their own tooling — opaque, over-engineered, and far too expensive for what it did.
+With our MSP contract winding down, the time had come to bring VM patching *back in house*. Our third-party provider had been handling it with their own tooling, which would obviously be no longer be used when the service contract expired.
 
 Enter [Azure Update Manager](https://learn.microsoft.com/en-us/azure/update-manager/overview) — the modern, agentless way to manage patching schedules across your Azure VMs. Add a bit of PowerShell, sprinkle in some Azure Policy, and you've got yourself a scalable, policy-driven solution that's more visible, auditable, and way more maintainable.
 
@@ -153,16 +153,18 @@ Write-Host "Sunday window now: $($updatedConfig.Duration) duration" -ForegroundC
 
 ## 🤖 Step 4 – Use AI to Group VMs by Patch Activity
 
-Armed with a jumble of CSV exports that made sense to nobody but the person who created them, I got AI to do the grunt work.
+Armed with CSV exports of the latest patching summaries, I got AI to do the grunt work and make sense of the contents.
 
 **What I did:**
 
 1. **Exported MSP data:** Weekly CSV reports showing patch installation timestamps for each VM
-2. **Uploaded to ChatGPT** with this prompt:
-   > "Analyze these patch installation times and group VMs by day/time patterns. Most VMs seem clustered on weekends - suggest optimal distribution across 7 maintenance windows for business continuity."
+2. **Uploaded to ChatGPT** with various iterative prompts, starting the conversation with this:
+   > "Attached is an export summary of the current patching activity form our incumbent MSP who currently look after the patching of the vm's in Azure
+I need you to review timestamps and work out which maintenance window each vm is currently in, and then match that to the appropriate maintenance config that we have just created.
+If there are mis matches in new and current schedule then we may need to tweak the settings of the new configs"
 
 3. **AI analysis revealed:**
-   * 60% of VMs were patching Saturday/Sunday (risky for business continuity)
+   * 60% of VMs were patching on one weekday evening
    * Several critical systems patching simultaneously
    * No consideration for application dependencies
 
@@ -173,7 +175,7 @@ Armed with a jumble of CSV exports that made sense to nobody but the person who 
 
 **The result:** A logical rebalancing that avoided "all our eggs in Sunday 1AM" basket and considered business impact.
 
-> **Why this matters:** The MSP was optimizing for their convenience, not our business continuity. AI helped identify risks we hadn't considered.
+> **Why this matters:** The current patching schedule was not optimized for business continuity. AI helped identify risks we hadn't considered.
 
 ---
 
@@ -887,12 +889,10 @@ You'll need two specific built-in policies assigned at the subscription (or mana
 
 ### ✅ Policy 1: `Set prerequisites for scheduling recurring updates on Azure virtual machines`
 
-**What it does:** This policy ensures your VMs have the necessary extensions and configurations to participate in Azure Update Manager. It automatically:
+**What it does:** This policy ensures your VMs have the necessary configurations to participate in Azure Update Manager. It automatically:
 
-* Installs the Azure Update Manager extension on Windows VMs
-* Registers required resource providers (`Microsoft.Maintenance`, `Microsoft.GuestConfiguration`)
 * Configures the VM to report its update compliance status
-* Sets the patch mode to "AutomaticByPlatform" where needed
+* Sets the patch orchestration mode to "Customer Managed Schedules" where needed
 
 > **Why this matters:** Without this policy, VMs won't appear in Update Manager scopes even if they're tagged correctly. The policy handles all the "plumbing" automatically.
 
