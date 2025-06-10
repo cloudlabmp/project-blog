@@ -381,13 +381,11 @@ Based on my week of trial and error, here are the most common problems you'll li
 **Symptoms:** "Invalid redirect URI" or "Authentication failed" errors when connecting to email services.
 
 **Likely causes:**
-
 - Redirect URI mismatch between app registration and n8n configuration
 - Self-hosted instance not using HTTPS for callbacks
 - App registration missing required API permissions
 
 **Solutions to try:**
-
 - Use app passwords instead of OAuth2 where possible (Gmail, Outlook.com) — **Note:** App passwords are simpler username/password credentials that bypass OAuth2 complexity but offer less security
 - Ensure your n8n instance is accessible via HTTPS with valid SSL certificate
 - Double-check app registration redirect URIs match exactly (including trailing slashes)
@@ -401,13 +399,11 @@ Based on my week of trial and error, here are the most common problems you'll li
 **Symptoms:** Slow model loading, container crashes, high memory usage.
 
 **Likely causes:**
-
 - Insufficient RAM allocation to Docker
 - CPU-intensive models running on inadequate hardware
 - Competing containers for limited resources
 
 **Solutions to try:**
-
 - Increase Docker memory limits in Docker Desktop settings
 - Use smaller model variants (7B instead of 13B+ parameters)
 - Monitor resource usage with `docker stats` command
@@ -421,13 +417,11 @@ Based on my week of trial and error, here are the most common problems you'll li
 **Symptoms:** API calls failing, unexpected high costs, token limits exceeded.
 
 **Likely causes:**
-
 - Testing with expensive models (GPT-4) instead of cheaper alternatives
 - No rate limiting in workflow configurations
 - Inefficient prompt design causing high token usage
 
 **Solutions to try:**
-
 - Start testing with GPT-3.5-turbo or GPT-4-mini models
 - Implement workflow rate limiting and retry logic
 - Optimize prompts to reduce token consumption
@@ -439,7 +433,6 @@ Based on my week of trial and error, here are the most common problems you'll li
 <summary><strong>Resource Requirements Summary</strong></summary>
 
 **Minimum Requirements for Recreation:**
-
 - **Cloud approach:** n8n trial account + $20-50 API experimentation budget
 - **Self-hosted approach:** 8GB+ RAM, Docker knowledge, 2-3 days setup time
 - **Local AI experimentation:** 16GB+ RAM recommended, considerable patience, NVMe storage preferred
