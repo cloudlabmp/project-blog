@@ -785,6 +785,7 @@ After running the system continuously in my home lab environment:
 Based on practical experience running this system, here are the most frequent challenges and their resolutions:
 
 ### **Prometheus Connection Issues**
+
 **Symptom**: Targets showing as "DOWN" in Prometheus interface
 
 ```bash
@@ -799,6 +800,7 @@ docker exec prometheus ping node-exporter
 ```
 
 ### **n8n Workflow Execution Failures**
+
 **Symptom**: HTTP 500 errors in workflow execution logs
 
 ```javascript
@@ -819,6 +821,7 @@ try {
 ```
 
 ### **Azure OpenAI Rate Limiting**
+
 **Symptom**: Sporadic HTTP 429 errors
 
 ```javascript
@@ -841,6 +844,7 @@ async function retryWithBackoff(apiCall, maxRetries = 3) {
 ```
 
 ### **Memory Management on Raspberry Pi**
+
 **Symptom**: System becomes unresponsive under load
 
 ```yaml
@@ -861,16 +865,19 @@ services:
 Having successfully built an AI-powered monitoring system in your home lab, you've developed transferable skills for larger infrastructure projects:
 
 **Immediate Next Steps:**
+
 - Apply these patterns to cloud infrastructure (AWS EC2, Azure VMs)
 - Expand monitoring to cover application metrics, not just system metrics
 - Explore other AI models and prompt engineering techniques
 
 **Future Learning Projects:**
+
 - **Security Event Analysis**: Use similar AI integration patterns for log analysis
 - **Cost Optimization**: Apply AI analysis to cloud billing and usage data
 - **Capacity Planning**: Extend monitoring for predictive resource planning
 
 **Skills You Can Now Confidently Apply:**
+
 - Integrating AI services with traditional monitoring tools
 - Creating business-relevant reports from technical metrics
 - Building automated workflows for infrastructure management
@@ -919,6 +926,7 @@ Having successfully built an AI-powered monitoring system in your home lab, you'
 
 - [Azure OpenAI Learning Path](https://learn.microsoft.com/en-us/training/paths/develop-ai-solutions-azure-openai/) — Microsoft Learn modules
 - [Prompt Engineering Guide](https://www.promptingguide.ai/) — Best practices and examples
+
 ---
 
 ## 🎯 Conclusion: AI-Enhanced Monitoring Success
