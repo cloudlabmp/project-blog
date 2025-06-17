@@ -1,5 +1,6 @@
 site_name: cloudlabmp
-site_url: https://cloudlabmp.github.io/project-blog
+#site_url: https://cloudlabmp.github.io/project-blog
+site_url: https://127.0.0.1/project-blog
 site_author: Matthew Pollock
 site_description: A blog about tech stuff
 repo_url: https://github.com/cloudlabmp/project-blog
