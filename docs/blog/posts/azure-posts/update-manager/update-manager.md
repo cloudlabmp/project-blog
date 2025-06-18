@@ -2,7 +2,9 @@
 title: "Bringing Patch Management In-House: Migrating from MSP to Azure Update Manager"
 description: "A real-world walkthrough of migrating VM patching from a third-party provider to Azure Update Manager using PowerShell, tagging, and policy automation."
 author: Matt Pollock
-date: 2025-05-29
+date: 
+    created: 2025-05-29
+    updated: 2025-05-29
 categories: [Azure, Automation, Patch Management]
 tags: [Azure Update Manager, PowerShell, Azure Policy, VM Patching, FinOps]
 ---

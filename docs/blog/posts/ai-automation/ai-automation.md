@@ -2,9 +2,9 @@
 title: "First Steps into AI Automation: My Journey from Trial to Self-Hosted Chaos"
 description: "A real-world walkthrough of experimenting with n8n, Ollama, and OpenWebUI - complete with the inevitable OAuth headaches and Docker container migrations."
 author: Matt Pollock
-date: 2025-06-09
-date.created: 2025-06-09
-date.updated: 2025-06-09
+date:
+    created: 2025-06-09
+    updated: 2025-06-09
 categories: [AI, Automation, Self-Hosting]
 tags: [n8n, Ollama, OpenWebUI, Azure OpenAI, Docker, Email Automation, LLM, Self-Hosting]
 ---
