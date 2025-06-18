@@ -3,6 +3,8 @@ title: "Building AI-Powered Infrastructure Monitoring: From Home Lab to Cloud Pr
 description: "A comprehensive guide to integrating AI into infrastructure monitoring using Prometheus, Grafana, n8n, and Azure OpenAI. Learn to transform traditional alerts into intelligent business insights through hands-on home lab experimentation."
 author: "Matt Pollock"
 date: 2025-06-16
+date.created: 2025-06-16
+date.updated: 2025-06-16
 tags:
   - AI
   - Infrastructure Monitoring
