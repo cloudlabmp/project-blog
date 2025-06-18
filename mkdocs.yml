@@ -69,7 +69,14 @@ plugins:
       date_from_meta:
         as_creation: date.created
         as_update: date.updated
-      use_git: false  # Added to prevent the warning
+      use_git: false
+      length: 20
+      pretty_print: true
+      abstract_chars_count: 160
+      abstract_delimiter: "<!-- more -->"
+      # Add these stability settings
+      feed_ttl: 60  # Cache for 60 minutes
+      json_feed_enabled: false  # Reduce complexity
 
   - git-committers:
       enabled: true
