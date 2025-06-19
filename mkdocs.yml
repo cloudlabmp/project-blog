@@ -12,7 +12,7 @@ nav:
   - Blog:
       - Posts: blog/index.md
       - Tags: blog/tags.md
-      - Learn: learn.md
+  - Learn: learn.md
   - About: about.md
   - Work: work.md
 
@@ -92,7 +92,7 @@ plugins:
       enabled: true
   
 extra:
-  homepage: https://blog.pollockweb.com/blog/posts/
+  homepage: https://blog.pollockweb.com/blog/
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cloudlabmp
