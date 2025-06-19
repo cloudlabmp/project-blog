@@ -22,7 +22,7 @@ tags:
 
 # Cloud Resume Challenge with Terraform: Building the Backend API 🚀
 
-In our [previous post](link-to-previous-post), we set up the frontend infrastructure for our resume website using Terraform. Now it's time to build the backend API that will power our visitor counter.
+In our [previous posts](post2-improved.md), we set up the frontend infrastructure for our resume website using Terraform. Now it's time to build the backend API that will power our visitor counter.
 
 ## Backend Architecture Overview 🏗️
 

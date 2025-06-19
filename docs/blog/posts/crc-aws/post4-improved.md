@@ -23,7 +23,7 @@ tags:
 
 # Cloud Resume Challenge with Terraform: Automating Deployments with GitHub Actions ⚡
 
-In our [previous posts](link-to-previous-post), we built the frontend and backend components of our cloud resume project. Now it's time to take our implementation to the next level by implementing **continuous integration and deployment (CI/CD)** with GitHub Actions.
+In our [previous posts](post3-improved.md), we built the frontend and backend components of our cloud resume project. Now it's time to take our implementation to the next level by implementing **continuous integration and deployment (CI/CD)** with GitHub Actions.
 
 ## Why CI/CD Is Critical for Cloud Engineers 🛠️
 

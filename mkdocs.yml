@@ -8,9 +8,11 @@ repo_url: https://github.com/cloudlabmp/project-blog
 repo_name: "cloudlabmp/project-blog"
 
 nav:
+  - Home: index.md
   - Blog:
       - Posts: blog/index.md
       - Tags: blog/tags.md
+  
   - Learn: learn.md
   - About: about.md
   - Work: work.md
@@ -99,6 +101,8 @@ extra:
       link: https://linkedin.com/in/matthew-pollock-76831920/
     - icon: fontawesome/solid/globe
       link: https://profile.pollockweb.com
+    - icon: fontawesome/solid/rss
+      link: https://blog.pollockweb.com/feed_rss_created.xml
   analytics:
     provider: google
     property: G-800NGKWBYL

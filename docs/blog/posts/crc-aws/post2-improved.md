@@ -25,7 +25,7 @@ tags:
 
 ## Introduction 🌍
 
-In the [previous post](link-to-previous-post), we set up our Terraform environment and outlined the architecture for our Cloud Resume Challenge project. Now it's time to start building! In this post, we'll focus on deploying the first component: **the static website** that will host our resume.
+In the [previous post](post1-improved.md), we set up our Terraform environment and outlined the architecture for our Cloud Resume Challenge project. Now it's time to start building! In this post, we'll focus on deploying the first component: **the static website** that will host our resume.
 
 ## Frontend Architecture Overview 🏗️
 
