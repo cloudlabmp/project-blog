@@ -25,6 +25,9 @@ categories:
   - Cloud Engineering
   - Learning Projects
 reading_time: "20 min"
+social:
+  cards_layout_options:
+    background_image: /AIMonitoringDashboard_Final.png
 ---
 
 # 🔥 Vibe Coding My Way to AI Infra: Terraform, Claude & Cloud-Native Monitoring
