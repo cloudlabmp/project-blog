@@ -378,7 +378,7 @@ Despite its capabilities, working with GenAI in a complex, multi-phase project r
 - 📏 **Scope creep** — Claude regularly expanded simple requests into full architectural reviews without being asked
 
 Despite these pain points, the experience was still a net positive — but only because I was prepared to steer the conversation firmly and frequently.
-
+![AI Monitoring Dashboard V1](./AIMonitoringDashboardV1.png)
 ![Chat length limit warning](./Claude_ChatLengthLImit.png)
 
 #### 🧪 From Real-World Troubleshooting
