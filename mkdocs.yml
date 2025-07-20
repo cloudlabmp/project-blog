@@ -93,6 +93,7 @@ plugins:
   
 extra:
   homepage: https://blog.pollockweb.com/blog/
+  social_image: https://blog.pollockweb.com/assets/icons/logo-48x48.png
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cloudlabmp
@@ -102,7 +103,7 @@ extra:
       link: https://profile.pollockweb.com
     - icon: fontawesome/solid/rss
       link: https://blog.pollockweb.com/feed_rss_created.xml
-      
+  
 
   analytics:
     provider: google
