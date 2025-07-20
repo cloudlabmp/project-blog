@@ -21,7 +21,7 @@ tags:
   - powershell
 ---
 
-# Replacing SAS Tokens with User Assigned Managed Identity (UAMI) in AzCopy for Blob Uploads
+# 🕵️ Replacing SAS Tokens with User Assigned Managed Identity (UAMI) in AzCopy for Blob Uploads
 
 Using Shared Access Signature (SAS) tokens with `azcopy` is common — but rotating tokens and handling them securely can be a hassle. To improve security and simplify our automation, I recently replaced SAS-based authentication in our scheduled AzCopy jobs with **Azure User Assigned Managed Identity (UAMI)**.
 

@@ -20,7 +20,7 @@ tags:
   - uk
 ---
 
-# Configuring UK Regional Settings on Windows Servers with PowerShell
+# ⏲️ Configuring UK Regional Settings on Windows Servers with PowerShell
 
 When building out cloud-hosted or automated deployments of Windows Servers, especially for UK-based organisations, it’s easy to overlook **regional settings**. But these seemingly small configurations — like date/time formats, currency symbols, or keyboard layouts — can have a big impact on usability, application compatibility, and user experience.
 

@@ -20,7 +20,7 @@ tags:
   - scheduled task
 ---
 
-# Enforcing Time Zone and DST Compliance on Windows Servers Using GPO and Scheduled Tasks
+# ⌚Enforcing Time Zone and DST Compliance on Windows Servers Using GPO and Scheduled Tasks
 
 ---
 

@@ -23,7 +23,7 @@ categories:
   - Learning Projects
 reading_time: "25 min"
 ---
-# Building AI-Powered Infrastructure Monitoring: From Home Lab to Cloud Production
+# 🍓 Building AI-Powered Infrastructure Monitoring: From Home Lab to Cloud Production
 
 After successfully diving into AI automation with n8n (and surviving the OAuth battles), I decided to tackle a more ambitious learning project: exploring how to integrate AI into infrastructure monitoring systems. The goal was to understand how AI can transform traditional monitoring from simple threshold alerts into intelligent analysis that provides actionable insights—all while experimenting in a safe home lab environment before applying these concepts to production cloud infrastructure.
 
