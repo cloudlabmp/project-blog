@@ -1,6 +1,6 @@
 ---
-title: "Vibe Coding AI Connected Azure Infra"
-description: "How I Built an Azure AI Monitoring Platform with Claude, Azure and Terraform"
+title: "Vibe Coding My Way to AI Infra"
+description: "Terraform, Claude & Cloud-Native Monitoring"
 author: "Matt Pollock"
 date:
   created: 2025-07-18
