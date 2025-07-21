@@ -5,6 +5,7 @@ author: "Matt Pollock"
 date:
   created: 2025-07-18
   updated: 2025-07-18
+image: AIMonitoringDashboard_Final.png
 tags:
   - AI
   - Infrastructure as Code

@@ -49,6 +49,7 @@ theme:
 
 plugins:
   - search
+  - social
   - glightbox:
       zoomable: true
   
@@ -61,9 +62,6 @@ plugins:
       archive: true
       archive_name: Posts
       post_url_format: "{slug}"
-
-  - tags:
-      tags_file: blog/tags.md
       
   - rss:
       match_path: "blog/posts/.*"
@@ -93,7 +91,7 @@ plugins:
   
 extra:
   homepage: https://blog.pollockweb.com/blog/
-  social_image: https://blog.pollockweb.com/assets/icons/logo-48x48.png
+  
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cloudlabmp
@@ -103,7 +101,8 @@ extra:
       link: https://profile.pollockweb.com
     - icon: fontawesome/solid/rss
       link: https://blog.pollockweb.com/feed_rss_created.xml
-  
+  cards: true 
+  image: assets/icons/logo-48x48.png
 
   analytics:
     provider: google
