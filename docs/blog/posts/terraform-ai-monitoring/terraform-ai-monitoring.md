@@ -1,11 +1,10 @@
 ---
-title: "Vibe Coding My Way to AI Connected Azure Infra Monitoring"
+title: "Vibe Coding AI Connected Azure Infra"
 description: "How I Built an Azure AI Monitoring Platform with Claude, Azure and Terraform"
 author: "Matt Pollock"
 date:
   created: 2025-07-18
   updated: 2025-07-21
-image: AIMonitoringDashboard_Final.png
 tags:
   - AI
   - Infrastructure as Code
@@ -28,7 +27,7 @@ categories:
 reading_time: "20 min"
 ---
 
-# 🔥 Vibe Coding My Way to AI Infra: Terraform, Claude & Cloud-Native Monitoring
+# 🔥 Vibe Coding My Way to AI Connected Infra: Claude, Terraform & Cloud-Native Monitoring
 
 ## 📖 TL;DR – What This Post Covers
 
