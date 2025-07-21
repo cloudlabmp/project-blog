@@ -79,7 +79,7 @@ The dashboard screenshots demonstrate the outcome.
 ## 📚 Table of Contents
 
 - [Introduction](#introduction)
-- [📚 Table of Contents](#-table-of-contents)
+- [📚 Table of Contents](#table-of-contents)
 - [Part 1: The Prototype](#part-1-the-prototype)
 - [Version 1: The Manual Deployment Marathon](#version-1-the-manual-deployment-marathon)
 - [Platform and GenAI Choices](#platform-and-genai-choices)
@@ -87,15 +87,15 @@ The dashboard screenshots demonstrate the outcome.
 - [🧠 Phase 2: Intelligence Layer](#phase-2-intelligence-layer)
 - [🎨 Phase 3: The User Experience](#phase-3-the-user-experience)
 - [🌍 Part 2: Why Terraform? Why Now?](#part-2-why-terraform-why-now)
-- [🧠 Part 3: Working with GenAI – The Good, the Bad, and the Wandering](#part-3-working-with-genai--the-good-the-bad-and-the-wandering)
-- [🏗️ Part 4: Building the Stack – What Got Built](#️part-4-building-the-stack---what-got-built)
-- [🧾 Part 5: The Result - A Portable, Reusable AI Monitoring Stack](#part-5-the-result---a-portable-reusable-ai-monitoring-stack)
+- [🧠 Part 3: Working with GenAI – The Good, the Bad, and the Wandering](#part-3-working-with-genai-the-good-the-bad-and-the-wandering)
+- [🏗️ Part 4: Building the Stack – What Got Built](#part-4-building-the-stack-what-got-built)
+- [🧾 Part 5: The Result - A Portable, Reusable AI Monitoring Stack](#part-5-the-result-a-portable-reusable-ai-monitoring-stack)
 - [🧠 Part 6: Reflections and Lessons Learned](#part-6-reflections-and-lessons-learned)
 - [✅ Conclusion](#conclusion)
 
 ## Part 1: The Prototype
 
-_(Stage 1 – Manual AI-Assisted Deployment)* The Birth of a Vibe-Coded Project
+*(Stage 1 – Manual AI-Assisted Deployment)* The Birth of a Vibe-Coded Project
 
 The project didn’t start with a business requirement — it started with curiosity. One evening, mid-career reflection turned into a late-night conversation with ChatGPT:
 
