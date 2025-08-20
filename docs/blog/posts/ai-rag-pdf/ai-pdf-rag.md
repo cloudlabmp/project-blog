@@ -1,19 +1,13 @@
 ---
 title: "From PDF Overload to AI Clarity: Building an AI RAG Assistant"
+description: "How I built an AI-powered RAG assistant"
+author: "Matt Pollock"
 date:
   created: 2025-08-18
   updated: 2025-08-19
-authors:
-  - matthew
-description: "How I built an AI-powered RAG assistant"
-categories:
+tags:
   - AI
   - RAG
-  - Projects
-  - Claude Code
-tags:
-  - ai
-  - rag
   - pinecone
   - chromadb
   - qdrant
@@ -22,6 +16,18 @@ tags:
   - docker
   - cli
   - claude
+categories:
+  - AI
+  - RAG
+  - Projects
+  - Containers
+  - Docker
+  - Vector Databases
+  - Azure OpenAI
+  - Claude Code
+  - Vibe Coding
+  - Learning Projects
+reading_time: "6 min"
 ---
 
 # 📚 From PDF Overload to AI Clarity: Building an AI RAG Assistant
