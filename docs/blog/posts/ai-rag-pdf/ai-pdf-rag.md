@@ -24,7 +24,7 @@ tags:
   - claude
 ---
 
-# 📚 From PDF Overload to AI Clarity: My Four-Iteration Journey Building an AI RAG Assistant
+# 📚 From PDF Overload to AI Clarity: Building an AI RAG Assistant
 
 ## Introduction
 
