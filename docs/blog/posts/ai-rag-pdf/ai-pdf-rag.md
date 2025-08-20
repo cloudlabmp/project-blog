@@ -1,11 +1,11 @@
 ---
-title: "From PDF Overload to AI Clarity: My Four-Iteration Journey Building an AI RAG Assistant"
+title: "From PDF Overload to AI Clarity: Building an AI RAG Assistant"
 date:
   created: 2025-08-18
   updated: 2025-08-19
 authors:
   - matthew
-description: "A behind-the-scenes look at how I built an AI-powered RAG assistant through four full rewrites — from broken Pinecone prototypes to a functional enterprise-style CLI app with model switching, caching, and analytics."
+description: "How I built an AI-powered RAG assistant"
 categories:
   - AI
   - RAG
