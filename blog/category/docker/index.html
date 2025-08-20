@@ -1,0 +1,2451 @@
+<head>
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+
+  
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A blog about tech stuff">
+      
+      
+        <meta name="author" content="matt.pollock@outlook.com">
+      
+      
+        <link rel="canonical" href="https://blog.pollockweb.com/blog/category/docker/">
+      
+      
+        <link rel="prev" href="../devops/">
+      
+      
+        <link rel="next" href="../documentation/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Docker - cloudlabmp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-800NGKWBYL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-800NGKWBYL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-800NGKWBYL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Docker - cloudlabmp" >
+      
+        <meta  property="og:description"  content="A blog about tech stuff" >
+      
+        <meta  property="og:image"  content="https://blog.pollockweb.com/assets/images/social/blog/category/docker.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://blog.pollockweb.com/blog/category/docker/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Docker - cloudlabmp" >
+      
+        <meta  name="twitter:description"  content="A blog about tech stuff" >
+      
+        <meta  name="twitter:image"  content="https://blog.pollockweb.com/assets/images/social/blog/category/docker.png" >
+      
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#docker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+    <div class="announcement-content">
+      <p>Welcome to my blog! Connect with me:</p>
+      <a href="https://www.linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="profile.pollockweb.com">
+        <i class="fas fa-globe fa-2x"></i>
+      </a>
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://blog.pollockweb.com/feed_rss_created.xml" target="_blank" title="RSS Feed">
+        <i class="fa-solid fa-rss fa-2x"></i>
+      </a>
+    </div>
+  
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://blog.pollockweb.com/blog/" title="cloudlabmp" class="md-header__button md-logo" aria-label="cloudlabmp" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo-48x48.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cloudlabmp
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Docker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cloudlabmp/project-blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudlabmp/project-blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../learn/" class="md-tabs__link">
+        
+  
+    
+  
+  Learn
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../work/" class="md-tabs__link">
+        
+  
+    
+  
+  Work
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://blog.pollockweb.com/blog/" title="cloudlabmp" class="md-nav__button md-logo" aria-label="cloudlabmp" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo-48x48.png" alt="logo">
+
+    </a>
+    cloudlabmp
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cloudlabmp/project-blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudlabmp/project-blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Posts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Posts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai--study-techniques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI &amp; Study Techniques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../application-insights/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Insights
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure-openai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure OpenAI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../bcdr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BCDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blogging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blogging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cicd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../career-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Career Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude-code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Claude Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-engineering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Engineering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-resume-challenge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Resume Challenge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../customization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 From PDF Overload to AI Clarity: Building an AI RAG Assistant
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../finops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FinOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../group-policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Group Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../iis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IIS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../iac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IaC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../infrastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../intune/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intune
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../life-update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Life Update
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../microsoft-certifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Certifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patch Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RAG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../regional-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regional Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-hosting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-Hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../serverless/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serverless
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vector-databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vibe-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibe Coding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-hosting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 From PDF Overload to AI Clarity: Building an AI RAG Assistant
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="docker">Docker</h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-08-18 00:00:00+00:00">August 18, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../ai/" class="md-meta__link">AI</a>, 
+              <a href="../rag/" class="md-meta__link">RAG</a>, 
+              <a href="../projects/" class="md-meta__link">Projects</a>, 
+              <a href="../containers/" class="md-meta__link">Containers</a>, 
+              <a href="./" class="md-meta__link">Docker</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              10 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/">📚 From PDF Overload to AI Clarity: Building an AI RAG Assistant</a></h2>
+<h3 id="introduction"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#introduction">Introduction</a></h3>
+<p>If you’ve ever tried to dig a single obscure fact out of a massive technical manual, you’ll know the frustration 😩: you <em>know</em> it’s in there somewhere, you just can’t remember the exact wording, cmdlet name, or property that will get you there.</p>
+<p>For me, this pain point came from <em>Office 365 for IT Pros</em> — a constantly updated, encyclopaedic PDF covering Microsoft cloud administration. It’s a superb resource… but not exactly quick to search when you can’t remember the magic keyword.<br />
+Often I know exactly what I want to achieve — say, <em>add copies of sent emails to the sender’s mailbox when using a shared mailbox</em> — but I can’t quite recall the right cmdlet or property to Ctrl+F my way to the answer.</p>
+<p>That’s when I thought: what if I could take this PDF (and others in my archive), drop them into a centralised app, and use AI as the conductor and translator 🎼🤖 to retrieve the exact piece of information I need — just by asking naturally in plain English.</p>
+<p>This project also doubled as a test bed for <a href="https://claude.ai/">Claude Code</a>, which I’d been using since recently completing a GenAI Bootcamp 🚀.<br />
+I wanted to see how it fared when building something from scratch in an IDE, rather than in a chat window.  </p>
+<p>👉 In this post, I’ll give a very high level overview of the four iterations (v1–v4) - what worked, what failed, and what I learned along the way.</p>
+<hr />
+<h3 id="version-comparison-at-a-glance"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#version-comparison-at-a-glance">Version Comparison at a Glance 🗂️</a></h3>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Stack / Interface</th>
+<th>Vector DB(s)</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>v1</strong></td>
+<td>Python + Gradio UI</td>
+<td><a href="https://www.pinecone.io/">Pinecone</a></td>
+<td>Uploaded PDFs fine, but no usable retrieval. Abandoned.</td>
+</tr>
+<tr>
+<td><strong>v2</strong></td>
+<td>FastAPI + React (Dockerised)</td>
+<td>Pinecone + <a href="https://qdrant.tech/">Qdrant</a></td>
+<td>Cleaner setup, partial functionality. Containers failed often.</td>
+</tr>
+<tr>
+<td><strong>v3</strong></td>
+<td>Python CLI (dual pipeline: PDF + Markdown)</td>
+<td><a href="https://docs.trychroma.com/">ChromaDB</a></td>
+<td>More stable retrieval, dropped UI, faster iteration. Still config headaches.</td>
+</tr>
+<tr>
+<td><strong>v4</strong></td>
+<td>Enterprise-style CLI</td>
+<td>Azure OpenAI + <a href="https://ollama.ai/">Ollama</a>, Chroma</td>
+<td>Usable tool: caching, reranking, analytics, model switching. I actually use this daily.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="architecture-evolution-v1-v4"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#architecture-evolution-v1-v4">Architecture Evolution (v1 → v4)</a></h3>
+<p><img alt="Architecture Flowchart" src="../../ai-rag-pdf/v4/PDF%20RAG%20Assistant%20v4.jpg" />  </p>
+<p>This single diagram captures the arc of the project 🛠️.  </p>
+<hr />
+<h3 id="version-1-pinecone-rag-test-application"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#version-1-pinecone-rag-test-application">Version 1 – Pinecone RAG Test Application</a></h3>
+<p><img alt="Version 1 Screenshot" src="../../ai-rag-pdf/v1/PDF%20RAG%20Assistant%20v1.jpg" /></p>
+<p>The first attempt was… short lived 🪦.  </p>
+<p>I gave Claude clear instructions, and to its credit, it produced a functional backend and frontend pretty quickly. I uploaded a PDF into <a href="https://www.pinecone.io/">Pinecone</a>, successfully chunked it, and then… nothing.  </p>
+<p>This first attempt was a non-starter 🚫.<br />
+Despite uploading the PDF successfully to Pinecone, the app was unable to retrieve any usable results for whatever reason. I spent a day troubleshooting before calling it a day and moving on.<br />
+I had kind of being following a YouTube tutorial for this project, but even though the tutorial was less than a year old, much of the content didn't map to what I was seeing - especially in the Pinecone UI.<br />
+Evidence of how quickly the AI landscape and products are changing I guess.😲</p>
+<p>💡 <em>Lesson learned: I should've known the steps I was following in the tutorial were likely to have changed.
+  I do afterall work with Microsoft Cloud on a daily basis, where product interfaces seem to change between browser refreshes!</em>😎  </p>
+<p>👉 Which led me to v2: if I was going to try again, I wanted a cleaner, containerised architecture from the start.  </p>
+<hr />
+<h3 id="version-2-it-assistant-fastapi-react"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#version-2-it-assistant-fastapi-react">Version 2 – IT Assistant (FastAPI + React)</a></h3>
+<p><img alt="Version 2 Screenshot" src="../../ai-rag-pdf/v2/PDF%20RAG%20Assistant%20v2.jpg" /></p>
+<p>For round two, I decided to start cleaner 🧹.  </p>
+<p>The first attempt had been a sprawl of Python files, with Claude spinning up new scripts left, right, and centre. So I thought: let’s containerise from the start 🐳.  </p>
+<ul>
+<li><strong>Stack:</strong> FastAPI backend, Next.js frontend, Dockerised deployment  </li>
+<li><strong>Vector Stores:</strong> Pinecone and <a href="https://qdrant.tech/">Qdrant</a>  </li>
+<li><strong>Features:</strong> Modular vector store interface, PDF + Markdown parsing, a React chat UI with source display  </li>
+</ul>
+<p>On paper, it looked solid. In practice: the containers refused to start, health checks failed — meaning the services never even got to the point of talking to each other — and ports (3030, 8000) were dead 💀.  </p>
+<p>In short, the project got a bit further in terms of useful results and functionality, but ultimately I parked it and went back to the drawing board.  </p>
+<p>💡 <em>Lesson learned: Dockerising from day one helps with clean deployments, but only if the containers actually run.</em>  </p>
+<p>By this point, I genuinely wondered if I was wasting my time and that I might be missing some huge bit of fundamental knowledge that was grounding the project before it had started 🫠.<br />
+Still, I knew I wanted to strip things back and simplify.<br />
+So, before ordering a copy of <em>"The Big Book of AI: Seniors Edition"</em> off of Amazon, I thought I would try a different tack.</p>
+<p>👉 Which led directly to v3: drop the UI, keep it lean, focus on retrieval.</p>
+<hr />
+<h3 id="version-3-rag-agent-dual-pipeline-cli"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#version-3-rag-agent-dual-pipeline-cli">Version 3 – RAG Agent (Dual-Pipeline, CLI)</a></h3>
+<p><img alt="Version 3 Screenshot" src="../../ai-rag-pdf/v3/PDF%20RAG%20Assistant%20v3.jpg" /></p>
+<p>By this point, I realised the frontend was becoming a distraction 🎭. I’d spent too long wrestling with UX issues, which were getting in the way of the real meat and potatoes of the project — so I ditched the UI and went full CLI.  </p>
+<ul>
+<li><strong>Stack:</strong> Python CLI, dual pipelines for PDF + Markdown  </li>
+<li><strong>Vector Store:</strong> <a href="https://docs.trychroma.com/">ChromaDB</a>  </li>
+<li><strong>Features:</strong> PDF-to-Markdown converter, deduplication, metadata enrichment, batch processing, incremental updates, output logging, rich terminal formatting  </li>
+</ul>
+<p>Chroma proved more successful than Pinecone, and the CLI gave me a faster dev loop ⚡.<br />
+But misaligned environment variables and Azure credential mismatches caused repeated headaches 🤯.</p>
+<p>💡 <em>Lesson learned: simplifying the interface let me focus on the retrieval logic — but configuration discipline was just as important. During issue debugging Claude will spin up numerous different python files to fix the issue(s) at hand. I had to remember to get Claude to roll the fixes into the new container builds each time, to ensure the project structure stayed clean and tidy</em></p>
+<p>At this stage, I had a functioning app, but the results of retrival were pretty poor, and the functionality was lacking.</p>
+<p>👉 Which led naturally into v4: keep the CLI, tune the retriaval process, and add the features that would make the app useable.</p>
+<hr />
+<h3 id="version-4-pdf-rag-assistant-v20-enterprise"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#version-4-pdf-rag-assistant-v20-enterprise">Version 4 – PDF RAG Assistant v2.0 Enterprise</a></h3>
+<p><img alt="Version 4 Screenshot" src="../../ai-rag-pdf/v4/PDF%20RAG%20Assistant%20v4.jpg" />
+After three rewrites, I finally had something that looked and felt like a useable tool 🎉.</p>
+<p>This is the version I still use today 🎉. It wasn’t a quick win: v4 took a long time to fettle into shape with many hours of trying different things to improve the results, testing, re-testing, and testing again 🔄.  </p>
+<p>The app is in pretty good shape now, with some good features added along the way. Most importantly, the results returned via query are good enough for me to use ✅.
+Don’t get me wrong, the “final” version of the app (for now) is pretty usable — but I don’t think I’ll be troubling any AI startup finance backers any time soon 💸🙃.  </p>
+<hr />
+<h4 id="the-guided-tour-v4-screenshots"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#the-guided-tour-v4-screenshots">The Guided Tour (v4 Screenshots)</a></h4>
+<h5 id="1-startup-menu"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#1-startup-menu">1. Startup &amp; Menu</a></h5>
+<p><img alt="v4 Menu" src="../../ai-rag-pdf/v4/v4-menu-commands.png" /><br />
+<em>Finally felt like a tool instead of just another Python script 🛠️.</em></p>
+<h5 id="2-query-processing-pipeline"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#2-query-processing-pipeline">2. Query Processing Pipeline</a></h5>
+<p><img alt="v4 Pipeline" src="../../ai-rag-pdf/v4/v4-query-processing-pipeline.png" /><br />
+<em>For the first time, everything was working together instead of fighting me ⚔️.</em></p>
+<h5 id="3a-model-switching-azure"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#3a-model-switching-azure">3a. Model Switching – Azure</a></h5>
+<p><img alt="v4 Model Switch 1" src="../../ai-rag-pdf/v4/v4-model-switching-interface-1.png" /><br />
+<em>Azure OpenAI was quicker ⚡ and free with my Dev subscription.</em>  </p>
+<h5 id="3b-model-switching-ollama"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#3b-model-switching-ollama">3b. Model Switching – Ollama</a></h5>
+<p><img alt="v4 Model Switch 2" src="../../ai-rag-pdf/v4/v4-model-switching-interface-2.png" /><br />
+<em><a href="https://ollama.ai/">Ollama</a> gave me a safety net offline 🌐, even if slower.</em>  </p>
+<h5 id="4-start-page-status"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#4-start-page-status">4. Start Page &amp; Status</a></h5>
+<p><img alt="v4 Start Page" src="../../ai-rag-pdf/v4/v4-pdf-rag-start-page.png" /><br />
+<em>Reassuring after so many broken starts — just seeing a healthy status page felt like progress.</em> 😅</p>
+<h5 id="5a-query-results-simple"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#5a-query-results-simple">5a. Query Results – Simple</a></h5>
+<p><img alt="v4 Simple Response" src="../../ai-rag-pdf/v4/v4-simple-rag-response.png" />  </p>
+<h5 id="5b-query-results-detailed"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#5b-query-results-detailed">5b. Query Results – Detailed</a></h5>
+<p><img alt="v4 Detailed Response" src="../../ai-rag-pdf/v4/v4-detailed-rag-response.png" /><br />
+<em>Detailed mode felt like the first time the assistant could teach me back, not just parrot text.</em> 📖</p>
+<h5 id="6-response-quality-reports"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#6-response-quality-reports">6. Response Quality Reports</a></h5>
+<p><img alt="v4 Quality Report" src="../../ai-rag-pdf/v4/v4-response-quality-report.png" /><br />
+<em>Handy both as a sanity check ✅ and as a reminder that it’s not perfect — but at least it knows it.</em> 🤷</p>
+<h5 id="7-query-history"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#7-query-history">7. Query History</a></h5>
+<p><img alt="v4 History" src="../../ai-rag-pdf/v4/v4-query-history.png" /><br />
+<em>At this point, it wasn’t just answering questions — it was helping me build knowledge over time.</em> 📚</p>
+<hr />
+<h4 id="what-made-v4-different"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#what-made-v4-different">What Made v4 Different</a></h4>
+<p>Here’s what finally tipped the balance from “prototype” to “usable assistant”:  </p>
+<ul>
+<li><strong>Semantic caching 🧠</strong> – the assistant remembers previous queries and responses, so it doesn’t waste time (or tokens) re-answering the same thing.  </li>
+<li><strong>ColBERT reranking 🎯</strong> – instead of trusting the first vector search result, ColBERT reorders the results by semantic similarity, surfacing the most relevant chunks.  </li>
+<li><strong>Analytics 📊</strong> – lightweight stats on query quality and hit rates. Not a dashboard, more like reassurance that the retrieval pipeline is behaving.  </li>
+<li><strong>Dynamic model control 🔀</strong> – being able to switch between <a href="https://azure.microsoft.com/en-us/products/ai-services/openai-service">Azure OpenAI</a> (fast, cloud-based) and Ollama (slow, local fallback) directly in the CLI.  </li>
+</ul>
+<p>💡 <em>Lesson learned: retrieval accuracy isn’t just about the database — caching, reranking, and model flexibility all compound to make the experience better.</em>  </p>
+<hr />
+<h3 id="losing-my-rag-pun-intended"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#losing-my-rag-pun-intended">Losing my RAG 🧵 (Pun Intended)</a></h3>
+<p>There were definitely points where frustration levels were high enough to make me question why I’d even started  — four rewrites will do that to you. Pinecone that wouldn’t retrieve, Docker containers that wouldn’t start, environment variables that wouldn’t line up.  </p>
+<p>Each dead end was frustrating in the moment, but in hindsight, as we all know, the failures are where the learning is. Every wrong turn taught me something that made the next version a little better.  </p>
+<hr />
+<h3 id="experimentation-debugging"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#experimentation-debugging">Experimentation &amp; Debugging</a></h3>
+<ul>
+<li><strong>Pinecone:</strong> I created two or three different DBs and successfully chunked the data each time. But v1 and v2 couldn’t pull anything useful back out 🪫.  </li>
+<li><strong>Azure:</strong> The only real issue was needing a fairly low chunk size (256) to avoid breaching my usage quota ⚖️.  </li>
+<li><strong>Iteration habit:</strong> If I hit a roadblock with Claude Code that seemed to be taking me further away from the goal, I’d pause ⏸️, step away 🚶, then revisit 🔄. Sometimes it was worth troubleshooting; other times it was better to start fresh.  </li>
+</ul>
+<hr />
+<h3 id="lessons-learned"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#lessons-learned">Lessons Learned</a></h3>
+<p>💡 Start with a CLI before adding a UI — it keeps you focused on retrieval.<br />
+💡 Always check embedding/vector dimensions for compatibility.<br />
+💡 Dockerising helps with clean deployments, but rebuilds can be brittle.<br />
+💡 Small chunk sizes often work better with Azure OpenAI quotas.<br />
+💡 RAG accuracy depends on multiple layers — not just the vector DB.  </p>
+<hr />
+<h3 id="if-i-were-starting-again"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#if-i-were-starting-again">If I Were Starting Again</a></h3>
+<p>With hindsight, I’d probably:  </p>
+<ul>
+<li>Begin directly with <a href="https://docs.trychroma.com/">ChromaDB</a> instead of Pinecone.  </li>
+<li>Skip the frontend until retrieval was nailed down.  </li>
+<li>Spend more time upfront on embedding/vector compatibility.  </li>
+<li>Put more time into researching retrievability improvements.  </li>
+</ul>
+<hr />
+<h3 id="whats-next-v5"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#whats-next-v5">What’s Next (v5?)</a></h3>
+<p>Future directions might include:  </p>
+<ul>
+<li>🧪 <strong>Testing new embedding models and vector DBs</strong> – different models could improve retrieval precision, especially for domain-specific PDFs.  </li>
+<li>🎯 <strong>Improving pinpoint retrieval accuracy</strong> – because even in v4, it sometimes still “gets close” rather than “spot on.”  </li>
+<li>💬 <strong>MCP Server integration</strong> – so the app can query multiple data sources, not just local files.  </li>
+<li>📊 <strong>Adding Guardrails</strong> – edging it closer toward an enterprise-ready assistant.  </li>
+</ul>
+<p>If I can improve the results in v4 or with v5, then that would be a real win 🏆.  </p>
+<hr />
+<h3 id="things-i-liked-about-claude-code"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#things-i-liked-about-claude-code">Things I Liked About Claude Code 🖥️</a></h3>
+<p>One of the constants across the project was working inside <a href="https://claude.ai/">Claude Code</a>, and there were some things I really liked about the experience:  </p>
+<ul>
+<li>✅ <strong>Automatic chat compaction</strong> – no endless scrolling or need to copy/paste old snippets  </li>
+<li>🗂️ <strong>Chat history</strong> – the ability to pick up where I left off in a previous session  </li>
+<li>🔢 <strong>On-screen token counter</strong> – knowing exactly how much context I was burning through  </li>
+<li>👀 <strong>Realtime query view</strong> – watching Claude process step-by-step, with expand/collapse options for analysis  </li>
+</ul>
+<p>Compared to a browser-based UI, these felt like small but meaningful quality-of-life upgrades. For a coding-heavy project, those workflow improvements really mattered.  </p>
+<hr />
+<h3 id="final-thoughts"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#final-thoughts">Final Thoughts</a></h3>
+<p>This project started with the frustration of not being able to remember which cmdlet to search for in a 1,000-page PDF 😤. Four rewrites later, I have a tool that can answer those questions directly.  </p>
+<p>It’s far from perfect. There are limitations to how well the data can be processed and subsequently how accurately it can be retrieved — at least with the models and resources I used ⚖️. But it’s functional enough that I actually use it — which is more than I could say for versions one through three.  </p>
+<p>Overall, though, this wasn’t just about the app. It was about getting hands-on with a code editor in the terminal and IDE, instead of being stuck in a chat-based UI 💻. In that regard, the project goal was achieved. Using Claude Code (other CLI-based AI assistants are available 😎) was a much better experience for a coding-heavy project.  </p>
+<p>I did briefly try OpenAI’s Codex at the very start, just to see which editor I preferred. It didn’t take long to see that Codex didn’t really have the chops ❌. Claude felt sharper, more capable ✨, and it became clear why it has the reputation as the current CLI editor sweetheart 💖 — while Codex has barely made a ripple 🌊.  </p>
+<hr />
+<h3 id="reader-takeaway"><a class="toclink" href="../../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/#reader-takeaway">Reader Takeaway 📦</a></h3>
+<p>If you’re thinking about building your own RAG assistant:  </p>
+<ul>
+<li>Expect dead ends — each failed attempt will teach you something.  </li>
+<li>Keep it simple early (CLI + local DB) before adding shiny extras.  </li>
+<li>Focus on retrieval quality, not just the vector DB.  </li>
+<li>Treat AI assistants as copilots, not magicians.  </li>
+</ul>
+<p>At the end of the day, my assistant works well enough for me (for now) — and that was the whole point.  </p>
+<p><a class="md-button" href="https://x.com/intent/tweet?text=From%20PDF%20Overload%20to%20AI%20Clarity%3A%20Building%20an%20AI%20RAG%20Assistant%0A&amp;url=https://blog.pollockweb.com/blog/from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span></a>
+<a class="md-button" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.pollockweb.com/blog/from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"/></svg></span></a></p>
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+  <div class="custom-footer">
+    <div class="custom-footer-left">
+      <p>Copyright &copy; 2025 Matthew Pollock</p>
+    </div>
+    <div class="custom-footer-right">
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="profile.pollockweb.com">
+        <i class="fas fa-globe"></i>
+      </a>
+      <a href="https://blog.pollockweb.com/feed_rss_created.xml" target="_blank" title="RSS Feed">
+        <i class="fa-solid fa-rss"></i>
+      </a>
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.select", "content.code.copy", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

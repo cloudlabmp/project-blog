@@ -1,0 +1,2655 @@
+<head>
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+
+  
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A blog about tech stuff">
+      
+      
+        <meta name="author" content="matt.pollock@outlook.com">
+      
+      
+        <link rel="canonical" href="https://blog.pollockweb.com/blog/category/self-hosting/">
+      
+      
+        <link rel="prev" href="../security/">
+      
+      
+        <link rel="next" href="../serverless/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Self-Hosting - cloudlabmp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-800NGKWBYL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-800NGKWBYL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-800NGKWBYL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Self-Hosting - cloudlabmp" >
+      
+        <meta  property="og:description"  content="A blog about tech stuff" >
+      
+        <meta  property="og:image"  content="https://blog.pollockweb.com/assets/images/social/blog/category/self-hosting.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://blog.pollockweb.com/blog/category/self-hosting/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Self-Hosting - cloudlabmp" >
+      
+        <meta  name="twitter:description"  content="A blog about tech stuff" >
+      
+        <meta  name="twitter:image"  content="https://blog.pollockweb.com/assets/images/social/blog/category/self-hosting.png" >
+      
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#self-hosting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+    <div class="announcement-content">
+      <p>Welcome to my blog! Connect with me:</p>
+      <a href="https://www.linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="profile.pollockweb.com">
+        <i class="fas fa-globe fa-2x"></i>
+      </a>
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://blog.pollockweb.com/feed_rss_created.xml" target="_blank" title="RSS Feed">
+        <i class="fa-solid fa-rss fa-2x"></i>
+      </a>
+    </div>
+  
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://blog.pollockweb.com/blog/" title="cloudlabmp" class="md-header__button md-logo" aria-label="cloudlabmp" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo-48x48.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cloudlabmp
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Self-Hosting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cloudlabmp/project-blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudlabmp/project-blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../learn/" class="md-tabs__link">
+        
+  
+    
+  
+  Learn
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../work/" class="md-tabs__link">
+        
+  
+    
+  
+  Work
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://blog.pollockweb.com/blog/" title="cloudlabmp" class="md-nav__button md-logo" aria-label="cloudlabmp" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo-48x48.png" alt="logo">
+
+    </a>
+    cloudlabmp
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cloudlabmp/project-blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudlabmp/project-blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Posts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Posts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai--study-techniques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI &amp; Study Techniques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../application-insights/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Insights
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure-openai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure OpenAI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../bcdr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BCDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blogging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blogging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cicd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../career-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Career Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude-code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Claude Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-engineering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Engineering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-resume-challenge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Resume Challenge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../customization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../finops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FinOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../group-policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Group Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../iis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IIS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../iac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IaC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../infrastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../intune/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intune
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../life-update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Life Update
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../microsoft-certifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Certifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patch Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RAG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../regional-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regional Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Self-Hosting
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Self-Hosting
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 First Steps into AI Automation: My Journey from Trial to Self-Hosted Chaos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../serverless/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serverless
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vector-databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vibe-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibe Coding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-hosting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 First Steps into AI Automation: My Journey from Trial to Self-Hosted Chaos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="self-hosting">Self-Hosting</h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-06-09 00:00:00+00:00">June 9, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../ai/" class="md-meta__link">AI</a>, 
+              <a href="../automation/" class="md-meta__link">Automation</a>, 
+              <a href="./" class="md-meta__link">Self-Hosting</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              14 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/">🤖 First Steps into AI Automation: My Journey from Trial to Self-Hosted Chaos</a></h2>
+<blockquote>
+<p>What started as 'let me just automate some emails' somehow turned into a comprehensive exploration of every AI automation platform and deployment method known to mankind...</p>
+</blockquote>
+<p>After months of reading about AI automation tools and watching everyone else's productivity skyrocket with clever workflows, I finally decided to stop being a spectator and dive in myself. What started as a simple "let's automate job alert emails" experiment quickly became a week-long journey through cloud trials, self-hosted deployments, OAuth authentication battles, and enough Docker containers to power a small data centre.</p>
+<p><strong>In this post, you'll discover:</strong></p>
+<ul>
+<li>Real costs of AI automation experimentation ($10-50 range)</li>
+<li>Why self-hosted OAuth2 is significantly harder than cloud versions</li>
+<li>Performance differences: Pi 5 vs. desktop hardware for local AI</li>
+<li>When to choose local vs. cloud AI models</li>
+<li>Time investment reality: ~10 hours over 1 week for this project</li>
+</ul>
+<p>Here's how my first real foray into AI automation unfolded — spoiler alert: it involved more container migrations than I initially planned.</p>
+<p><strong>Hardware baseline for this project:</strong></p>
+<blockquote>
+<p><strong>💻 Development Environment</strong></p>
+<ul>
+<li><strong>Primary machine:</strong> AMD Ryzen 7 5800X, 32GB DDR4, NVMe SSD</li>
+<li><strong>Pi 5 setup:</strong> 8GB RAM, microSD storage  </li>
+<li><strong>Network:</strong> Standard home broadband (important for cloud API performance)</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="the-mission-taming-job-alert-email-chaos"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#the-mission-taming-job-alert-email-chaos">🎯 The Mission: Taming Job Alert Email Chaos</a></h3>
+<p>Let's set the scene. If you're drowning in recruitment emails like I was, spending 30+ minutes daily parsing through multiple job listings scattered across different emails, you'll understand the frustration. Each recruitment platform has its own format, some emails contain 5-10 different opportunities, and manually extracting the relevant URLs was becoming a productivity killer.</p>
+<p><strong>The vision:</strong> Create an automated workflow that would:</p>
+<ul>
+<li>Scrape job-related emails from my Outlook.com inbox</li>
+<li>Extract and clean the job data using AI</li>
+<li>Generate a neat summary email with all the job URLs in one place</li>
+<li>Send it back to me in a digestible format</li>
+</ul>
+<p>Simple enough, right? <em>Famous last words.</em></p>
+<hr />
+<h3 id="phase-1-the-n8n-cloud-trial-adventure"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#phase-1-the-n8n-cloud-trial-adventure">🔄 Phase 1: The n8n Cloud Trial Adventure</a></h3>
+<p>My research pointed to <a href="https://n8n.io/">n8n</a> as the go-to tool for this kind of automation workflow. Being sensible, I started with their 14-day cloud trial rather than jumping straight into self-hosting complexities.</p>
+<h4 id="initial-setup-first-success"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#initial-setup-first-success">⚙️ Initial Setup &amp; First Success</a></h4>
+<p>The n8n cloud interface is genuinely impressive — drag-and-drop workflow building with a proper visual editor that actually makes sense. Within a couple of hours, I had:</p>
+<p>✅ <strong>Connected to Outlook.com</strong> via their built-in connector<br />
+✅ <strong>Set up email filtering</strong> to grab job-related messages<br />
+✅ <strong>Configured basic data processing</strong> to extract text content<br />
+✅ <strong>Integrated OpenAI API</strong> for intelligent job URL extraction  </p>
+<p><img alt="n8n jobs workflow with OpenAI API integration" src="../../ai-automation/n8n-jobs-workflow-openai.png" /></p>
+<h4 id="the-ai-integration-challenge"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#the-ai-integration-challenge">🤖 The AI Integration Challenge</a></h4>
+<p>This is where things got interesting. Initially, I connected the workflow to my <a href="https://openai.com/api/">OpenAI API</a> account, using GPT-4 to parse email content and extract job URLs. The AI component worked brilliantly — almost too well, since I managed to burn through my $10 worth of token credits in just two days of testing.</p>
+<p><strong>The cost reality:</strong> Those "just testing a few prompts" sessions add up fast. A single complex email with multiple job listings processed through GPT-4 was costing around $0.15-0.30 per API call. When you're iterating on prompts and testing edge cases, those costs compound quickly.</p>
+<p><strong>Lesson learned:</strong> Test with smaller models first, then scale up. GPT-4 is excellent but not cheap for experimental workflows.</p>
+<h4 id="partial-success-the-classic-it-story"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#partial-success-the-classic-it-story">🎯 Partial Success (The Classic IT Story)</a></h4>
+<p>The workflow was <em>partially</em> successful — and in true IT fashion, "partially" is doing some heavy lifting here. While the automation successfully processed emails and generated summaries, it had one glaring limitation: <strong>it only extracted one job URL per email</strong>, when most recruitment emails contain multiple opportunities.</p>
+<p><strong>What this actually meant:</strong> A typical recruitment email might contain 5-7 job listings with individual URLs, but my workflow would only capture the first one it encountered. This wasn't a parsing issue — the AI was correctly identifying all the URLs in its response, but the n8n workflow was only processing the first result from the AI output.</p>
+<p><strong>Why this limitation exists:</strong> The issue stemmed from how I'd configured the data processing nodes in n8n. The workflow was treating the AI response as a single data item rather than an array of multiple URLs. This is a common beginner mistake when working with structured data outputs.</p>
+<p>This became the recurring theme of my experimentation week: <em>everything works, just not quite how you want it to.</em></p>
+<h4 id="enter-azure-openai"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#enter-azure-openai">💡 Enter Azure OpenAI</a></h4>
+<p>Rather than continue burning through OpenAI credits, I pivoted to <a href="https://azure.microsoft.com/en-gb/products/ai-services/openai-service">Azure OpenAI</a>. This turned out to be a smart move for several reasons:</p>
+<ul>
+<li><strong>Cost control:</strong> Better integration with my existing Azure credits</li>
+<li><strong>Familiar environment:</strong> Already comfortable with Azure resource management  </li>
+<li><strong>Testing flexibility:</strong> My Visual Studio Developer subscription gives me £120 monthly credits</li>
+</ul>
+<p>I deployed a <strong>GPT-4 Mini</strong> model in my test lab Azure tenant — perfect for experimentation without breaking the bank.</p>
+<p><img alt="Azure OpenAI GPT-4 Mini deployment configuration" src="../../ai-automation/azure-openai-deployment.png" /></p>
+<p>The Azure OpenAI integration worked seamlessly with n8n, and I successfully redirected my workflow to use the new endpoint. <em>Finally, something that worked first time.</em></p>
+<p><img alt="n8n jobs workflow with Azure OpenAI integration" src="../../ai-automation/n8n-jobs-workflow-azure.png" /></p>
+<hr />
+<h3 id="phase-2-self-hosting-ambitions-container-edition-1"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#phase-2-self-hosting-ambitions-container-edition-1">🐳 Phase 2: Self-Hosting Ambitions (Container Edition #1)</a></h3>
+<p>With the n8n cloud trial clocking ticking down, I faced the classic build-vs-buy decision. The cloud version was excellent, but I wanted full control and the ability to experiment without subscription constraints. The monthly $20 cost wasn't prohibitive, but the learning opportunity of self-hosting was too appealing to pass up.</p>
+<p>Enter self-hosting with Docker containers — specifically, targeting my Raspberry Pi 5 setup.</p>
+<h4 id="the-openmediavault-experiment"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#the-openmediavault-experiment">🏠 The OpenMediaVault Experiment</a></h4>
+<p>My first attempt involved deploying n8n as a self-hosted Docker container on my <a href="https://www.openmediavault.org/">OpenMediaVault (OMV)</a> setup. For those unfamiliar, OMV is a network-attached storage (NAS) solution built on Debian, perfect for home lab environments where you want proper storage management with container capabilities.</p>
+<p><strong>Why the Pi 5 + OMV route:</strong></p>
+<ul>
+<li><strong>Always-on availability:</strong> Unlike my main PC, the Pi runs 24/7</li>
+<li><strong>Low power consumption:</strong> Perfect for continuous automation workflows</li>
+<li><strong>Storage integration:</strong> OMV provides excellent Docker volume management</li>
+<li><strong>Learning opportunity:</strong> Understanding self-hosted deployment challenges</li>
+</ul>
+<p><strong>The setup:</strong></p>
+<ul>
+<li><strong>Host:</strong> Raspberry Pi 5 running OpenMediaVault</li>
+<li><strong>Backend storage:</strong> NAS device for persistent data</li>
+<li><strong>Database:</strong> PostgreSQL container for n8n's backend</li>
+<li><strong>Edition:</strong> n8n Community Edition (self-hosted)</li>
+</ul>
+<p><img alt="OpenMediaVault Docker container management interface" src="../../ai-automation/omv-docker-n8n-containers.png" /></p>
+<h4 id="the-great-oauth-authentication-battle"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#the-great-oauth-authentication-battle">😤 The Great OAuth Authentication Battle</a></h4>
+<p>This is where my self-hosting dreams met reality with a resounding thud.</p>
+<p>I quickly discovered that replicating my cloud workflow wasn't going to be straightforward. The self-hosted community edition has functionality restrictions compared to the cloud version, but more frustratingly, I couldn't get OAuth2 authentication working properly.</p>
+<p><strong>Why OAuth2 is trickier with self-hosted setups:</strong></p>
+<ul>
+<li><strong>Redirect URI complexity:</strong> Cloud services handle callback URLs automatically, but self-hosted instances need manually configured redirect URIs</li>
+<li><strong>App registration headaches:</strong> Azure app registrations expect specific callback patterns that don't align well with dynamic self-hosted URLs</li>
+<li><strong>Token management:</strong> Cloud versions handle OAuth token refresh automatically; self-hosted requires manual configuration</li>
+<li><strong>Security certificate requirements:</strong> Many OAuth providers now require HTTPS callbacks, adding SSL certificate management complexity</li>
+</ul>
+<p><strong>The specific challenges I hit:</strong></p>
+<ul>
+<li><strong>Outlook.com authentication:</strong> Couldn't configure OAuth2 credentials using an app registration from my test lab Azure tenant</li>
+<li><strong>Exchange Online integration:</strong> Also failed to connect via app registration — kept getting "invalid redirect URI" errors</li>
+<li><strong>Documentation gaps:</strong> Self-hosting authentication setup felt less polished than the cloud version</li>
+</ul>
+<p>After several hours over two days debugging OAuth flows and Azure app registrations, I admitted defeat on the email integration front. <em>Sometimes retreat is the better part of valour.</em></p>
+<h4 id="simple-success-weather-api-workflow"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#simple-success-weather-api-workflow">🌤️ Simple Success: Weather API Workflow</a></h4>
+<p>Rather than abandon the entire self-hosting experiment, I pivoted to a simpler proof-of-concept. I created a basic workflow using:</p>
+<ul>
+<li><strong><a href="https://openweathermap.org/api">OpenWeatherMap API</a></strong> for weather data</li>
+<li><strong>Gmail integration</strong> with app passwords (much simpler than OAuth2)</li>
+<li><strong>Basic data processing</strong> and email generation</li>
+</ul>
+<p>This worked perfectly and proved that the self-hosted n8n environment was functional — the issue was specifically with the more complex authentication requirements of my original workflow.</p>
+<p><img alt="Simple n8n weather workflow using OpenAI API" src="../../ai-automation/n8n-weather-workflow.png" /></p>
+<hr />
+<h3 id="phase-3-the-wsl-migration-container-migration-2"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#phase-3-the-wsl-migration-container-migration-2">🐳 Phase 3: The WSL Migration (Container Migration #2)</a></h3>
+<p>While the Pi 5 setup was working fine for simple workflows, I started feeling the hardware limitations when testing more complex operations. Loading even smaller AI models was painfully slow, and memory constraints meant I couldn't experiment with anything approaching production-scale workflows.</p>
+<p>Time for <strong>Container Migration #2</strong>.</p>
+<h4 id="moving-to-wsl-docker-desktop"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#moving-to-wsl-docker-desktop">🖥️ Moving to WSL + Docker Desktop</a></h4>
+<p>With the Pi 5 hitting performance limits, I decided to experiment with local AI models using Ollama (a local LLM hosting platform) and OpenWebUI (a web interface for interacting with AI models). This required more computational resources than the Pi could provide, so I deployed these tools using Docker Compose inside Ubuntu running on Windows WSL (Windows Subsystem for Linux).</p>
+<p>This setup offered several advantages:</p>
+<p><strong>Why WSL over the Pi 5:</strong></p>
+<ul>
+<li><strong>Better hardware resources:</strong> Access to my Windows PC's 32GB RAM and 8-core CPU vs. Pi 5's 8GB RAM limitation</li>
+<li><strong>Docker Desktop integration:</strong> Visual container management through familiar interface</li>
+<li><strong>Development flexibility:</strong> Easier to iterate and debug workflows with full IDE access</li>
+<li><strong>Performance reality:</strong> Local LLM model loading went from 1+ minutes on Pi 5 to under 30 seconds</li>
+</ul>
+<p><strong>My development machine specs:</strong></p>
+<ul>
+<li><strong>CPU:</strong> AMD Ryzen 7 5800H with Radeon Graphics</li>
+<li><strong>RAM:</strong> 32GB DDR4</li>
+<li><strong>Storage:</strong> NVMe SSD for fast model loading</li>
+<li><strong>GPU:</strong> None (pure CPU inference)</li>
+</ul>
+<p><strong>Time Investment Reality:</strong></p>
+<ul>
+<li><strong>n8n cloud setup:</strong> 2-3 hours (including initial workflow creation)</li>
+<li><strong>OAuth2 debugging:</strong> 3+ hours over 2 days (ongoing challenge)</li>
+<li><strong>Pi 5 container setup:</strong> 2+ hours</li>
+<li><strong>Docker Desktop container set up:</strong> 2+ hours</li>
+<li><strong>Total project time:</strong> ~10 hours over 1 week</li>
+</ul>
+<p><strong>The new stack:</strong></p>
+<ul>
+<li><strong>Host:</strong> Ubuntu in WSL2 on Windows</li>
+<li><strong>Container orchestration:</strong> Docker Compose</li>
+<li><strong>Management:</strong> Docker Desktop for Windows</li>
+<li><strong>Models:</strong> <a href="https://ollama.ai/">Ollama</a> for local LLM hosting</li>
+<li><strong>Interface:</strong> <a href="https://openwebui.com/">OpenWebUI</a> for model interaction</li>
+</ul>
+<p><img alt="Docker Desktop showing Ollama containers running" src="../../ai-automation/docker-desktop-ollama.png" /></p>
+<h4 id="local-llm-experimentation"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#local-llm-experimentation">🧠 Local LLM Experimentation</a></h4>
+<p>This is where the project took an interesting turn. Rather than continuing to rely on cloud APIs, I started experimenting with local language models through Ollama.</p>
+<p><strong>Why local LLMs?</strong></p>
+<ul>
+<li><strong>Cost control:</strong> No per-token charges for experimentation</li>
+<li><strong>Privacy:</strong> Sensitive data stays on local infrastructure</li>
+<li><strong>Learning opportunity:</strong> Understanding how different models perform</li>
+</ul>
+<p>The Docker Compose setup made it trivial to spin up different model combinations and test their performance on my email processing use case.</p>
+<h4 id="reality-check-local-vs-cloud-performance"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#reality-check-local-vs-cloud-performance">⚠️ Reality Check: Local vs. Cloud Performance</a></h4>
+<p>Let's be honest here — <strong>using an LLM locally is never going to be a fully featured replacement for the likes of ChatGPT or Claude</strong>. This became apparent pretty quickly during my testing.</p>
+<p><strong>Performance realities:</strong></p>
+<ul>
+<li><strong>Speed:</strong> Unless you're running some serious hardware, the performance will be a lot slower than the online AI counterparts</li>
+<li><strong>Model capabilities:</strong> Local models (especially smaller ones that run on consumer hardware) lack the sophisticated reasoning of GPT-4 or Claude</li>
+<li><strong>Resource constraints:</strong> My standard PC setup meant I was limited to smaller model variants</li>
+<li><strong>Response quality:</strong> Noticeably less nuanced and accurate responses compared to cloud services</li>
+</ul>
+<p><strong>Where local LLMs do shine:</strong></p>
+<ul>
+<li><strong>Privacy-sensitive tasks:</strong> When you can't send data to external APIs</li>
+<li><strong>Development and testing:</strong> Iterating on prompts without burning through API credits</li>
+<li><strong>Learning and experimentation:</strong> Understanding how different model architectures behave</li>
+<li><strong>Offline scenarios:</strong> When internet connectivity is unreliable</li>
+</ul>
+<p>The key insight: <strong>local LLMs are a complement to cloud services, not a replacement</strong>. Use them when privacy, cost, or learning are the primary concerns, but stick with cloud APIs when you need reliable, high-quality results.</p>
+<h4 id="hybrid-approach-best-of-both-worlds"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#hybrid-approach-best-of-both-worlds">🔗 Hybrid Approach: Best of Both Worlds</a></h4>
+<p>The final configuration became a hybrid approach:</p>
+<ul>
+<li><strong>OpenWebUI connected to Azure OpenAI</strong> for production-quality responses</li>
+<li><strong>Local Ollama models</strong> for development and privacy-sensitive testing</li>
+<li><strong>Docker containers</strong> exposed through Docker Desktop for easy management</li>
+</ul>
+<p>This gave me the flexibility to choose the right tool for each task — cloud APIs when I need reliability and performance, local models when I want to experiment or maintain privacy.</p>
+<p><img alt="OpenWebUI local interface with model selection" src="../../ai-automation/openwebui-local.png" /></p>
+<h4 id="cost-reality-check"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#cost-reality-check">💰 Cost Reality Check</a></h4>
+<p>After a week of experimentation, here's how the costs actually broke down:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Service</strong></th>
+<th><strong>Trial Period</strong></th>
+<th><strong>Monthly Cost</strong></th>
+<th><strong>My Usage</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>n8n Cloud</td>
+<td>14 days free</td>
+<td>€20/month</td>
+<td>2 weeks testing</td>
+<td>Full OAuth2 features</td>
+</tr>
+<tr>
+<td>OpenAI API</td>
+<td>Pay-per-use</td>
+<td>Variable</td>
+<td>$10 in 2 days</td>
+<td>Expensive for testing</td>
+</tr>
+<tr>
+<td>Azure OpenAI</td>
+<td>Free credits</td>
+<td>£120/month budget</td>
+<td>~£15 used</td>
+<td>Better for experimentation</td>
+</tr>
+<tr>
+<td>Self-hosted</td>
+<td>Free</td>
+<td>Hardware + time</td>
+<td>2 days setup</td>
+<td>OAuth2 complexity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key insight:</strong> The "free" self-hosted option came with a significant time cost — debugging authentication issues for hours vs. having things work immediately in the cloud version.</p>
+<hr />
+<h3 id="current-state-lessons-learned-next-steps"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#current-state-lessons-learned-next-steps">📊 Current State: Lessons Learned &amp; Next Steps</a></h3>
+<p>After a week of container deployments, OAuth battles, and API integrations, here's where I've landed:</p>
+<h4 id="whats-working-well"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#whats-working-well">✅ What's Working Well</a></h4>
+<p><strong>Technical Stack:</strong></p>
+<ul>
+<li><strong>n8n self-hosted:</strong> Currently running 2 active workflows (weather alerts, basic data processing)</li>
+<li><strong>Azure OpenAI integration:</strong> Reliable and cost-effective for AI processing — saving ~£25/month vs. direct OpenAI API</li>
+<li><strong>Docker containerisation:</strong> Easy deployment and management across different environments</li>
+<li><strong>WSL environment:</strong> 10x performance improvement over Pi 5 for local AI model loading</li>
+</ul>
+<p><strong>Process Improvements:</strong></p>
+<ul>
+<li><strong>Iterative approach:</strong> Start simple, add complexity gradually — this saved significant debugging time</li>
+<li><strong>Hybrid cloud/local strategy:</strong> Use the right tool for each requirement rather than forcing one solution</li>
+<li><strong>Container flexibility:</strong> Easy to migrate and scale across different hosts when hardware constraints appear</li>
+</ul>
+<p><strong>Daily productivity impact:</strong> While the original job email automation isn't fully solved, the weather automation saves ~10 minutes daily, and the learning has already paid dividends in other automation projects.</p>
+<h4 id="ongoing-challenges-the-work-in-progress-list"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#ongoing-challenges-the-work-in-progress-list">⚠️ Ongoing Challenges (The Work-in-Progress List)</a></h4>
+<p><strong>Authentication Issues:</strong></p>
+<ul>
+<li>OAuth2 integration with Outlook.com/Exchange Online still unresolved</li>
+<li>Need to explore alternative authentication methods or different email providers</li>
+<li>May require diving deeper into Azure app registration configurations</li>
+</ul>
+<p><strong>Workflow Limitations:</strong></p>
+<ul>
+<li>Original job email processing goal partially achieved but needs refinement</li>
+<li>Multiple job URL extraction per email still needs work</li>
+<li>Error handling and retry logic need improvement</li>
+</ul>
+<p><strong>Infrastructure Decisions:</strong></p>
+<ul>
+<li>Balancing local vs. cloud resources for different use cases</li>
+<li>Determining optimal Docker deployment strategy for production workflows</li>
+<li>Managing costs across multiple AI service providers</li>
+</ul>
+<p><strong>Decision-making process during failures:</strong> When something doesn't work, I typically: (1) Troubleshoot the exact error using ChatGPT or Anthropic Claude, (2) Search for similar issues in community forums, (3) Try a simpler alternative approach, (4) If still stuck after 2-3 hours, pivot to a different method rather than continuing to debug indefinitely.</p>
+<h4 id="next-steps-future-experiments"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#next-steps-future-experiments">🚀 Next Steps &amp; Future Experiments</a></h4>
+<p><strong>Short-term goals (next 2-4 weeks):</strong></p>
+<ol>
+<li><strong>Resolve OAuth2 authentication</strong> for proper email integration</li>
+<li><strong>Improve job URL extraction accuracy</strong> — tackle the multiple URLs per email challenge</li>
+<li><strong>Add error handling and logging</strong> to existing workflows</li>
+<li><strong>Explore alternative email providers</strong> if Outlook.com integration remains problematic</li>
+</ol>
+<p><strong>Medium-term exploration (next 2-3 months):</strong></p>
+<ol>
+<li><strong>Local LLM performance tuning</strong> for specific use cases</li>
+<li><strong>Workflow templates</strong> for common automation patterns</li>
+<li><strong>Integration with other productivity tools</strong> (calendar, task management)</li>
+<li><strong>Monitoring and alerting</strong> for automated workflows</li>
+</ol>
+<h4 id="quick-wins-for-beginners"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#quick-wins-for-beginners">🛠️ Quick Wins for Beginners</a></h4>
+<p>If you're just starting your AI automation journey, here are the lessons learned that could save you time:</p>
+<blockquote>
+<p><strong>🎯 Start Simple First</strong></p>
+<ul>
+<li>Begin with n8n cloud trial to understand the platform without authentication headaches</li>
+<li>Use simple APIs (weather, RSS feeds) before tackling complex ones (email OAuth2)</li>
+<li>Test with smaller AI models before jumping to GPT-4</li>
+</ul>
+<p><strong>💡 Budget for Experimentation</strong></p>
+<ul>
+<li>Set aside $20-50 for API testing — it goes faster than you think</li>
+<li>Azure OpenAI credits can be more cost-effective than direct OpenAI API for learning</li>
+<li>Factor in time costs when choosing self-hosted vs. cloud solutions</li>
+</ul>
+<p><strong>🔧 Have Fallback Options Ready</strong></p>
+<ul>
+<li>Plan alternative authentication methods (app passwords vs. OAuth2)</li>
+<li>Keep both cloud and local AI options available</li>
+<li>Document what works and what doesn't for future reference</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="technical-resources-documentation"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#technical-resources-documentation">🔧 Technical Resources &amp; Documentation</a></h3>
+<p>For anyone inspired to start their own AI automation journey, here are the key resources that proved invaluable:</p>
+<h4 id="core-tools-platforms"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#core-tools-platforms">🛠️ Core Tools &amp; Platforms</a></h4>
+<ul>
+<li><strong><a href="https://n8n.io/">n8n</a></strong> — Visual workflow automation platform</li>
+<li><strong><a href="https://www.docker.com/">Docker</a></strong> — Containerisation platform</li>
+<li><strong><a href="https://docs.docker.com/compose/">Docker Compose</a></strong> — Multi-container orchestration tool</li>
+<li><strong><a href="https://www.openmediavault.org/">OpenMediaVault</a></strong> — NAS/storage management solution</li>
+</ul>
+<h4 id="ai-llm-resources"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#ai-llm-resources">🤖 AI &amp; LLM Resources</a></h4>
+<ul>
+<li><strong><a href="https://ollama.ai/">Ollama</a></strong> — Local LLM hosting platform</li>
+<li><strong><a href="https://openwebui.com/">OpenWebUI</a></strong> — Web interface for local LLM interaction</li>
+<li><strong><a href="https://azure.microsoft.com/en-gb/products/ai-services/openai-service">Azure OpenAI Service</a></strong> — Enterprise AI API platform</li>
+<li><strong><a href="https://openai.com/api/">OpenAI API</a></strong> — Direct API access to GPT models</li>
+</ul>
+<h4 id="setup-guides-documentation"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#setup-guides-documentation">📚 Setup Guides &amp; Documentation</a></h4>
+<ul>
+<li><strong><a href="https://docs.n8n.io/hosting/">n8n Self-Hosting Guide</a></strong></li>
+<li><strong><a href="https://docs.docker.com/get-docker/">Docker Installation Documentation</a></strong></li>
+<li><strong><a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart">Azure OpenAI Quickstart</a></strong> — Getting started with Azure OpenAI</li>
+<li><strong><a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL Installation Guide</a></strong> — Windows Subsystem for Linux setup</li>
+</ul>
+<h4 id="troubleshooting-common-issues"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#troubleshooting-common-issues">🔧 Troubleshooting Common Issues</a></h4>
+<p>Based on my week of trial and error, here are the most common problems you'll likely encounter:</p>
+<p><strong>🔐 OAuth2 Authentication Failures</strong></p>
+<p><em>Symptoms:</em> "Invalid redirect URI" or "Authentication failed" errors when connecting to email services.</p>
+<p><em>Likely causes:</em></p>
+<ul>
+<li>Redirect URI mismatch between app registration and n8n configuration</li>
+<li>Self-hosted instance not using HTTPS for callbacks</li>
+<li>App registration missing required API permissions</li>
+</ul>
+<p><em>Solutions to try:</em></p>
+<ul>
+<li>Use app passwords instead of OAuth2 where possible (Gmail, Outlook.com) — <strong>Note:</strong> App passwords are simpler username/password credentials that bypass OAuth2 complexity but offer less security</li>
+<li>Ensure your n8n instance is accessible via HTTPS with valid SSL certificate</li>
+<li>Double-check app registration redirect URIs match exactly (including trailing slashes)</li>
+<li>Start with cloud trial to verify workflow logic before self-hosting</li>
+</ul>
+<p><strong>🐳 Container Performance Issues</strong></p>
+<p><em>Symptoms:</em> Slow model loading, container crashes, high memory usage.</p>
+<p><em>Likely causes:</em></p>
+<ul>
+<li>Insufficient RAM allocation to Docker</li>
+<li>CPU-intensive models running on inadequate hardware</li>
+<li>Competing containers for limited resources</li>
+</ul>
+<p><em>Solutions to try:</em></p>
+<ul>
+<li>Increase Docker memory limits in Docker Desktop settings</li>
+<li>Use smaller model variants (7B instead of 13B+ parameters)</li>
+<li>Monitor resource usage with <code>docker stats</code> command</li>
+<li>Consider migrating from Pi to x86 hardware for better performance</li>
+</ul>
+<p><strong>💸 API Rate Limiting and Costs</strong></p>
+<p><em>Symptoms:</em> API calls failing, unexpected high costs, token limits exceeded.</p>
+<p><em>Likely causes:</em></p>
+<ul>
+<li>Testing with expensive models (GPT-4) instead of cheaper alternatives</li>
+<li>No rate limiting in workflow configurations</li>
+<li>Inefficient prompt design causing high token usage</li>
+</ul>
+<p><em>Solutions to try:</em></p>
+<ul>
+<li>Start testing with GPT-3.5-turbo or GPT-4-mini models</li>
+<li>Implement workflow rate limiting and retry logic</li>
+<li>Optimize prompts to reduce token consumption</li>
+<li>Set API spending alerts in provider dashboards</li>
+</ul>
+<p><strong>💻 Resource Requirements Summary</strong></p>
+<p><em>Minimum Requirements for Recreation:</em></p>
+<ul>
+<li><strong>Cloud approach:</strong> n8n trial account + $20-50 API experimentation budget</li>
+<li><strong>Self-hosted approach:</strong> 8GB+ RAM, Docker knowledge, 2-3 days setup time</li>
+<li><strong>Local AI experimentation:</strong> 16GB+ RAM recommended, considerable patience, NVMe storage preferred</li>
+<li><strong>Network:</strong> Stable broadband connection for cloud API performance</li>
+</ul>
+<hr />
+<h3 id="final-thoughts-the-joy-of-controlled-chaos"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#final-thoughts-the-joy-of-controlled-chaos">💭 Final Thoughts: The Joy of Controlled Chaos</a></h3>
+<p>What started as a simple email automation project became a comprehensive exploration of modern AI automation tools. While I didn't achieve my original goal completely (yet), the journey provided invaluable hands-on experience with:</p>
+<ul>
+<li><strong>Container orchestration</strong> across different environments</li>
+<li><strong>AI service integration</strong> patterns and best practices  </li>
+<li><strong>Authentication complexity</strong> in self-hosted vs. cloud environments</li>
+<li><strong>Hybrid deployment strategies</strong> for flexibility and cost control</li>
+</ul>
+<p>The beauty of this approach is that each "failed" experiment taught me something valuable about the tools and processes involved. The OAuth2 authentication issues, while frustrating, highlighted the importance of proper authentication design. The container migrations demonstrated the flexibility of modern deployment approaches.</p>
+<p><strong>Most importantly:</strong> I now have a functional foundation for AI automation experiments, with both cloud and local capabilities at my disposal.</p>
+<p>Is it overengineered for a simple email processing task? Absolutely. Was it worth the learning experience? Without question.</p>
+<p><em>Have you tackled similar AI automation projects?</em> I'd particularly love to hear from anyone who's solved the OAuth2 self-hosting puzzle or found creative workarounds for email processing limitations. Drop me a line if you've found better approaches to any of these challenges.</p>
+<hr />
+<h4 id="image-requirements-summary"><a class="toclink" href="../../first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/#image-requirements-summary">📸 Image Requirements Summary</a></h4>
+<p><strong>For anyone recreating this setup, here are the key screenshots included in this post:</strong></p>
+<ol>
+<li><strong>n8n-jobs-workflow-openai.png</strong> — Original workflow using direct OpenAI API (the expensive version that burned through $10 in 2 days)</li>
+<li><strong>azure-openai-deployment.png</strong> — Azure OpenAI Studio showing GPT-4 Mini deployment configuration  </li>
+<li><strong>n8n-jobs-workflow-azure.png</strong> — Improved workflow using Azure OpenAI integration (the cost-effective version)</li>
+<li><strong>omv-docker-n8n-containers.png</strong> — OpenMediaVault interface showing Docker container management on Pi 5</li>
+<li><strong>n8n-weather-workflow.png</strong> — Simple weather API to Gmail workflow demonstrating successful self-hosted setup</li>
+<li><strong>docker-desktop-ollama.png</strong> — Docker Desktop showing Ollama and OpenWebUI containers running on WSL</li>
+<li><strong>openwebui-local.png</strong> — OpenWebUI interface showing both Azure OpenAI and local model selection options</li>
+</ol>
+<p>Each image demonstrates the practical implementation rather than theoretical concepts, helping readers visualize the actual tools and interfaces involved in the automation journey.</p>
+<p><a class="md-button" href="https://x.com/intent/tweet?text=First%20Steps%20into%20AI%20Automation%3A%20My%20Journey%20from%20Trial%20to%20Self-Hosted%20Chaos%0A&amp;url=https://blog.pollockweb.com/blog/first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span></a>
+<a class="md-button" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.pollockweb.com/blog/first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"/></svg></span></a></p>
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+  <div class="custom-footer">
+    <div class="custom-footer-left">
+      <p>Copyright &copy; 2025 Matthew Pollock</p>
+    </div>
+    <div class="custom-footer-right">
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="profile.pollockweb.com">
+        <i class="fas fa-globe"></i>
+      </a>
+      <a href="https://blog.pollockweb.com/feed_rss_created.xml" target="_blank" title="RSS Feed">
+        <i class="fa-solid fa-rss"></i>
+      </a>
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.select", "content.code.copy", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    
+    <title>cloudlabmp</title>
+    <description>A blog about tech stuff</description>
+    <link>https://blog.pollockweb.com/</link>
+    <atom:link href="https://blog.pollockweb.com/feed_rss_created.xml" rel="self" type="application/rss+xml" />
+
+    
+    <managingEditor>matt.pollock@outlook.com</managingEditor>
+    <docs>https://github.com/cloudlabmp/project-blog</docs>
+    <language>en</language>
+
+    
+    <pubDate>Wed, 20 Aug 2025 19:33:17 -0000</pubDate>
+    <lastBuildDate>Wed, 20 Aug 2025 19:33:17 -0000</lastBuildDate>
+    <ttl>60</ttl>
+
+    
+    <generator>MkDocs RSS plugin - v1.16.0</generator>
+
+    
+    
+
+    
+    
+    <item>
+      <title>From PDF Overload to AI Clarity: Building an AI RAG Assistant</title>
+      
+      
+        
+      <author>Matt Pollock</author>
+        
+      
+      
+      
+      <description>How I built an AI-powered RAG assistant</description>
+      <link>https://blog.pollockweb.com/blog/from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/</link>
+      <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant.png" type="image/png" length="71792" />
+      
+    </item>
+    
+    <item>
+      <title>Vibe Coding My Way to AI Infra</title>
+      
+      
+        
+      <author>Matt Pollock</author>
+        
+      
+      
+      
+      <description>Terraform, Claude &amp; Cloud-Native Monitoring</description>
+      <link>https://blog.pollockweb.com/blog/vibe-coding-my-way-to-ai-infra/</link>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/vibe-coding-my-way-to-ai-infra/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/vibe-coding-my-way-to-ai-infra.png" type="image/png" length="64837" />
+      
+    </item>
+    
+    <item>
+      <title>Building AI-Powered Infrastructure Monitoring: From Home Lab to Cloud Production</title>
+      
+      
+        
+      <author>Matt Pollock</author>
+        
+      
+      
+      
+      <description>A comprehensive guide to integrating AI into infrastructure monitoring using Prometheus, Grafana, n8n, and Azure OpenAI. Learn to transform traditional alerts into intelligent business insights through hands-on home lab experimentation.</description>
+      <link>https://blog.pollockweb.com/blog/building-ai-powered-infrastructure-monitoring-from-home-lab-to-cloud-production/</link>
+      <pubDate>Mon, 16 Jun 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/building-ai-powered-infrastructure-monitoring-from-home-lab-to-cloud-production/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/building-ai-powered-infrastructure-monitoring-from-home-lab-to-cloud-production.png" type="image/png" length="70367" />
+      
+    </item>
+    
+    <item>
+      <title>First Steps into AI Automation: My Journey from Trial to Self-Hosted Chaos</title>
+      
+      
+        
+      <author>Matt Pollock</author>
+        
+      
+      
+      
+      <description>A real-world walkthrough of experimenting with n8n, Ollama, and OpenWebUI - complete with the inevitable OAuth headaches and Docker container migrations.</description>
+      <link>https://blog.pollockweb.com/blog/first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/first-steps-into-ai-automation-my-journey-from-trial-to-self-hosted-chaos.png" type="image/png" length="79651" />
+      
+    </item>
+    
+    <item>
+      <title>Bringing Patch Management In-House: Migrating from MSP to Azure Update Manager</title>
+      
+      
+        
+      <author>Matt Pollock</author>
+        
+      
+      
+      
+      <description>A real-world walkthrough of migrating VM patching from a third-party provider to Azure Update Manager using PowerShell, tagging, and policy automation.</description>
+      <link>https://blog.pollockweb.com/blog/bringing-patch-management-in-house-migrating-from-msp-to-azure-update-manager/</link>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/bringing-patch-management-in-house-migrating-from-msp-to-azure-update-manager/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/bringing-patch-management-in-house-migrating-from-msp-to-azure-update-manager.png" type="image/png" length="72856" />
+      
+    </item>
+    
+    <item>
+      <title>Azure BCDR Review – Turning Inherited Cloud Infrastructure into a Resilient Recovery Strategy</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>A high-level walkthrough of how to assess and formalise a business continuity and disaster recovery (BCDR) posture in Azure, following an inherited landing zone handover.</description>
+      <link>https://blog.pollockweb.com/blog/azure-bcdr-review--turning-inherited-cloud-infrastructure-into-a-resilient-recovery-strategy/</link>
+      <pubDate>Thu, 08 May 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/azure-bcdr-review--turning-inherited-cloud-infrastructure-into-a-resilient-recovery-strategy/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/azure-bcdr-review--turning-inherited-cloud-infrastructure-into-a-resilient-recovery-strategy.png" type="image/png" length="73387" />
+      
+    </item>
+    
+    <item>
+      <title>Azure BCDR – How I Turned a DR Review into a Strategic Recovery Plan</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>Part 2 of a real-world Azure BCDR journey: how I transformed a discovery-led review into a structured recovery plan with prioritised actions and stakeholder alignment.</description>
+      <link>https://blog.pollockweb.com/blog/azure-bcdr--how-i-turned-a-dr-review-into-a-strategic-recovery-plan/</link>
+      <pubDate>Thu, 08 May 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/azure-bcdr--how-i-turned-a-dr-review-into-a-strategic-recovery-plan/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/azure-bcdr--how-i-turned-a-dr-review-into-a-strategic-recovery-plan.png" type="image/png" length="77158" />
+      
+    </item>
+    
+    <item>
+      <title>Saving Azure Costs with Scheduled VM Start/Stop using Custom Azure Automation Runbooks</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>Implement cost-saving automation in Azure using lightweight, tag-driven runbooks to start and stop virtual machines on a daily schedule. This post walks through an end-to-end setup using Azure Automation and PowerShell.</description>
+      <link>https://blog.pollockweb.com/blog/saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks.png" type="image/png" length="86142" />
+      
+    </item>
+    
+    <item>
+      <title>Enforcing Time Zone and DST Compliance on Windows Servers Using GPO and Scheduled Tasks</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>Ensure consistent GMT Standard Time configuration and Daylight Saving Time (DST) handling across domain-joined Windows Servers using a scheduled task GPO approach. Includes auditing and remediation scripts for enterprise environments.</description>
+      <link>https://blog.pollockweb.com/blog/enforcing-time-zone-and-dst-compliance-on-windows-servers-using-gpo-and-scheduled-tasks/</link>
+      <pubDate>Mon, 31 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/enforcing-time-zone-and-dst-compliance-on-windows-servers-using-gpo-and-scheduled-tasks/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/enforcing-time-zone-and-dst-compliance-on-windows-servers-using-gpo-and-scheduled-tasks.png" type="image/png" length="77468" />
+      
+    </item>
+    
+    <item>
+      <title>Configuring UK Regional Settings on Windows Servers with PowerShell</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>A PowerShell-based guide to applying consistent UK regional settings to Windows Server systems, especially in cloud or automated environments.</description>
+      <link>https://blog.pollockweb.com/blog/configuring-uk-regional-settings-on-windows-servers-with-powershell/</link>
+      <pubDate>Mon, 31 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/configuring-uk-regional-settings-on-windows-servers-with-powershell/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/configuring-uk-regional-settings-on-windows-servers-with-powershell.png" type="image/png" length="79899" />
+      
+    </item>
+    
+    <item>
+      <title>Replacing SAS Tokens with User Assigned Managed Identity (UAMI) in AzCopy for Blob Uploads</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>A step-by-step guide to replacing AzCopy SAS token authentication with User Assigned Managed Identity (UAMI) for uploading files to Azure Blob Storage.</description>
+      <link>https://blog.pollockweb.com/blog/replacing-sas-tokens-with-user-assigned-managed-identity-uami-in-azcopy-for-blob-uploads/</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/replacing-sas-tokens-with-user-assigned-managed-identity-uami-in-azcopy-for-blob-uploads/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/replacing-sas-tokens-with-user-assigned-managed-identity-uami-in-azcopy-for-blob-uploads.png" type="image/png" length="82219" />
+      
+    </item>
+    
+    <item>
+      <title>Replacing SQL Credentials with User Assigned Managed Identity (UAMI) in Azure SQL Managed Instance</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>A step-by-step guide to replacing hardcoded SQL credentials with User Assigned Managed Identity (UAMI) authentication in Azure SQL Managed Instance.</description>
+      <link>https://blog.pollockweb.com/blog/replacing-sql-credentials-with-user-assigned-managed-identity-uami-in-azure-sql-managed-instance/</link>
+      <pubDate>Thu, 27 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/replacing-sql-credentials-with-user-assigned-managed-identity-uami-in-azure-sql-managed-instance/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/replacing-sql-credentials-with-user-assigned-managed-identity-uami-in-azure-sql-managed-instance.png" type="image/png" length="81741" />
+      
+    </item>
+    
+    <item>
+      <title>Cloud Resume Challenge with Terraform: Final Reflections &amp; Future Directions</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>Reflecting on lessons learned from the Cloud Resume Challenge, exploring next steps, and discussing how the skills gained apply to real-world cloud engineering roles.</description>
+      <link>https://blog.pollockweb.com/blog/cloud-resume-challenge-with-terraform-final-reflections--future-directions/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/cloud-resume-challenge-with-terraform-final-reflections--future-directions/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/cloud-resume-challenge-with-terraform-final-reflections--future-directions.png" type="image/png" length="74614" />
+      
+    </item>
+    
+    <item>
+      <title>Cloud Resume Challenge with Terraform: Automating Deployments with GitHub Actions</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>Setting up GitHub Actions for CI/CD automation of Terraform deployments to AWS.</description>
+      <link>https://blog.pollockweb.com/blog/cloud-resume-challenge-with-terraform-automating-deployments-with-github-actions/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/cloud-resume-challenge-with-terraform-automating-deployments-with-github-actions/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/cloud-resume-challenge-with-terraform-automating-deployments-with-github-actions.png" type="image/png" length="73249" />
+      
+    </item>
+    
+    <item>
+      <title>Cloud Resume Challenge with Terraform: Building the Backend API</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>Creating a serverless API with AWS Lambda, API Gateway, and DynamoDB using Terraform.</description>
+      <link>https://blog.pollockweb.com/blog/cloud-resume-challenge-with-terraform-building-the-backend-api/</link>
+      <pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/cloud-resume-challenge-with-terraform-building-the-backend-api/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/cloud-resume-challenge-with-terraform-building-the-backend-api.png" type="image/png" length="77974" />
+      
+    </item>
+    
+    <item>
+      <title>Cloud Resume Challenge with Terraform: Deploying the Static Website</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>Using Terraform to deploy a static website on AWS with S3, CloudFront, Route 53, and SSL encryption.</description>
+      <link>https://blog.pollockweb.com/blog/cloud-resume-challenge-with-terraform-deploying-the-static-website/</link>
+      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/cloud-resume-challenge-with-terraform-deploying-the-static-website/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/cloud-resume-challenge-with-terraform-deploying-the-static-website.png" type="image/png" length="75470" />
+      
+    </item>
+    
+    <item>
+      <title>Cloud Resume Challenge with Terraform: Introduction &amp; Setup</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>An introduction to the Cloud Resume Challenge and how to set up Terraform for AWS infrastructure as code.</description>
+      <link>https://blog.pollockweb.com/blog/cloud-resume-challenge-with-terraform-introduction--setup/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/cloud-resume-challenge-with-terraform-introduction--setup/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/cloud-resume-challenge-with-terraform-introduction--setup.png" type="image/png" length="73571" />
+      
+    </item>
+    
+    <item>
+      <title>Monitoring an IIS-Based Web Farm with Azure Application Insights</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>A step-by-step guide to setting up and configuring Azure Application Insights for IIS-based web farms.</description>
+      <link>https://blog.pollockweb.com/blog/monitoring-an-iis-based-web-farm-with-azure-application-insights/</link>
+      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/monitoring-an-iis-based-web-farm-with-azure-application-insights/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/monitoring-an-iis-based-web-farm-with-azure-application-insights.png" type="image/png" length="76697" />
+      
+    </item>
+    
+    <item>
+      <title>Uninstalling PaperCut MF Client via Intune – A Step-by-Step Guide</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>A guide to unistalling software using Powershell and Intune</description>
+      <link>https://blog.pollockweb.com/blog/uninstalling-papercut-mf-client-via-intune--a-step-by-step-guide/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/uninstalling-papercut-mf-client-via-intune--a-step-by-step-guide/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/uninstalling-papercut-mf-client-via-intune--a-step-by-step-guide.png" type="image/png" length="65476" />
+      
+    </item>
+    
+    <item>
+      <title>How I used ChatGPT to create AZ-400 exam prep notes from MSLearn</title>
+      
+      
+        
+      <author>matthew</author>
+        
+      
+      
+      
+      <description>My experience using AI and GitHub to streamline study notes for Microsoft certification exams.</description>
+      <link>https://blog.pollockweb.com/blog/how-i-used-chatgpt-to-create-az-400-exam-prep-notes-from-mslearn/</link>
+      <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
+      <source url="https://blog.pollockweb.com/feed_rss_created.xml">cloudlabmp</source>
+      
+      <guid isPermaLink="true">https://blog.pollockweb.com/blog/how-i-used-chatgpt-to-create-az-400-exam-prep-notes-from-mslearn/</guid>
+      
+      <enclosure url="https://blog.pollockweb.com/assets/images/social/blog/how-i-used-chatgpt-to-create-az-400-exam-prep-notes-from-mslearn.png" type="image/png" length="76634" />
+      
+    </item>
+    
+  </channel>
+</rss>

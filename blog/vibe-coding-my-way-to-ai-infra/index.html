@@ -1,0 +1,3782 @@
+<head>
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+
+  
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Terraform, Claude & Cloud-Native Monitoring">
+      
+      
+        <meta name="author" content="Matt Pollock">
+      
+      
+        <link rel="canonical" href="https://blog.pollockweb.com/blog/vibe-coding-my-way-to-ai-infra/">
+      
+      
+        <link rel="prev" href="../building-ai-powered-infrastructure-monitoring-from-home-lab-to-cloud-production/">
+      
+      
+        <link rel="next" href="../from-pdf-overload-to-ai-clarity-building-an-ai-rag-assistant/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Vibe Coding My Way to AI Infra - cloudlabmp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-800NGKWBYL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-800NGKWBYL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-800NGKWBYL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Vibe Coding My Way to AI Infra - cloudlabmp" >
+      
+        <meta  property="og:description"  content="Terraform, Claude & Cloud-Native Monitoring" >
+      
+        <meta  property="og:image"  content="https://blog.pollockweb.com/assets/images/social/blog/posts/terraform-ai-monitoring/terraform-ai-monitoring.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://blog.pollockweb.com/blog/vibe-coding-my-way-to-ai-infra/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Vibe Coding My Way to AI Infra - cloudlabmp" >
+      
+        <meta  name="twitter:description"  content="Terraform, Claude & Cloud-Native Monitoring" >
+      
+        <meta  name="twitter:image"  content="https://blog.pollockweb.com/assets/images/social/blog/posts/terraform-ai-monitoring/terraform-ai-monitoring.png" >
+      
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vibe-coding-my-way-to-ai-connected-infra-claude-terraform-cloud-native-monitoring" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+    <div class="announcement-content">
+      <p>Welcome to my blog! Connect with me:</p>
+      <a href="https://www.linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="profile.pollockweb.com">
+        <i class="fas fa-globe fa-2x"></i>
+      </a>
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://blog.pollockweb.com/feed_rss_created.xml" target="_blank" title="RSS Feed">
+        <i class="fa-solid fa-rss fa-2x"></i>
+      </a>
+    </div>
+  
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://blog.pollockweb.com/blog/" title="cloudlabmp" class="md-header__button md-logo" aria-label="cloudlabmp" data-md-component="logo">
+      
+  <img src="../../assets/icons/logo-48x48.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cloudlabmp
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vibe Coding My Way to AI Infra
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cloudlabmp/project-blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudlabmp/project-blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../learn/" class="md-tabs__link">
+        
+  
+    
+  
+  Learn
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../work/" class="md-tabs__link">
+        
+  
+    
+  
+  Work
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://blog.pollockweb.com/blog/" title="cloudlabmp" class="md-nav__button md-logo" aria-label="cloudlabmp" data-md-component="logo">
+      
+  <img src="../../assets/icons/logo-48x48.png" alt="logo">
+
+    </a>
+    cloudlabmp
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cloudlabmp/project-blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudlabmp/project-blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Posts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Posts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/ai--study-techniques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI &amp; Study Techniques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/ai-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/aws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/application-insights/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Insights
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/azure-openai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure OpenAI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/bcdr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BCDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/blogging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blogging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/cicd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/career-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Career Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/claude-code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Claude Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/cloud-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/cloud-engineering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Engineering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/cloud-resume-challenge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Resume Challenge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/customization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/devops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/finops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FinOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/gitops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/group-policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Group Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/iis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IIS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/iac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IaC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/identity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/infrastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/intune/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intune
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/learning-projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/life-update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Life Update
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/microsoft-certifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Certifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/patch-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patch Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/powershell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/rag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RAG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/regional-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regional Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/scripting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/self-hosting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-Hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/serverless/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serverless
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/tech/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/time-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/vector-databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/vibe-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibe Coding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/web-hosting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../work/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tldr-what-this-post-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 TL;DR – What This Post Covers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-project-mattered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why this project mattered
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-prototype" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: The Prototype
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The Prototype">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-thought-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Thought Experiment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-vibe-coding-aka-slop-ops" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Vibe Coding (a.k.a. Slop-Ops)?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-1-the-manual-deployment-marathon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 1: The Manual Deployment Marathon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-and-genai-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform and GenAI Choices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform and GenAI Choices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Why Azure?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-claude" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Why Claude?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-engineering-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 Prompt Engineering Principles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Phase 1: Foundation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 Phase 1: Foundation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-got-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 What Got Built
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell-verification-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖥️ PowerShell Verification Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-intelligence-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Phase 2: Intelligence Layer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Phase 2: Intelligence Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Key Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-integration-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗣️ AI Integration Philosophy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Why This Setup?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-the-user-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 Phase 3: The User Experience
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 Phase 3: The User Experience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components-deployed" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Components Deployed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Why This Architecture?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Deployment Highlights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Final Result
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-reality-of-ai-assisted-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 The Reality of AI-Assisted Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤖 The Reality of AI-Assisted Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#daily-frustrations-included" class="md-nav__link">
+    <span class="md-ellipsis">
+      😫 Daily Frustrations Included
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-real-world-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 From Real-World Troubleshooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-1-deployed-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version 1 - Deployed &amp; Working
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-i-learned-from-part-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What I Learned from Part 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 What I Learned from Part 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-worked-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ What Worked Well
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-needed-constant-oversight" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 What Needed Constant Oversight
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#language-tooling-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Language &amp; Tooling Choices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-why-terraform-why-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 Part 2: Why Terraform? Why Now?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌍 Part 2: Why Terraform? Why Now?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-terraform-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 The Terraform Challenge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 The Terraform Challenge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goals-of-the-terraform-rewrite" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Goals of the Terraform Rewrite
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-structured-prompt-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 The Structured Prompt Approach
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-refactoring-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 The Refactoring Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 The Refactoring Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-modules-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Key Modules Created
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modular-structure-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Modular Structure Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterative-refinement-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Iterative Refinement in Practice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-working-with-genai-the-good-the-bad-and-the-wandering" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Part 3: Working with GenAI – The Good, the Bad, and the Wandering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Part 3: Working with GenAI – The Good, the Bad, and the Wandering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-good-where-ai-excelled" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ The Good: Where AI Excelled
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-bad-where-ai-struggled" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ The Bad: Where AI Struggled
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-wandering-managing-ai-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌀 The Wandering: Managing AI Attention
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-building-the-stack-what-got-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Part 4: Building The Stack - What Got Built
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ Part 4: Building The Stack - What Got Built">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Core Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supporting-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 Supporting Infrastructure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-technical-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 Key Technical Decisions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧮 Visual Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-dashboard-shows" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 What the Dashboard Shows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-the-result-a-portable-reusable-ai-monitoring-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 Part 5: The Result - A Portable, Reusable AI Monitoring Stack
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧾 Part 5: The Result - A Portable, Reusable AI Monitoring Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Deployment Experience
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗺️ Infrastructure Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      💰 Cost Optimization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portability-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Portability Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-reflections-and-lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Part 6: Reflections and Lessons Learned
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Part 6: Reflections and Lessons Learned">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-ai-assisted-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 On AI-Assisted Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-infrastructure-as-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ On Infrastructure as Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-vibe-coding-as-a-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎭 On Vibe Coding as a Methodology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#things-id-do-differently" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Things I’d Do Differently
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Conclusion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-technical-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 The Technical Outcome
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Key Takeaways
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 What’s Next?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Final Thoughts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-07-18 00:00:00+00:00" class="md-ellipsis">July 18, 2025</time>
+                      </div>
+                    </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2025-07-21 00:00:00+00:00" class="md-ellipsis">July 21, 2025</time>
+                        </div>
+                      </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/infrastructure/">Infrastructure</a>, 
+                              <a href="../category/ai-integration/">AI Integration</a>, 
+                              <a href="../category/cloud-engineering/">Cloud Engineering</a>, 
+                              <a href="../category/learning-projects/">Learning Projects</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              22 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+  
+  
+
+
+<h1 id="vibe-coding-my-way-to-ai-connected-infra-claude-terraform-cloud-native-monitoring">🔥 Vibe Coding My Way to AI Connected Infra: Claude, Terraform &amp; Cloud-Native Monitoring</h1>
+<h2 id="tldr-what-this-post-covers">📖 TL;DR – What This Post Covers</h2>
+<ul>
+<li>How I used AI tools to build an Azure-based monitoring solution from scratch  </li>
+<li>Lessons learned from developing two full versions (manual vs. Terraform)  </li>
+<li>The good, bad, and wandering of GenAI for infrastructure engineers  </li>
+<li>A working, cost-effective, and fully redeployable AI monitoring stack</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>This project began, as many of mine do, with a career planning conversation. During a discussion with ChatGPT about professional development and emerging skill areas for 2025, one suggestion stuck with me:</p>
+<blockquote>
+<p>"You should become an Infrastructure AI Integration Engineer."</p>
+</blockquote>
+<p>It’s a role that doesn’t really exist yet — but probably should.</p>
+<p>What followed was a journey to explore whether such a role could be real. I set out to build an AI-powered infrastructure monitoring solution in Azure, without any formal development background and using nothing but conversations with Claude. This wasn’t just about building something cool — it was about testing whether a seasoned infra engineer could:</p>
+<ul>
+<li>Use GenAI to design and deploy a full solution</li>
+<li>Embrace the unknown and lean into the chaos of LLM-based workflows</li>
+<li>Create something reusable, repeatable, and useful</li>
+</ul>
+<p>The first phase of the journey was a local prototype using my Pi5 and n8n for AI workflow automation (see my previous post for that). It worked — but it was local, limited, and not exactly enterprise-ready.</p>
+<p>So began the cloud migration.</p>
+<h3 id="why-this-project-mattered">Why this project mattered</h3>
+<p>I had two goals:</p>
+<ul>
+<li>✅ Prove that “vibe coding” — using GenAI with limited pre-planning — could produce something deployable</li>
+<li>✅ Build a portfolio project for the emerging intersection of AI and infrastructure engineering</li>
+</ul>
+<p>This isn’t a tutorial on AI monitoring. Instead, it’s a behind-the-scenes look at what happens when you try to:</p>
+<ul>
+<li>Build something real using AI chat alone</li>
+<li>Translate a messy, manual deployment into clean Infrastructure as Code</li>
+<li>Learn <em>with</em> the AI, not just from it</li>
+</ul>
+<p>The Terraform modules prove it works.<br />
+The chat logs show how we got there.<br />
+The dashboard screenshots demonstrate the outcome.</p>
+<blockquote>
+<p><em>The next sections cover the journey in two parts: first, the vibe-coded v1; then the Terraform-powered refactor in v2.</em></p>
+</blockquote>
+<hr />
+<h2 id="table-of-contents">📚 Table of Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#table-of-contents">📚 Table of Contents</a></li>
+<li><a href="#part-1-the-prototype">Part 1: The Prototype</a></li>
+<li><a href="#version-1-the-manual-deployment-marathon">Version 1: The Manual Deployment Marathon</a></li>
+<li><a href="#platform-and-genai-choices">Platform and GenAI Choices</a></li>
+<li><a href="#phase-1-foundation">🧱 Phase 1: Foundation</a></li>
+<li><a href="#phase-2-intelligence-layer">🧠 Phase 2: Intelligence Layer</a></li>
+<li><a href="#phase-3-the-user-experience">🎨 Phase 3: The User Experience</a></li>
+<li><a href="#part-2-why-terraform-why-now">🌍 Part 2: Why Terraform? Why Now?</a></li>
+<li><a href="#part-3-working-with-genai-the-good-the-bad-and-the-wandering">🧠 Part 3: Working with GenAI – The Good, the Bad, and the Wandering</a></li>
+<li><a href="#part-4-building-the-stack-what-got-built">🏗️ Part 4: Building the Stack – What Got Built</a></li>
+<li><a href="#part-5-the-result-a-portable-reusable-ai-monitoring-stack">🧾 Part 5: The Result - A Portable, Reusable AI Monitoring Stack</a></li>
+<li><a href="#part-6-reflections-and-lessons-learned">🧠 Part 6: Reflections and Lessons Learned</a></li>
+<li><a href="#conclusion">✅ Conclusion</a></li>
+</ul>
+<h2 id="part-1-the-prototype">Part 1: The Prototype</h2>
+<p><em>(Stage 1 – Manual AI-Assisted Deployment)</em> The Birth of a Vibe-Coded Project</p>
+<p>The project didn’t start with a business requirement — it started with curiosity. One evening, mid-career reflection turned into a late-night conversation with ChatGPT:</p>
+<blockquote>
+<p>"You should become an Infrastructure AI Integration Engineer."</p>
+</blockquote>
+<p>I’d never heard the term, but it sparked something. With 20+ years in IT infrastructure and the growing presence of AI in tooling, it felt like a direction worth exploring.</p>
+<h3 id="the-thought-experiment">The Thought Experiment</h3>
+<p>Could I — an infrastructure engineer, not a dev — build an AI-driven cloud monitoring solution:</p>
+<ul>
+<li>End-to-end, using only AI assistance</li>
+<li>Without dictating the architecture</li>
+<li>With minimal manual planning</li>
+</ul>
+<p>The rules were simple:</p>
+<ul>
+<li>❌ No specifying what resources to use</li>
+<li>❌ No formal design documents</li>
+<li>✅ Just tell the AI the <em>outcome</em> I wanted, and let it choose the path</li>
+</ul>
+<p>The result: pure "vibe coding." Or as I now call it: <strong>AI Slop-Ops</strong>.</p>
+<h3 id="what-is-vibe-coding-aka-slop-ops">What is Vibe Coding (a.k.a. Slop-Ops)?</h3>
+<p>For this project, "vibe coding" meant:</p>
+<ul>
+<li>🤖 Generating all infrastructure and app code using natural language prompts</li>
+<li>🧠 Letting Claude decide how to structure everything</li>
+<li>🪵 Learning through experimentation and iteration</li>
+</ul>
+<blockquote>
+<p>My starting prompt was something like:<br />
+<em>"I want to build an AI monitoring solution in Azure that uses Azure OpenAI to analyze infrastructure metrics."</em></p>
+</blockquote>
+<p>Claude replied:</p>
+<blockquote>
+<p>"Let’s start with a simple architecture: Azure Container Apps for the frontend, Azure Functions for the AI processing, and Azure OpenAI for the intelligence. We'll build it in phases."</p>
+</blockquote>
+<p>That one sentence kicked off a 4–5 week journey involving:</p>
+<ul>
+<li>~40–50 hours of evening and weekend effort 🧵</li>
+<li>Dozens of chats, scripts, and browser tabs</li>
+<li>An unpredictable mix of brilliance and bafflement</li>
+</ul>
+<p>And the whole thing started to work.</p>
+<hr />
+<h2 id="version-1-the-manual-deployment-marathon">Version 1: The Manual Deployment Marathon</h2>
+<p>The first build was fully manual — a mix of PowerShell scripts, Azure portal clicks, and Claude-prompting marathons. Claude suggested a phased approach, which turned out to be the only way to keep it manageable.</p>
+<p>💬 <em>Claude liked PowerShell. I honestly can’t remember if that was my idea or if I just went along with it.</em> 🤷‍♂️</p>
+<hr />
+<h2 id="platform-and-genai-choices">Platform and GenAI Choices</h2>
+<h3 id="why-azure">🌐 Why Azure?</h3>
+<p>The platform decision was pragmatic:</p>
+<ul>
+<li>I already had a <a href="https://learn.microsoft.com/en-us/visualstudio/subscriptions/">Visual Studio Developer Subscription</a> with £120/month of Azure credits.</li>
+<li>Azure is the cloud provider I work with day-to-day, so it made sense to double down.</li>
+<li>Using Azure OpenAI gave me hands-on experience with <strong>Azure AI Foundry</strong> – increasingly relevant in modern infrastructure roles.</li>
+</ul>
+<p>In short: low cost, high familiarity, and useful upskilling.</p>
+<hr />
+<h3 id="why-claude">🧠 Why Claude?</h3>
+<p>This project was built almost entirely through chat with <strong>Claude</strong>, Anthropic’s conversational AI. I’ve found:</p>
+<p>✅ <strong>Claude is better at structured technical responses</strong>, particularly with IaC and shell scripting.<br />
+❌ <strong>ChatGPT tends to hallucinate more often</strong> in my experience when writing infrastructure code.</p>
+<p>But Claude had its own quirks too:</p>
+<ul>
+<li>No memory between chats — every session required reloading context.</li>
+<li>Occasional focus issues — drifting from task or overcomplicating simple requests.</li>
+<li>Tendency to suggest hardcoded values when debugging — needing constant vigilance to maintain DRY principles.</li>
+</ul>
+<blockquote>
+<p>⚠️ Reality check: Claude isn't a Terraform expert. It's a language model that <em>guesses well</em> based on input. The human still needs to guide architecture, validate outputs, and ensure everything actually works.</p>
+</blockquote>
+<hr />
+<h3 id="prompt-engineering-principles">🤖 Prompt Engineering Principles</h3>
+<p>I used a consistent framework to keep Claude focused and productive:</p>
+<ul>
+<li><strong>ROLE</strong>: Define Claude's purpose (e.g., “You are a Terraform expert”)</li>
+<li><strong>INPUT</strong>: What files or context is provided</li>
+<li><strong>OUTPUT</strong>: What should Claude return (e.g., a module, refactored block, explanation)</li>
+<li><strong>CONSTRAINTS</strong>: e.g., “No hardcoded values”, “Use locals not repeated variables”</li>
+<li><strong>TASK</strong>: Specific action or generation requested</li>
+<li><strong>REMINDERS</strong>: Extra nudges — “Use comments”, “Output in markdown”, “Use Azure CLI not PowerShell”</li>
+</ul>
+<blockquote>
+<p>This approach reduced misunderstandings and helped prevent “solution drift” during long iterative sessions.</p>
+</blockquote>
+<hr />
+<h2 id="phase-1-foundation">🧱 Phase 1: Foundation</h2>
+<p>This first phase set up the core infrastructure that everything else would build upon.</p>
+<h3 id="what-got-built">🔧 What Got Built</h3>
+<ul>
+<li><strong>Resource Groups</strong> – Logical container for resources  </li>
+<li><strong>Storage Accounts</strong> – Persistent storage for logs, state, and AI interaction data  </li>
+<li><strong>Log Analytics Workspace</strong> – Centralized logging for observability  </li>
+<li><strong>Application Insights</strong> – Telemetry and performance monitoring for apps</li>
+</ul>
+<p>These services created the backbone of the environment, enabling both operational and analytical insight.</p>
+<hr />
+<h3 id="powershell-verification-script">🖥️ PowerShell Verification Script</h3>
+<p>This example script was used during v1 to manually verify deployment success:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Verify everything is working</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;🔍 Verifying Step 1.1 completion...&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Yellow</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># Check resource group</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">$rg</span> <span class="p">=</span> <span class="nb">Get-AzResourceGroup</span> <span class="n">-Name</span> <span class="s2">&quot;rg-ai-monitoring-dev&quot;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$rg</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;✅ Resource Group exists&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;❌ Resource Group not found&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c"># Check workspace</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nv">$ws</span> <span class="p">=</span> <span class="nb">Get-AzOperationalInsightsWorkspace</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;rg-ai-monitoring-dev&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;law-ai-monitoring-dev&quot;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$ws</span> <span class="o">-and</span> <span class="nv">$ws</span><span class="p">.</span><span class="n">ProvisioningState</span> <span class="o">-eq</span> <span class="s2">&quot;Succeeded&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;✅ Log Analytics Workspace is ready&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;❌ Log Analytics Workspace not ready. State: </span><span class="p">$(</span><span class="nv">$ws</span><span class="p">.</span><span class="n">ProvisioningState</span><span class="p">)</span><span class="s2">&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c"># Check config file</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="s2">&quot;.\phase1-step1-config.json&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;✅ Configuration file created&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;❌ Configuration file missing&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Red</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="phase-2-intelligence-layer">🧠 Phase 2: Intelligence Layer</h2>
+<p>With the foundation in place, the next step was to add the brainpower — the AI and automation components that turn infrastructure data into actionable insights.</p>
+<h3 id="key-components">🧩 Key Components</h3>
+<ul>
+<li><strong>Azure OpenAI Service</strong></li>
+<li>Deployed with <code>gpt-4o-mini</code> to balance cost and performance</li>
+<li>
+<p>Powers the natural language analysis and recommendation engine</p>
+</li>
+<li>
+<p><strong>Azure Function App</strong></p>
+</li>
+<li>Hosts the core AI processing logic</li>
+<li>Parses data from monitoring tools and feeds it to OpenAI</li>
+<li>
+<p>Returns interpreted insights in a format suitable for dashboards and alerts</p>
+</li>
+<li>
+<p><strong>Logic Apps</strong></p>
+</li>
+<li>Automates data ingestion and flow between services</li>
+<li>Orchestrates the processing of logs, telemetry, and alert conditions</li>
+<li>Acts as glue between Function Apps, OpenAI, and supporting services</li>
+</ul>
+<hr />
+<h3 id="ai-integration-philosophy">🗣️ AI Integration Philosophy</h3>
+<p>This stage wasn’t about building complex AI logic — it was about using OpenAI to interpret patterns in infrastructure data and return intelligent summaries or recommendations in natural language.</p>
+<blockquote>
+<p>Example prompt fed to OpenAI from within a Function App:</p>
+<p>“Based on this log stream, are there any signs of service degradation or performance issues in the last 15 minutes?”</p>
+</blockquote>
+<p>The response would be embedded in a monitoring dashboard or sent via alert workflows, giving human-readable insights without manual interpretation.</p>
+<hr />
+<h3 id="why-this-setup">⚙️ Why This Setup?</h3>
+<p>Each component in this layer was chosen for a specific reason:</p>
+<ul>
+<li><strong>OpenAI</strong> for flexible, contextual intelligence  </li>
+<li><strong>Function Apps</strong> for scalable, event-driven execution  </li>
+<li><strong>Logic Apps</strong> for orchestration without writing custom backend code  </li>
+</ul>
+<p>This approach removed the need for always-on VMs or bespoke integrations — and kept things lean.</p>
+<hr />
+<p>📌 <em>By the end of Phase 2, the system had a functioning AI backend that could interpret infrastructure metrics in plain English and respond in near real-time.</em></p>
+<h2 id="phase-3-the-user-experience">🎨 Phase 3: The User Experience</h2>
+<p>With the core infrastructure and AI processing in place, it was time to build the frontend — the visible interface for users to interact with the AI-powered monitoring system.</p>
+<p>This phase focused on deploying a set of containerized applications, each responsible for a specific role in the monitoring workflow.</p>
+<hr />
+<h3 id="components-deployed">🧱 Components Deployed</h3>
+<p>The solution was built around <strong>Azure Container Apps</strong>, with a four-container ecosystem designed to work in harmony:</p>
+<ul>
+<li>
+<p><strong>FastAPI Backend</strong><br />
+  Handles API requests, routes data to the correct services, and acts as the core orchestrator behind the scenes.</p>
+</li>
+<li>
+<p><strong>React Dashboard</strong><br />
+  A clean, responsive frontend displaying infrastructure metrics, system health, and AI-generated insights.</p>
+</li>
+<li>
+<p><strong>Background Processor</strong><br />
+  Continuously monitors incoming data and triggers AI evaluations when certain thresholds or patterns are detected.</p>
+</li>
+<li>
+<p><strong>Load Generator</strong><br />
+  Provides synthetic traffic and test metrics to simulate real usage patterns and help validate system behavior.</p>
+</li>
+</ul>
+<hr />
+<h3 id="why-this-architecture">🔄 Why This Architecture?</h3>
+<p>Each container serves a focused purpose, allowing for:</p>
+<ul>
+<li><strong>Isolation of concerns</strong> — easier debugging and development</li>
+<li><strong>Scalable deployment</strong> — each component scales independently</li>
+<li><strong>Separation of UI and logic</strong> — keeping the AI and logic layers decoupled from the frontend</li>
+</ul>
+<blockquote>
+<p>“Claude recommended this separation early on — the decision to use Container Apps instead of AKS or App Services kept costs down and complexity low, while still providing a modern cloud-native experience.”</p>
+</blockquote>
+<hr />
+<h3 id="deployment-highlights">⚙️ Deployment Highlights</h3>
+<p>Container Apps were provisioned via CLI in the manual version, and later through Terraform in v2. The deployment process involved:</p>
+<ul>
+<li>Registering a <strong>Container Apps Environment</strong></li>
+<li>Creating the four separate app containers</li>
+<li>Passing environment variables for API endpoints, keys, and settings</li>
+<li>Enabling diagnostics and logging via Application Insights</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>az<span class="w"> </span>containerapp<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--name<span class="w"> </span>react-dashboard<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--image<span class="w"> </span>myregistry.azurecr.io/dashboard:latest<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--env-vars<span class="w"> </span><span class="nv">REACT_APP_API_URL</span><span class="o">=</span>https://api.example.com
+</span></code></pre></div>
+<h3 id="final-result">📊 Final Result</h3>
+<p>Once deployed, the user-facing layer provided:</p>
+<ul>
+<li>🔍 <strong>Real-time visual metrics</strong></li>
+<li>💡 <strong>AI-generated recommendations</strong></li>
+<li>🧠 <strong>Interactive analysis via chat</strong></li>
+<li>📈 <strong>Infrastructure performance summaries</strong></li>
+<li>💬 <strong>Stakeholder-friendly reporting</strong></li>
+</ul>
+<p>This phase brought the system to life — from backend AI logic to a polished, interactive dashboard.</p>
+<h3 id="the-reality-of-ai-assisted-development">🤖 The Reality of AI-Assisted Development</h3>
+<p>Here's what the success story doesn’t capture: the relentless battles with Claude’s limitations.</p>
+<p>Despite its capabilities, working with GenAI in a complex, multi-phase project revealed real friction points — especially when continuity and context were critical.</p>
+<h4 id="daily-frustrations-included">😫 Daily Frustrations Included</h4>
+<ul>
+<li>🧱 <strong>Hitting chat length limits daily</strong> — even with Claude Pro</li>
+<li>🧭 <strong>AI meandering off-topic</strong>, despite carefully structured prompts</li>
+<li>📚 <strong>Over-analysis</strong> — asking for one thing and receiving a detailed architectural breakdown</li>
+<li>⚙️ <strong>Token burn during troubleshooting</strong> — Claude often provided five-step fixes when a one-liner was needed</li>
+<li>❌ <strong>No persistent memory or project history</strong></li>
+<li>This meant manually copy/pasting prior chats into a <code>.txt</code> file just to refeed them back in</li>
+<li>🔁 <strong>Starting new chats daily</strong> — and re-establishing context from scratch every time</li>
+<li>📏 <strong>Scope creep</strong> — Claude regularly expanded simple requests into full architectural reviews without being asked</li>
+</ul>
+<p>Despite these pain points, the experience was still a net positive — but only because I was prepared to steer the conversation firmly and frequently.
+<a class="glightbox" href="../terraform-ai-monitoring/Claude_ChatLengthLImit.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Chat length limit warning" src="../terraform-ai-monitoring/Claude_ChatLengthLImit.png" /></a></p>
+<h4 id="from-real-world-troubleshooting">🧪 From Real-World Troubleshooting</h4>
+<p>Sometimes, working with Claude felt like pair programming with a colleague who had perfect recall — until they completely wiped their memory overnight.</p>
+<blockquote>
+<p>🧵 <strong>From an actual troubleshooting session:</strong></p>
+<p>“The dashboard is calling the wrong function URL again.<br />
+It’s trying to reach <code>func-tf-ai-monitoring-dev-ai</code>,<br />
+but the actual function is at <code>func-ai-monitoring-dev-ask6868-ai</code>.”</p>
+</blockquote>
+<p>It was a recurring theme: great memory during a session, zero continuity the next day.</p>
+<blockquote>
+<p><strong>Me:</strong> “Right, shall we pick up where we left off yesterday then?”<br />
+<strong>Claude:</strong> “I literally have no idea what you're talking about, mate.”<br />
+<strong>Claude:</strong> “Wait, who are you again?”</p>
+</blockquote>
+<p>Every failure taught <em>both</em> me and Claude something — but the learning curve was steep, and the iteration cycles could be genuinely exhausting.</p>
+<h3 id="version-1-deployed-working">Version 1 - Deployed &amp; Working</h3>
+<p><a class="glightbox" href="../terraform-ai-monitoring/AIMonitoringDashboardV1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="AI Monitoring Dashboard V1" src="../terraform-ai-monitoring/AIMonitoringDashboardV1.png" /></a></p>
+<h3 id="what-i-learned-from-part-1">🧠 What I Learned from Part 1</h3>
+<p>Reflecting on the first phase of this project — the manual, vibe-coded deployment — several key takeaways emerged.</p>
+<h4 id="what-worked-well">✅ What Worked Well</h4>
+<ul>
+<li>⚡ <strong>Rapid prototyping</strong> — quickly turned ideas into functioning infrastructure</li>
+<li>💬 <strong>Natural language problem-solving</strong> — great for tackling Azure’s complex service interactions</li>
+<li>🧾 <strong>Syntactically sound code generation</strong> — most outputs worked with minimal tweaks</li>
+<li>⏱️ <strong>Massive time savings</strong> — tasks that might take days manually were completed in hours</li>
+</ul>
+<h4 id="what-needed-constant-oversight">🔍 What Needed Constant Oversight</h4>
+<ul>
+<li>🧠 <strong>Keeping the AI focused</strong> — drift and distraction were constant threats</li>
+<li>🔗 <strong>Managing dependencies and naming</strong> — conflicts and collisions needed manual intervention</li>
+<li>🐛 <strong>Debugging runtime issues</strong> — particularly frustrating when errors only manifested in Azure</li>
+<li>🧭 <strong>Architectural decisions</strong> — strategic direction still had to come from me</li>
+<li>⚠️ <strong>Knowing when “it works” wasn’t “production-ready”</strong> — validation remained a human job</li>
+</ul>
+<h4 id="language-tooling-choices">🛠️ Language &amp; Tooling Choices</h4>
+<p>Interestingly, <strong>Claude dictated the stack</strong> more than I did.</p>
+<ul>
+<li><strong>Version 1</strong> leaned heavily on <strong>PowerShell</strong></li>
+<li><strong>Version 2</strong> shifted to <strong>Azure CLI and Bash</strong></li>
+</ul>
+<p>Despite years of experience with PowerShell, I found Claude was significantly more confident (and accurate) when generating Azure CLI or Bash-based commands. This influenced the eventual choice to move away from PowerShell in the second iteration.</p>
+<hr />
+<p>By the end of Part 1, I had a functional AI monitoring solution — but it was fragile, inconsistent, and impossible to redeploy without repeating all the manual steps.</p>
+<p>That realisation led directly to <strong>Version 2</strong> — a full rebuild using Infrastructure as Code.</p>
+<hr />
+<h2 id="part-2-why-terraform-why-now">🌍 Part 2: Why Terraform? Why Now?</h2>
+<p>After several weeks of manual deployments, the <strong>limitations of version 1</strong> became unmissable.</p>
+<p>Yes — the system <em>worked</em> — but only just:</p>
+<ul>
+<li>Scripts were fragmented and inconsistent  </li>
+<li>Fixes required custom, ad-hoc scripts created on the fly  </li>
+<li>Dependencies weren’t tracked, and naming conflicts crept in  </li>
+<li>Reproducibility? Practically zero  </li>
+</ul>
+<p>🚨 The deployment process had become <strong>unwieldy</strong> — a sprawl of folders, partial fixes, and manual interventions. Functional? Sure. Maintainable? Absolutely not.</p>
+<hr />
+<p>That’s when the <strong>Infrastructure as Code (IaC)</strong> mindset kicked in.</p>
+<blockquote>
+<p><em>“Anything worth building once is worth building repeatably.”</em></p>
+</blockquote>
+<p>The question was simple:<br />
+💡 <em>Could I rebuild everything from scratch — but this time, using AI assistance to create clean, modular, production-ready Terraform code?</em></p>
+<hr />
+<h3 id="the-terraform-challenge">🧱 The Terraform Challenge</h3>
+<p>Rebuilding in Terraform wasn’t just a choice of tooling — it was a <strong>challenge to see how far AI-assisted development could go</strong> when held to production-level standards.</p>
+<h4 id="goals-of-the-terraform-rewrite">🎯 Goals of the Terraform Rewrite</h4>
+<ul>
+<li><strong>Modularity</strong><br />
+  Break down the monolithic structure into <strong>reusable, isolated modules</strong>  </li>
+<li><strong>Portability</strong><br />
+  Enable consistent deployment <strong>across environments and subscriptions</strong></li>
+<li><strong>DRY Principles</strong><br />
+  Absolutely <strong>no hardcoded values</strong> or duplicate code</li>
+<li><strong>Documentation</strong><br />
+  Ensure the code was <strong>clear, self-documenting</strong>, and reusable by others</li>
+</ul>
+<hr />
+<p>Terraform wasn’t just a tech choice — it became the <strong>refinement phase</strong>.<br />
+A chance to take what I’d learned from the vibe-coded version and bake that insight into clean, structured infrastructure-as-code.</p>
+<p>Next: how AI and I tackled that rebuild, and the (sometimes surprising) choices we made.</p>
+<h3 id="the-structured-prompt-approach">🧠 The Structured Prompt Approach</h3>
+<p>The <strong>prompt engineering</strong> approach became absolutely crucial during the Terraform refactoring phase.</p>
+<p>Rather than relying on vague questions or “do what I mean” instructions, I adopted a structured briefing style — the kind you might use when assigning work to a consultant:</p>
+<ul>
+<li>Define the <strong>role</strong></li>
+<li>Set the <strong>goals</strong></li>
+<li>Describe the <strong>inputs</strong></li>
+<li>Outline the <strong>method</strong></li>
+<li>Impose <strong>constraints</strong></li>
+</ul>
+<hr />
+<p>Here’s the <strong>actual instruction prompt</strong> I used to initiate the Terraform rebuild 👇</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>🔧<span class="w"> </span>Enhanced<span class="w"> </span>Prompt:<span class="w"> </span>AI<span class="w"> </span>Monitoring<span class="w"> </span>Solution<span class="w"> </span>IaC<span class="w"> </span>Refactoring<span class="w"> </span>Project
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>👤<span class="w"> </span>Role<span class="w"> </span>Definition
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>You<span class="w"> </span>are<span class="w"> </span>acting<span class="w"> </span>as:
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>•<span class="w"> </span>An<span class="w"> </span>Infrastructure<span class="w"> </span>as<span class="w"> </span>Code<span class="w"> </span><span class="o">(</span>IaC<span class="o">)</span><span class="w"> </span>specialist<span class="w"> </span>with<span class="w"> </span>deep<span class="w"> </span>expertise<span class="w"> </span><span class="k">in</span><span class="w"> </span>Terraform
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>•<span class="w"> </span>An<span class="w"> </span>AI<span class="w"> </span>integration<span class="w"> </span>engineer,<span class="w"> </span>experienced<span class="w"> </span><span class="k">in</span><span class="w"> </span>deploying<span class="w"> </span>Azure-based<span class="w"> </span>AI<span class="w"> </span>workloads
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Your<span class="w"> </span>responsibilities<span class="w"> </span>are:
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>•<span class="w"> </span>To<span class="w"> </span>refactor<span class="w"> </span>an<span class="w"> </span>existing<span class="w"> </span>AI<span class="w"> </span>Monitoring<span class="w"> </span>solution<span class="w"> </span>from<span class="w"> </span>a<span class="w"> </span>manually<span class="w"> </span>built<span class="w"> </span>prototype<span class="w"> </span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span>into<span class="w"> </span>a<span class="w"> </span>modular,<span class="w"> </span>efficient,<span class="w"> </span>and<span class="w"> </span>portable<span class="w"> </span>Terraform<span class="w"> </span>project
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>•<span class="w"> </span>To<span class="w"> </span>minimize<span class="w"> </span>bloat,<span class="w"> </span>ensure<span class="w"> </span>code<span class="w"> </span>reusability,<span class="w"> </span>and<span class="w"> </span>produce<span class="w"> </span>clear<span class="w"> </span>documentation<span class="w"> </span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span>to<span class="w"> </span>allow<span class="w"> </span>redeployment<span class="w"> </span>with<span class="w"> </span>minimal<span class="w"> </span>changes
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>🎯<span class="w"> </span>Project<span class="w"> </span>Goals
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>•<span class="w"> </span>Rebuild<span class="w"> </span>the<span class="w"> </span>existing<span class="w"> </span>AI<span class="w"> </span>Monitoring<span class="w"> </span>solution<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>fully<span class="w"> </span>modular,<span class="w"> </span>DRY-compliant<span class="w"> </span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span>Terraform<span class="w"> </span>deployment
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>•<span class="w"> </span>Modularize<span class="w"> </span>resources<span class="w"> </span><span class="o">(</span>OpenAI,<span class="w"> </span>Function<span class="w"> </span>Apps,<span class="w"> </span>Logic<span class="w"> </span>Apps,<span class="w"> </span>Container<span class="w"> </span>Apps<span class="o">)</span><span class="w"> </span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span>into<span class="w"> </span>reusable<span class="w"> </span>components
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>•<span class="w"> </span>Provide<span class="w"> </span>clear,<span class="w"> </span>concise<span class="w"> </span>README.md<span class="w"> </span>files<span class="w"> </span><span class="k">for</span><span class="w"> </span>each<span class="w"> </span>module<span class="w"> </span>describing<span class="w"> </span>usage,<span class="w"> </span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span>input/output<span class="w"> </span>variables,<span class="w"> </span>and<span class="w"> </span>deployment<span class="w"> </span>steps
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>📁<span class="w"> </span>Project<span class="w"> </span>Artifacts<span class="w"> </span><span class="o">(</span>Input<span class="o">)</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>The<span class="w"> </span>following<span class="w"> </span>components<span class="w"> </span>are<span class="w"> </span>part<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>original<span class="w"> </span>Azure-hosted<span class="w"> </span>AI<span class="w"> </span>Monitoring<span class="w"> </span>solution:
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>•<span class="w"> </span>Azure<span class="w"> </span>OpenAI<span class="w"> </span>service
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>•<span class="w"> </span>Azure<span class="w"> </span>Function<span class="w"> </span>App
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>•<span class="w"> </span>Logic<span class="w"> </span>App
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>•<span class="w"> </span>Web<span class="w"> </span>Dashboard
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>•<span class="w"> </span>Container<span class="w"> </span>Apps<span class="w"> </span>Environment
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>•<span class="w"> </span>Supporting<span class="w"> </span>components<span class="w"> </span><span class="o">(</span>Key<span class="w"> </span>Vaults,<span class="w"> </span>App<span class="w"> </span>Insights,<span class="w"> </span>Storage,<span class="w"> </span>etc.<span class="o">)</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>🛠️<span class="w"> </span>Approach<span class="w"> </span>/<span class="w"> </span>Methodology
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>For<span class="w"> </span>each<span class="w"> </span>module:
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>•<span class="w"> </span>Use<span class="w"> </span>minimal<span class="w"> </span>but<span class="w"> </span><span class="nb">complete</span><span class="w"> </span>resource<span class="w"> </span>blocks
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>•<span class="w"> </span>Include<span class="w"> </span>only<span class="w"> </span>essential<span class="w"> </span>variables<span class="w"> </span>with<span class="w"> </span>sensible<span class="w"> </span>defaults
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>•<span class="w"> </span>Use<span class="w"> </span>output<span class="w"> </span>values<span class="w"> </span>to<span class="w"> </span><span class="nb">export</span><span class="w"> </span>key<span class="w"> </span>resource<span class="w"> </span>properties
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>•<span class="w"> </span>Follow<span class="w"> </span>DRY<span class="w"> </span>principles<span class="w"> </span>using<span class="w"> </span>locals<span class="w"> </span>or<span class="w"> </span>reusable<span class="w"> </span>variables<span class="w"> </span>where<span class="w"> </span>possible
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>📌<span class="w"> </span>Additional<span class="w"> </span>Guidelines
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>•<span class="w"> </span>Efficiency<span class="w"> </span>first:<span class="w"> </span>Avoid<span class="w"> </span>code<span class="w"> </span>repetition<span class="p">;</span><span class="w"> </span>prefer<span class="w"> </span>reusability,<span class="w"> </span>locals,<span class="w"> </span>and<span class="w"> </span>input<span class="w"> </span>variables
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>•<span class="w"> </span>Practical<span class="w"> </span>defaults:<span class="w"> </span>Pre-fill<span class="w"> </span>variables<span class="w"> </span>with<span class="w"> </span>production-safe,<span class="w"> </span>but<span class="w"> </span>general-purpose<span class="w"> </span>values
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>•<span class="w"> </span>Keep<span class="w"> </span>it<span class="w"> </span>modular:<span class="w"> </span>No<span class="w"> </span>monolithic<span class="w"> </span>deployment<span class="w"> </span>blocks—use<span class="w"> </span>modules<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>core<span class="w"> </span>resources
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>•<span class="w"> </span>Strict<span class="w"> </span>adherence:<span class="w"> </span>Do<span class="w"> </span>not<span class="w"> </span>expand<span class="w"> </span>scope<span class="w"> </span>unless<span class="w"> </span>confirmed
+</span></code></pre></div>
+<p>This structured approach helped maintain focus and provided clear boundaries for the AI to work within — though, as you'll see, <strong>constant reinforcement was still required</strong> throughout the process.</p>
+<hr />
+<h3 id="the-refactoring-process">🔄 The Refactoring Process</h3>
+<p>The Terraform rebuild became a <strong>different kind of AI collaboration</strong>.</p>
+<p>Where version 1 was about vibing ideas into reality, version 2 was about <strong>methodically translating a messy prototype into clean, modular, production-friendly code</strong>.</p>
+<hr />
+<h4 id="key-modules-created">🧩 Key Modules Created</h4>
+<ul>
+<li>
+<p><code>foundation</code><br />
+  Core infrastructure — resource groups, storage accounts, logging, etc.</p>
+</li>
+<li>
+<p><code>openai</code><br />
+  Azure OpenAI resource and model deployment — central to the intelligent analysis pipeline</p>
+</li>
+<li>
+<p><code>function-app</code><br />
+  Azure Functions for AI processing — connecting telemetry with insights</p>
+</li>
+<li>
+<p><code>container-apps</code><br />
+  Four-container ecosystem — the user-facing UI and visualization layers</p>
+</li>
+<li>
+<p><code>monitoring</code><br />
+  Application Insights + alerting — keeping the system observable and maintainable</p>
+</li>
+</ul>
+<hr />
+<h4 id="modular-structure-overview">📁 Modular Structure Overview</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>terraform-ai-monitoring/
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├──<span class="w"> </span>modules/
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│<span class="w">   </span>├──<span class="w"> </span>foundation/
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│<span class="w">   </span>├──<span class="w"> </span>openai/
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="k">function</span>-app/
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│<span class="w">   </span>└──<span class="w"> </span>container-apps/
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>├──<span class="w"> </span>main.tf
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>└──<span class="w"> </span>terraform.tfvars
+</span></code></pre></div>
+<p>Each module went through <strong>multiple refinement cycles</strong>. The goal wasn’t just to get it working — it was to ensure:</p>
+<ul>
+<li>Clean, reusable Terraform code</li>
+<li>Explicit configuration</li>
+<li>DRY principles throughout</li>
+<li>Reproducible, idempotent deployments</li>
+</ul>
+<hr />
+<h4 id="iterative-refinement-in-practice">🔧 Iterative Refinement in Practice</h4>
+<p>A typical troubleshooting session went something like this:</p>
+<ul>
+<li>I’d run the code or attempt a terraform plan or apply.</li>
+<li>If there were no errors, I’d verify the outcome and move on.</li>
+<li>If there were errors, I’d copy the output into Claude and we’d go back and forth trying to fix the problem.</li>
+</ul>
+<p>This is where things often got tricky. Claude would sometimes suggest hardcoded values despite earlier instructions to avoid them, or propose overly complex fixes instead of the simple, obvious one. Even with clear guidance in the prompt, it was a constant effort to keep the AI focused and within scope.</p>
+<p>The process wasn’t just code generation — it was troubleshooting, adjusting, and rechecking until things finally worked as expected.</p>
+<p><a class="glightbox" href="../terraform-ai-monitoring/Claude_Terraform_Chat_Error_Example.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Terraform schema correction" src="../terraform-ai-monitoring/Claude_Terraform_Chat_Error_Example.png" /></a></p>
+<p>The process revealed both the strengths and limitations of AI-assisted Infrastructure as Code development.</p>
+<hr />
+<h2 id="part-3-working-with-genai-the-good-the-bad-and-the-wandering">🧠 Part 3: Working with GenAI – The Good, the Bad, and the Wandering</h2>
+<p>Building two versions of the same project entirely through AI conversations provided unique insights into the <strong>practical realities of AI-assisted development</strong>.</p>
+<p>This wasn’t the utopian "AI will do everything" fantasy — nor was it the cynical "AI can’t do anything useful" view.<br />
+It was somewhere in between: <strong>messy, human, instructive</strong>.</p>
+<hr />
+<h3 id="the-good-where-ai-excelled">✅ The Good: Where AI Excelled</h3>
+<p><strong>⚡ Rapid prototyping and iteration</strong><br />
+Claude could produce working infrastructure code faster than I could even open the Azure documentation.<br />
+Need a Container App with specific environment variables? ✅ Done.<br />
+Modify the OpenAI integration logic? ✅ Updated in seconds.</p>
+<p><strong>🧩 Pattern recognition and consistency</strong><br />
+Once Claude grasped the structure of the project, it stuck with it.<br />
+Variable names, tagging conventions, module layout — it stayed consistent without me needing to babysit every decision.</p>
+<p><strong>🛠️ Boilerplate generation</strong><br />
+Claude churned out huge volumes of code across Terraform, PowerShell, React, and Python — all <strong>syntactically correct and logically structured</strong>, freeing me from repetitive coding.</p>
+<hr />
+<h3 id="the-bad-where-ai-struggled">❌ The Bad: Where AI Struggled</h3>
+<p><strong>🧠 Context drift and prompt guardrails</strong><br />
+Even with structured, detailed instructions, Claude would sometimes go rogue:  </p>
+<ul>
+<li>Proposing solutions for problems I hadn’t asked about  </li>
+<li>Rewriting things that didn’t need fixing  </li>
+<li>Suggesting complete redesigns for simple tweaks  </li>
+</ul>
+<p><strong>🎉 Over-enthusiasm</strong><br />
+Claude would often blurt out things like:  </p>
+<blockquote>
+<p><em>“CONGRATULATIONS!! 🎉 You now have a production-ready AI Monitoring platform!”</em><br />
+To which I’d reply:<br />
+<em>“Er, no bro. We're nowhere near done here. Still Cuz.”</em></p>
+</blockquote>
+<p>(Okay, I don’t <em>really</em> talk to Claude like a GenZ wannabe Roadman — but you get the idea 😂)</p>
+<p><strong>🐛 Runtime debugging limitations</strong><br />
+Claude could <em>write</em> the code. But fixing things like:  </p>
+<ul>
+<li>Azure authentication issues  </li>
+<li>Misconfigured private endpoints  </li>
+<li>Resource naming collisions<br />
+…was always on me. These weren’t things AI could reliably troubleshoot on its own.</li>
+</ul>
+<p><strong>🔁 Project continuity fail</strong><br />
+There’s no persistent memory.<br />
+Every new session meant reloading context from scratch — usually by copy-pasting yesterday’s chat into a new one.<br />
+Tedious, error-prone, and inefficient.</p>
+<hr />
+<h3 id="the-wandering-managing-ai-attention">🌀 The Wandering: Managing AI Attention</h3>
+<p><strong>⚠️ Fundamental challenge: No memory</strong><br />
+Claude has no memory beyond the current chat. Even structured prompts didn’t prevent “chat drift” unless I constantly reinforced boundaries.
+This is where ChatGPT has an edge in my opiion.
+If I ask about previous chats, ChatGPT can give me examples and context about chats we had previously if prompted.</p>
+<p><strong>🎯 The specificity requirement</strong><br />
+Vague:  </p>
+<blockquote>
+<p>"Fix the container deployment"<br />
+Resulted in:<br />
+"Let’s rebuild the entire architecture from scratch" 😬  </p>
+</blockquote>
+<p>Precise:  </p>
+<blockquote>
+<p>"Update the environment variable <code>REACT_APP_API_URL</code> in <code>container-apps</code> module"<br />
+Got the job done.</p>
+</blockquote>
+<p><strong>🚫 The hardcoded value trap</strong><br />
+Claude loved quick fixes — often hardcoding values just to “make it work”.<br />
+I had to go back and <strong>de-hardcode</strong> everything to stay true to the DRY principles I set from day one.</p>
+<p>**⏳ Time impact for non-devs
+Both stages of the project took longer than they probably should have — not because of any one flaw, but because of the nature of working with AI-generated infrastructure code.</p>
+<p>A seasoned DevOps engineer might have moved faster by spotting bugs earlier and validating logic more confidently. But a pure developer? Probably not. They’d likely struggle with the Azure-specific infrastructure decisions, access policies, and platform configuration that were second nature to me.</p>
+<p>This kind of work sits in a grey area — it needs both engineering fluency and platform experience. The real takeaway? GenAI can bridge that gap in either direction, but whichever way you’re coming from, there’s a learning curve.</p>
+<p>The cost: higher validation effort.<br />
+The reward: greater independence and accelerated learning.</p>
+<hr />
+<h2 id="part-4-building-the-stack-what-got-built">🏗️ Part 4: Building The Stack - What Got Built</h2>
+<p>The final Terraform solution creates a fully integrated AI monitoring ecosystem in Azure — one that’s modular, intelligent, and <em>almost</em> production-ready.<br />
+Here’s what was actually built — and why.</p>
+<hr />
+<h3 id="core-architecture">🔧 Core Architecture</h3>
+<p><strong>🧠 Azure OpenAI Integration</strong><br />
+At the heart of the system is GPT-4o-mini, providing infrastructure analysis and recommendations at a significantly lower cost than GPT-4 — without compromising on quality for this use case.</p>
+<p><strong>📦 Container Apps Environment</strong><br />
+Four lightweight, purpose-driven containers manage the monitoring workflow:</p>
+<ul>
+<li>⚙️ <strong>FastAPI backend</strong> – Data ingestion and processing</li>
+<li>📊 <strong>React dashboard</strong> – Front-end UI and live telemetry</li>
+<li>🔄 <strong>Background processor</strong> – Continuously monitors resource health</li>
+<li>🚀 <strong>Load generator</strong> – Simulates traffic for stress testing and metrics</li>
+</ul>
+<p><strong>⚡ Azure Function Apps for AI Processing</strong><br />
+Serverless compute bridges raw telemetry with OpenAI for analysis.<br />
+Functions scale on demand, keeping costs low and architecture lean.</p>
+<blockquote>
+<p>⚠️ The only part of the project not handled in Terraform was the custom dashboard container build.
+That's by design — Terraform isn’t meant for image building or pushing.
+Instead, I handled that manually (or via CI pipeline), which aligns with Hashicorps <a class="glightbox" href="https://developer.hashicorp.com/terraform/docs/language/resources/externally-managed" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="best practices" src="https://developer.hashicorp.com/terraform/docs/language/resources/externally-managed" /></a>.</p>
+</blockquote>
+<hr />
+<h3 id="supporting-infrastructure">🧰 Supporting Infrastructure</h3>
+<ul>
+<li><strong>Application Insights</strong> – Real-time telemetry for diagnostics</li>
+<li><strong>Log Analytics</strong> – Centralised logging and query aggregation</li>
+<li><strong>Azure Container Registry (ACR)</strong> – Stores and serves custom container images</li>
+<li><strong>Key Vault</strong> – Secrets management for safe credential handling</li>
+</ul>
+<hr />
+<h3 id="key-technical-decisions">🤔 Key Technical Decisions</h3>
+<p><strong>🆚 Why Container Apps instead of AKS?</strong><br />
+Honestly? Claude made the call.<br />
+When I described what I needed (multi-container orchestration without complex ops), Claude recommended <strong>Container Apps over AKS</strong>, citing:  </p>
+<ul>
+<li>Lower cost  </li>
+<li>Simpler deployment  </li>
+<li>Sufficient capability for this workload  </li>
+</ul>
+<p>And… Claude was right. AKS would have been overkill.</p>
+<p><strong>💸 Why GPT-4o-mini over GPT-4?</strong><br />
+This was a no-brainer. GPT-4o-mini gave near-identical results for our monitoring analysis — at a <strong>fraction of the cost</strong>.<br />
+Perfect balance of performance and budget.</p>
+<p><strong>📦 Why modular Terraform over monolithic deployment?</strong><br />
+Because chaos is not a deployment strategy.<br />
+Modular code = clean boundaries, reusable components, and simple environment customization.<br />
+It’s easier to debug, update, and scale.</p>
+<hr />
+<h3 id="visual-reference">🧮 Visual Reference</h3>
+<p>Below are visuals captured during project development and testing:</p>
+<p><strong>🔹 VS Code project structure</strong><br />
+<a class="glightbox" href="../terraform-ai-monitoring/VSCode_Terraform_Project_Structure.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VS Code project structure" src="../terraform-ai-monitoring/VSCode_Terraform_Project_Structure.png" /></a></p>
+<p><strong>🔹 Claude Projects interface</strong><br />
+<a class="glightbox" href="../terraform-ai-monitoring/Claude_Project_Screenshot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Claude Projects interface" src="../terraform-ai-monitoring/Claude_Project_Screenshot.png" /></a></p>
+<hr />
+<h3 id="what-the-dashboard-shows">📊 What the Dashboard Shows</h3>
+<p>The final React-based dashboard delivers:</p>
+<ul>
+<li>✅ <strong>Real-time API health checks</strong></li>
+<li>🧠 <strong>AI-generated infrastructure insights</strong></li>
+<li>📈 <strong>Performance metrics + trend analysis</strong></li>
+<li>💬 <strong>Interactive chat with OpenAI</strong></li>
+<li>📤 <strong>Exportable chats for analysis</strong></li>
+</ul>
+<p><strong>🔹 Dashboard – Full view</strong><br />
+<a class="glightbox" href="../terraform-ai-monitoring/AIMonitoringDashboard_Final.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Dashboard Full View" src="../terraform-ai-monitoring/AIMonitoringDashboard_Final.png" /></a></p>
+<p><strong>🔹 AI analysis in progress</strong><br />
+<a class="glightbox" href="../terraform-ai-monitoring/AIMonitoringDashboard_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Dashboard AI analysis 2" src="../terraform-ai-monitoring/AIMonitoringDashboard_2.png" /></a></p>
+<p><strong>🔹 OpenAI response card</strong><br />
+<a class="glightbox" href="../terraform-ai-monitoring/AIMonitoringDashboard.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="OpenAI response" src="../terraform-ai-monitoring/AIMonitoringDashboard.png" /></a></p>
+<hr />
+<h2 id="part-5-the-result-a-portable-reusable-ai-monitoring-stack">🧾 Part 5: The Result - A Portable, Reusable AI Monitoring Stack</h2>
+<p>The final Terraform deployment delivers a <strong>complete, modular, and production-friendly AI monitoring solution</strong> — fully reproducible across environments. More importantly, it <strong>demonstrates that AI-assisted infrastructure creation is not just viable, but effective</strong> when paired with good practices and human oversight.</p>
+<hr />
+<h3 id="deployment-experience">🚀 Deployment Experience</h3>
+<p><strong>From zero to running dashboard:</strong><br />
+~ <strong>15 minutes (give or take 30-40 hours 😂)</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>terraform<span class="w"> </span>init
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>terraform<span class="w"> </span>plan
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>terraform<span class="w"> </span>apply
+</span></code></pre></div>
+<p>Minimal configuration required:</p>
+<ul>
+<li>✅ Azure subscription credentials</li>
+<li>📄 Terraform variables (project name, region, container image names, etc.)</li>
+<li>🐳 Container image references (can use defaults or custom builds)</li>
+</ul>
+<hr />
+<h3 id="infrastructure-overview">🗺️ Infrastructure Overview</h3>
+<p>The final deployment provisions a complete, AI-driven monitoring stack — built entirely with Infrastructure as Code and connected through modular Terraform components.</p>
+<p><strong>🔹 Azure Resource Visualizer</strong><br />
+<a class="glightbox" href="../terraform-ai-monitoring/Azure_Resources.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Azure Resource Visualizer" src="../terraform-ai-monitoring/Azure_Resources.png" /></a></p>
+<hr />
+<h3 id="cost-optimization">💰 Cost Optimization</h3>
+<p>This solution costs <strong>~£15 per month</strong> for a dev/test deployment (even cheaper if you remember to turn the container apps off!😲) — vastly cheaper than typical enterprise-grade monitoring tools (which can range £50–£200+ per month).</p>
+<p><strong>Key savings come from:</strong></p>
+<ul>
+<li>⚡ Serverless Functions instead of always-on compute</li>
+<li>📦 Container Apps that scale to zero during idle time</li>
+<li>🤖 GPT-4o-mini instead of GPT-4 (with negligible accuracy trade-off)</li>
+</ul>
+<hr />
+<h3 id="portability-validation">🔁 Portability Validation</h3>
+<p>The real benefit of this solution is in its <strong>repeatability</strong>:</p>
+<p>✅ <strong>Dev environment</strong><br />
+UK South, full-feature stack</p>
+<p>✅ <strong>Test deployment</strong><br />
+New resource group, same subscription — <strong>identical results</strong></p>
+<p>✅ <strong>Clean subscription test</strong><br />
+Fresh environment, zero config drift</p>
+<p><strong>Conclusion:</strong><br />
+No matter where or how it's deployed, the <strong>stack just works</strong>.</p>
+<hr />
+<h2 id="part-6-reflections-and-lessons-learned">🧠 Part 6: Reflections and Lessons Learned</h2>
+<p>Building the same solution twice — once manually, once using Infrastructure as Code — offered a unique lens through which to view both <strong>AI-assisted development</strong> and <strong>modern infrastructure practices</strong>.</p>
+<hr />
+<h3 id="on-ai-assisted-development">🤖 On AI-Assisted Development</h3>
+<p><strong>🔎 The reality check</strong><br />
+AI-assisted development is <strong>powerful but not autonomous</strong>. It still relies on:</p>
+<ul>
+<li>Human oversight</li>
+<li>Strategic decisions</li>
+<li>Recognizing when the AI is confidently wrong</li>
+</ul>
+<p><strong>⚡ Speed vs. Quality</strong><br />
+AI can produce working code fast — sometimes scarily fast — but:</p>
+<ul>
+<li>The <strong>validation/debugging</strong> can take <em>longer</em> than traditional coding</li>
+<li>The real power lies in <strong>architectural iteration</strong>, not production-readiness</li>
+</ul>
+<p><strong>📚 The learning curve</strong><br />
+Truthfully, both v1 and v2 took <strong>much longer than they should have</strong>.<br />
+A seasoned developer with better validation skills could likely complete either project in <strong>half the time</strong> — by catching subtle issues earlier.</p>
+<hr />
+<h3 id="on-infrastructure-as-code">🛠️ On Infrastructure as Code</h3>
+<p><strong>📐 The transformation</strong><br />
+Switching to Terraform wasn’t just about reusability:</p>
+<ul>
+<li>It encouraged <strong>cleaner design</strong>, <strong>logical resource grouping</strong>, and <strong>explicit dependencies</strong></li>
+<li>It <em>forced</em> better decisions</li>
+</ul>
+<p><strong>🧩 The hidden complexity</strong><br />
+What looked simple in Terraform:</p>
+<ul>
+<li>Revealed just how <strong>messy</strong> the manual deployment had been</li>
+<li>Every implicit assumption, naming decision, and “just click here” moment had to become <strong>codified and reproducible</strong></li>
+</ul>
+<hr />
+<h3 id="on-vibe-coding-as-a-methodology">🎭 On Vibe Coding as a Methodology</h3>
+<p><strong>✅ What worked:</strong></p>
+<ul>
+<li>Rapid architectural exploration</li>
+<li>Solving problems in plain English</li>
+<li>Iterative builds based on feedback</li>
+<li>AI-assisted speed gains (things built in hours, not days)</li>
+</ul>
+<p><strong>❌ What didn’t:</strong></p>
+<ul>
+<li>Continuity across chat sessions</li>
+<li>Preserving project context</li>
+<li>Runtime debugging in Azure</li>
+<li>Keeping the agent focused on scoped tasks</li>
+</ul>
+<hr />
+<h3 id="things-id-do-differently">🔁 Things I’d Do Differently</h3>
+<p><strong>🧾 Better structured prompting from the outset</strong><br />
+While I used a defined structure for the AI prompt, I learned:</p>
+<ul>
+<li>Even good prompts <strong>require ongoing reinforcement</strong></li>
+<li>Claude needed regular reminders to stay on track during long sessions</li>
+</ul>
+<p><strong>✅ Regular resource validation</strong><br />
+A recurring challenge:</p>
+<ul>
+<li>Claude often <strong>over-provisioned</strong> services</li>
+<li>Periodic reviews of what we were building helped cut waste and simplify architecture</li>
+</ul>
+<p><strong>🧠 The reality of AI memory limitations</strong><br />
+No, the AI does not “remember” anything meaningful between sessions:</p>
+<ul>
+<li>Every day required <strong>rebuilding the conversation context</strong></li>
+<li>Guardrails had to be <strong>restated</strong> often</li>
+</ul>
+<p><strong>🎯 The extreme specificity requirement</strong><br />
+Vague asks = vague solutions<br />
+But:</p>
+<ul>
+<li><strong>Precise requests</strong> like “update <code>REACT_APP_API_URL</code> in <code>container-apps</code> module” yielded laser-targeted results</li>
+</ul>
+<hr />
+<h2 id="conclusion">✅ Conclusion</h2>
+<p>This project started as a career thought experiment — <em>“What if there was a role focused on AI-integrated infrastructure?”</em> — and ended with a fully functional AI monitoring solution deployed in Azure.</p>
+<p>What began as a prototype on a local Pi5 evolved into a robust, modular Terraform deployment. Over 4–5 weeks, it generated <strong>thousands of lines of infrastructure code</strong>, countless iterations, and a treasure trove of insights into AI-assisted development.</p>
+<hr />
+<h3 id="the-technical-outcome">🚀 The Technical Outcome</h3>
+<p>The result is a <strong>portable, cost-effective, AI-powered monitoring system</strong> that doesn’t just work — it <em>proves a point</em>. It's not quite enterprise-ready, but it’s a solid proof-of-concept and a foundation for learning, experimentation, and future iteration.</p>
+<hr />
+<h3 id="key-takeaways">🧠 Key Takeaways</h3>
+<ol>
+<li>
+<p><strong>AI-assisted development is powerful — but not autonomous.</strong><br />
+   It requires constant direction, critical oversight, and the ability to spot when the AI is confidently wrong.</p>
+</li>
+<li>
+<p><strong>Infrastructure as Code changes how you architect.</strong><br />
+   Writing Terraform forces discipline: clean structure, explicit dependencies, and reproducible builds.</p>
+</li>
+<li>
+<p><strong>Vibe coding has a learning curve.</strong><br />
+   Both versions took longer than expected. A seasoned developer could likely move faster — but for infra pros, this is how we learn.</p>
+</li>
+<li>
+<p><strong>Context management is still a major limitation.</strong><br />
+   The inability to persist AI session memory made long-term projects harder than they should have been.</p>
+</li>
+<li>
+<p><strong>The role of “Infrastructure AI Integration Engineer” is real — and emerging.</strong><br />
+   This project sketches out what that future job might involve: blending IaC, AI, automation, and architecture.</p>
+</li>
+</ol>
+<hr />
+<h3 id="whats-next">🧭 What’s Next?</h3>
+<p>Version 3 is already brewing ☕ — ideas include:</p>
+<ul>
+<li>Monitoring more Azure services</li>
+<li>Improving the dashboard’s AI output formatting</li>
+<li>Experimenting with newer tools like <strong>Claude Code</strong> and <strong>ChatGPT Codex</strong></li>
+<li>Trying AI-native IDEs and inline assistants to streamline the workflow</li>
+</ul>
+<p>And let’s not forget the rise of <strong>“Slop-Ops”</strong> — that beautiful mess where AI, infrastructure, and vibe-based engineering collide 😎</p>
+<hr />
+<h3 id="final-thoughts">💡 Final Thoughts</h3>
+<p>If you're an infrastructure engineer looking to explore AI integration, here’s the reality:</p>
+<ul>
+<li>The tools are ready.</li>
+<li>The method works.</li>
+<li>But it’s not magic — <strong>it takes effort, patience, and curiosity</strong>.</li>
+</ul>
+<p>The future of infrastructure might be conversational — but it’s not (yet) automatic.</p>
+<hr />
+<blockquote>
+<p>If you’ve read this far — thanks. 🙏
+I’d love feedback from anyone experimenting with AI-assisted IaC or Terraform refactors.
+Find me on [LinkedIn] or leave a comment.</p>
+</blockquote>
+<p><a class="md-button" href="https://x.com/intent/tweet?text=Vibe%20Coding%20My%20Way%20to%20AI%20Infra%0A&amp;url=https://blog.pollockweb.com/blog/vibe-coding-my-way-to-ai-infra/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span></a>
+<a class="md-button" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.pollockweb.com/blog/vibe-coding-my-way-to-ai-infra/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"/></svg></span></a></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2025</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2025</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="cloudlabmp/project-blog"
+        data-repo-id="R_kgDOODgKaQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOODgKac4Cnldm"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+  <div class="custom-footer">
+    <div class="custom-footer-left">
+      <p>Copyright &copy; 2025 Matthew Pollock</p>
+    </div>
+    <div class="custom-footer-right">
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="profile.pollockweb.com">
+        <i class="fas fa-globe"></i>
+      </a>
+      <a href="https://blog.pollockweb.com/feed_rss_created.xml" target="_blank" title="RSS Feed">
+        <i class="fa-solid fa-rss"></i>
+      </a>
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.select", "content.code.copy", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

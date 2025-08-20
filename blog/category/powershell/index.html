@@ -1,0 +1,2600 @@
+<head>
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+
+  
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A blog about tech stuff">
+      
+      
+        <meta name="author" content="matt.pollock@outlook.com">
+      
+      
+        <link rel="canonical" href="https://blog.pollockweb.com/blog/category/powershell/">
+      
+      
+        <link rel="prev" href="../patch-management/">
+      
+      
+        <link rel="next" href="../projects/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>PowerShell - cloudlabmp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-800NGKWBYL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-800NGKWBYL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-800NGKWBYL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="PowerShell - cloudlabmp" >
+      
+        <meta  property="og:description"  content="A blog about tech stuff" >
+      
+        <meta  property="og:image"  content="https://blog.pollockweb.com/assets/images/social/blog/category/powershell.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://blog.pollockweb.com/blog/category/powershell/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="PowerShell - cloudlabmp" >
+      
+        <meta  name="twitter:description"  content="A blog about tech stuff" >
+      
+        <meta  name="twitter:image"  content="https://blog.pollockweb.com/assets/images/social/blog/category/powershell.png" >
+      
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#powershell" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+    <div class="announcement-content">
+      <p>Welcome to my blog! Connect with me:</p>
+      <a href="https://www.linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="profile.pollockweb.com">
+        <i class="fas fa-globe fa-2x"></i>
+      </a>
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://blog.pollockweb.com/feed_rss_created.xml" target="_blank" title="RSS Feed">
+        <i class="fa-solid fa-rss fa-2x"></i>
+      </a>
+    </div>
+  
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://blog.pollockweb.com/blog/" title="cloudlabmp" class="md-header__button md-logo" aria-label="cloudlabmp" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo-48x48.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cloudlabmp
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PowerShell
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cloudlabmp/project-blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudlabmp/project-blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../learn/" class="md-tabs__link">
+        
+  
+    
+  
+  Learn
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../work/" class="md-tabs__link">
+        
+  
+    
+  
+  Work
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://blog.pollockweb.com/blog/" title="cloudlabmp" class="md-nav__button md-logo" aria-label="cloudlabmp" data-md-component="logo">
+      
+  <img src="../../../assets/icons/logo-48x48.png" alt="logo">
+
+    </a>
+    cloudlabmp
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cloudlabmp/project-blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudlabmp/project-blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Posts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Posts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai--study-techniques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI &amp; Study Techniques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../application-insights/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Insights
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure-openai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure OpenAI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../bcdr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BCDR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blogging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blogging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cicd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../career-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Career Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude-code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Claude Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-engineering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Engineering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-resume-challenge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Resume Challenge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../customization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../devops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../finops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FinOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../gitops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../group-policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Group Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../iis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IIS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../iac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IaC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../infrastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../intune/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intune
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../life-update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Life Update
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../microsoft-certifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Certifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../patch-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patch Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    PowerShell
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      💰 Saving Azure Costs with Scheduled VM Start/Stop using Custom Azure Automation Runbooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-uk-regional-settings-on-windows-servers-with-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏲️ Configuring UK Regional Settings on Windows Servers with PowerShell
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RAG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../regional-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regional Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-hosting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-Hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../serverless/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serverless
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tech
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../time-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Time Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vector-databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vibe-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibe Coding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-hosting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../work/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      💰 Saving Azure Costs with Scheduled VM Start/Stop using Custom Azure Automation Runbooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-uk-regional-settings-on-windows-servers-with-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏲️ Configuring UK Regional Settings on Windows Servers with PowerShell
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="powershell">PowerShell</h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/u/110421070?s=400&v=4" alt="Matthew Pollock">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-04-22 00:00:00+00:00">April 22, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../azure/" class="md-meta__link">Azure</a>, 
+              <a href="../automation/" class="md-meta__link">Automation</a>, 
+              <a href="../finops/" class="md-meta__link">FinOps</a>, 
+              <a href="./" class="md-meta__link">PowerShell</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/">💰 Saving Azure Costs with Scheduled VM Start/Stop using Custom Azure Automation Runbooks</a></h2>
+<p>As part of my ongoing commitment to FinOps practices, I've implemented several strategies to embed cost-efficiency into the way we manage cloud infrastructure. One proven tactic is scheduling virtual machines to shut down during idle periods, avoiding unnecessary spend.</p>
+<p>In this post, I’ll share how I’ve built out <strong>custom Azure Automation jobs</strong> to schedule VM start and stop operations. Rather than relying on Microsoft’s pre-packaged solution, I’ve developed a <strong>streamlined, purpose-built PowerShell implementation</strong> that provides maximum flexibility, transparency, and control.</p>
+<hr />
+<h3 id="why-i-chose-custom-runbooks-over-the-prebuilt-solution"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#why-i-chose-custom-runbooks-over-the-prebuilt-solution">✍️ Why I Chose Custom Runbooks Over the Prebuilt Solution</a></h3>
+<p>Microsoft provides a ready-made “Start/Stop VMs during off-hours” solution via the Automation gallery. While functional, it’s:</p>
+<ul>
+<li>A bit over-engineered for simple needs,</li>
+<li>Relatively opaque under the hood, and</li>
+<li>Not ideal for environments where control and transparency are priorities.</li>
+</ul>
+<p>My custom jobs:</p>
+<ul>
+<li>Use native PowerShell modules within Azure Automation,</li>
+<li>Are scoped to exactly the VMs I want via <strong>tags</strong>,</li>
+<li>Provide clean logging and alerting, and</li>
+<li>Keep things simple, predictable, and auditable.</li>
+</ul>
+<hr />
+<h3 id="step-1-set-up-the-azure-automation-account"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#step-1-set-up-the-azure-automation-account">🛠️ Step 1: Set Up the Azure Automation Account</a></h3>
+<blockquote>
+<p>🔗 <a href="https://learn.microsoft.com/en-us/azure/automation/automation-create-standalone-account">Official docs: Create and manage an Azure Automation Account</a></p>
+</blockquote>
+<ol>
+<li>Go to the <strong>Azure Portal</strong> and search for <strong>Automation Accounts</strong>.</li>
+<li>Click <strong>+ Create</strong>.</li>
+<li>Fill out the basics:</li>
+<li><strong>Name</strong>: e.g. <code>vm-scheduler</code></li>
+<li><strong>Resource Group</strong>: Create new or select existing</li>
+<li><strong>Region</strong>: Preferably where your VMs are located</li>
+<li>Enable <strong>System-Assigned Managed Identity</strong></li>
+<li>Once created, go to the Automation Account and ensure the following modules are imported using the <strong>Modules</strong> blade in the Azure Portal:</li>
+<li><code>Az.Accounts</code></li>
+<li><code>Az.Compute</code></li>
+</ol>
+<blockquote>
+<p>✅ Tip: These modules can be added from the gallery in just a few clicks via the UI—no scripting required.</p>
+<p>💡 Prefer scripting? You can also install them using PowerShell:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">Az</span><span class="p">.</span><span class="n">Accounts</span> <span class="n">-Force</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">Az</span><span class="p">.</span><span class="n">Compute</span> <span class="n">-Force</span>
+</span></code></pre></div>
+</blockquote>
+<ol>
+<li>Assign the <strong>Virtual Machine Contributor</strong> role to the Automation Account's managed identity at the resource group or subscription level.</li>
+</ol>
+<h4 id="cli-or-powershell-alternatives"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#cli-or-powershell-alternatives">⚙️ CLI or PowerShell alternatives</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Azure CLI example to create the automation account</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>az<span class="w"> </span>automation<span class="w"> </span>account<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span>--name<span class="w"> </span>vm-scheduler<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span>--resource-group<span class="w"> </span>MyResourceGroup<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span>--location<span class="w"> </span>uksouth<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">  </span>--assign-identity
+</span></code></pre></div>
+<hr />
+<h3 id="step-2-add-vm-tags-for-scheduling"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#step-2-add-vm-tags-for-scheduling">📅 Step 2: Add VM Tags for Scheduling</a></h3>
+<p>Apply consistent tags to any VM you want the runbooks to manage.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AutoStartStop</code></td>
+<td><code>devserver</code></td>
+</tr>
+</tbody>
+</table>
+<p>You can use the Azure Portal or PowerShell to apply these tags.</p>
+<h4 id="tag-vms-via-powershell"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#tag-vms-via-powershell">⚙️ Tag VMs via PowerShell</a></h4>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nv">$vm</span> <span class="p">=</span> <span class="nb">Get-AzVM</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;MyRG&quot;</span> <span class="n">-Name</span> <span class="s2">&quot;myVM&quot;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nv">$vm</span><span class="p">.</span><span class="n">Tags</span><span class="p">[</span><span class="s2">&quot;AutoStartStop&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="s2">&quot;devserver&quot;</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nb">Update-AzVM</span> <span class="n">-VM</span> <span class="nv">$vm</span> <span class="n">-ResourceGroupName</span> <span class="s2">&quot;MyRG&quot;</span>
+</span></code></pre></div>
+<hr />
+<h3 id="step-3-create-the-runbooks"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#step-3-create-the-runbooks">📂 Step 3: Create the Runbooks</a></h3>
+<blockquote>
+<p>🔗 <a href="https://learn.microsoft.com/en-us/azure/automation/automation-runbook-create">Official docs: Create a runbook in Azure Automation</a></p>
+</blockquote>
+<h4 id="create-a-new-runbook"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#create-a-new-runbook">▶️ Create a New Runbook</a></h4>
+<ol>
+<li>In your Automation Account, go to <strong>Process Automation</strong> &gt; <strong>Runbooks</strong>.</li>
+<li>Click <strong>+ Create a runbook</strong>.</li>
+<li>Name it something like <code>Stop-TaggedVMs</code>.</li>
+<li>Choose <strong>PowerShell</strong> as the type.</li>
+<li>Paste in the code below (repeat this process for the start runbook later).</li>
+</ol>
+<h4 id="runbook-code-auto-stop-based-on-tags"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#runbook-code-auto-stop-based-on-tags">🔹 Runbook Code: Auto-Stop Based on Tags</a></h4>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">Param</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="p">(</span>    
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">=</span><span class="nv">$false</span><span class="p">)][</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    <span class="no">[String]</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    <span class="nv">$AzureVMName</span> <span class="p">=</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>    <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span><span class="p">=</span><span class="nv">$true</span><span class="p">)][</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>    <span class="no">[String]</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>    <span class="nv">$AzureSubscriptionID</span> <span class="p">=</span> <span class="s2">&quot;&lt;your-subscription-id&gt;&quot;</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="p">)</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>    <span class="s2">&quot;Logging in to Azure...&quot;</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>    <span class="c"># Authenticate using the system-assigned managed identity of the Automation Account</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>    <span class="nb">Connect-AzAccount</span> <span class="n">-Identity</span> <span class="n">-AccountId</span> <span class="s2">&quot;&lt;managed-identity-client-id&gt;&quot;</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>    <span class="nb">Write-Error</span> <span class="n">-Message</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>    <span class="k">throw</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="p">}</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="nv">$TagName</span>  <span class="p">=</span> <span class="s2">&quot;AutoStartStop&quot;</span>
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="nv">$TagValue</span> <span class="p">=</span> <span class="s2">&quot;devserver&quot;</span>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="nb">Set-AzContext</span> <span class="n">-Subscription</span> <span class="nv">$AzureSubscriptionID</span>
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>
+</span><span id="__span-23-26"><a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$AzureVMName</span> <span class="o">-ne</span> <span class="s2">&quot;All&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-23-27"><a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>    <span class="nv">$VMs</span> <span class="p">=</span> <span class="nb">Get-AzResource</span> <span class="n">-TagName</span> <span class="nv">$TagName</span> <span class="n">-TagValue</span> <span class="nv">$TagValue</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span>
+</span><span id="__span-23-28"><a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>        <span class="nv">$_</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-like</span> <span class="s1">&#39;Microsoft.Compute/virtualMachines&#39;</span> <span class="o">-and</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Name</span> <span class="o">-like</span> <span class="nv">$AzureVMName</span>
+</span><span id="__span-23-29"><a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>    <span class="p">}</span>
+</span><span id="__span-23-30"><a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-23-31"><a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a>    <span class="nv">$VMs</span> <span class="p">=</span> <span class="nb">Get-AzResource</span> <span class="n">-TagName</span> <span class="nv">$TagName</span> <span class="n">-TagValue</span> <span class="nv">$TagValue</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span>
+</span><span id="__span-23-32"><a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a>        <span class="nv">$_</span><span class="p">.</span><span class="n">ResourceType</span> <span class="o">-like</span> <span class="s1">&#39;Microsoft.Compute/virtualMachines&#39;</span>
+</span><span id="__span-23-33"><a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a>    <span class="p">}</span>
+</span><span id="__span-23-34"><a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a><span class="p">}</span>
+</span><span id="__span-23-35"><a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a>
+</span><span id="__span-23-36"><a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$VM</span> <span class="k">in</span> <span class="nv">$VMs</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-23-37"><a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a>    <span class="nb">Stop-AzVM</span> <span class="n">-ResourceGroupName</span> <span class="nv">$VM</span><span class="p">.</span><span class="n">ResourceGroupName</span> <span class="n">-Name</span> <span class="nv">$VM</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Verbose</span> <span class="n">-Force</span>
+</span><span id="__span-23-38"><a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a><span class="p">}</span>
+</span></code></pre></div>
+<blockquote>
+<p>🔗 <a href="https://learn.microsoft.com/en-us/powershell/module/az.accounts/connect-azaccount">Docs: Connect-AzAccount with Managed Identity</a></p>
+</blockquote>
+<h4 id="create-the-start-runbook"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#create-the-start-runbook">🔹 Create the Start Runbook</a></h4>
+<p>Duplicate the above, replacing <code>Stop-AzVM</code> with <code>Start-AzVM</code>.</p>
+<blockquote>
+<p>🔗 <a href="https://learn.microsoft.com/en-us/powershell/module/az.compute/start-azvm">Docs: Start-AzVM</a></p>
+</blockquote>
+<hr />
+<h3 id="step-4-create-and-link-schedules"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#step-4-create-and-link-schedules">⏰ Step 4: Create and Link Schedules</a></h3>
+<blockquote>
+<p>🔗 <a href="https://learn.microsoft.com/en-us/azure/automation/automation-schedules">Docs: Create schedules in Azure Automation</a></p>
+</blockquote>
+<ol>
+<li>Go to the Automation Account &gt; <strong>Schedules</strong> &gt; <strong>+ Add a schedule</strong>.</li>
+<li>Create two schedules:</li>
+<li><code>DailyStartWeekdays</code> — Recurs every weekday at 07:30</li>
+<li><code>DailyStopWeekdays</code> — Recurs every weekday at 18:30</li>
+<li>Go to each runbook &gt; <strong>Link to schedule</strong> &gt; Choose the matching schedule.</li>
+</ol>
+<blockquote>
+<p>📊 You can get creative here: separate schedules for dev vs UAT, or different times for different departments.</p>
+</blockquote>
+<hr />
+<h3 id="testing-your-runbooks"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#testing-your-runbooks">🧪 Testing Your Runbooks</a></h3>
+<p>You can test each runbook directly in the portal:</p>
+<ul>
+<li>Open the runbook</li>
+<li>Click <strong>Edit</strong> &gt; <strong>Test Pane</strong></li>
+<li>Provide test parameters if needed</li>
+<li>Click <strong>Start</strong> and monitor output</li>
+</ul>
+<p>This is also a good time to validate:</p>
+<ul>
+<li>The identity has permission</li>
+<li>The tags are applied correctly</li>
+<li>The VMs are in a stopped or running state as expected</li>
+</ul>
+<hr />
+<h3 id="the-results"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#the-results">📊 The Results</a></h3>
+<p>Even this lightweight automation has produced major savings in our environment. Non-prod VMs are now automatically turned off outside office hours, resulting in monthly compute savings of up to <strong>60%</strong> without sacrificing availability during working hours.</p>
+<hr />
+<h3 id="ideas-for-further-enhancement"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#ideas-for-further-enhancement">🧠 Ideas for Further Enhancement</a></h3>
+<ul>
+<li>Pull tag values from a central config (e.g. Key Vault or Storage Table)</li>
+<li>Add logic to check for active RDP sessions or Azure Monitor heartbeats</li>
+<li>Alert via email or Teams on job success/failure</li>
+<li>Track savings over time and visualize them</li>
+</ul>
+<hr />
+<h3 id="final-thoughts"><a class="toclink" href="../../saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/#final-thoughts">💭 Final Thoughts</a></h3>
+<p>If you’re looking for a practical, immediate way to implement FinOps principles in Azure, VM scheduling is a great place to start. With minimal setup and maximum flexibility, custom runbooks give you control without the complexity of the canned solutions.</p>
+<p>Have you built something similar or extended this idea further? I’d love to hear about it—drop me a comment or reach out on LinkedIn.</p>
+<p>Stay tuned for more FinOps tips coming soon!</p>
+<p><a class="md-button" href="https://x.com/intent/tweet?text=Saving%20Azure%20Costs%20with%20Scheduled%20VM%20Start/Stop%20using%20Custom%20Azure%20Automation%20Runbooks%0A&amp;url=https://blog.pollockweb.com/blog/saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span></a>
+<a class="md-button" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.pollockweb.com/blog/saving-azure-costs-with-scheduled-vm-startstop-using-custom-azure-automation-runbooks/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"/></svg></span></a></p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/u/110421070?s=400&v=4" alt="Matthew Pollock">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-03-31 00:00:00+00:00">March 31, 2025</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../windows/" class="md-meta__link">Windows</a>, 
+              <a href="./" class="md-meta__link">PowerShell</a>, 
+              <a href="../automation/" class="md-meta__link">Automation</a>, 
+              <a href="../regional-settings/" class="md-meta__link">Regional Settings</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="configuring-uk-regional-settings-on-windows-servers-with-powershell"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/">⏲️ Configuring UK Regional Settings on Windows Servers with PowerShell</a></h2>
+<p>When building out cloud-hosted or automated deployments of Windows Servers, especially for UK-based organisations, it’s easy to overlook <strong>regional settings</strong>. But these seemingly small configurations — like date/time formats, currency symbols, or keyboard layouts — can have a big impact on usability, application compatibility, and user experience.</p>
+<p>In this post, I’ll show how I automate this using a simple PowerShell script that sets all relevant UK regional settings in one go.</p>
+<hr />
+<h3 id="why-regional-settings-matter"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#why-regional-settings-matter">🔍 Why Regional Settings Matter</a></h3>
+<p>Out-of-the-box, Windows often defaults to <strong>en-US</strong> settings:</p>
+<ul>
+<li>Date format becomes <code>MM/DD/YYYY</code></li>
+<li>Decimal separators switch to <code>.</code> instead of <code>,</code></li>
+<li>Currency symbols use <code>$</code></li>
+<li>Time zones default to US-based settings</li>
+<li>Keyboard layout defaults to US (which can be infuriating!)</li>
+</ul>
+<p>For UK-based organisations, this can:</p>
+<ul>
+<li>Cause confusion in logs or spreadsheets</li>
+<li>Break date parsing in scripts or apps expecting <code>DD/MM/YYYY</code></li>
+<li>Result in the wrong characters being typed (e.g., <code>@</code> vs <code>"</code>)</li>
+<li>Require manual fixing after deployment</li>
+</ul>
+<p>Automating this ensures <strong>consistency across environments</strong>, saves time, and avoids annoying regional mismatches.</p>
+<hr />
+<h3 id="script-overview"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#script-overview">🔧 Script Overview</a></h3>
+<p>I created a PowerShell script that:</p>
+<ul>
+<li>Sets the system locale and input methods</li>
+<li>Configures UK date/time formats</li>
+<li>Applies the British English language pack (if needed)</li>
+<li>Sets the time zone to GMT Standard Time (London)</li>
+</ul>
+<p>The script can be run manually, included in provisioning pipelines, or dropped into automation tools like Task Scheduler or cloud-init processes.</p>
+<hr />
+<h3 id="prerequisites"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#prerequisites">✅ Prerequisites</a></h3>
+<p>To run this script, you should have:</p>
+<ul>
+<li>Administrator privileges</li>
+<li>PowerShell 5.1+ (default on most supported Windows Server versions)</li>
+<li>Optional: Internet access (if language pack needs to be added)</li>
+</ul>
+<hr />
+<h3 id="the-script-set-ukregionalsettingsps1"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#the-script-set-ukregionalsettingsps1">🔹 The Script: <code>Set-UKRegionalSettings.ps1</code></a></h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c"># Set system locale and formats to English (United Kingdom)</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">Set-WinSystemLocale</span> <span class="n">-SystemLocale</span> <span class="n">en-GB</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nb">Set-WinUserLanguageList</span> <span class="n">-LanguageList</span> <span class="n">en-GB</span> <span class="n">-Force</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nb">Set-Culture</span> <span class="n">en-GB</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nb">Set-WinHomeLocation</span> <span class="n">-GeoId</span> <span class="n">242</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nb">Set-TimeZone</span> <span class="n">-Id</span> <span class="s2">&quot;GMT Standard Time&quot;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="c"># Optional reboot prompt</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="nb">Write-Host</span> <span class="s2">&quot;UK regional settings applied. A reboot is recommended for all changes to take effect.&quot;</span>
+</span></code></pre></div>
+<hr />
+<h3 id="how-to-use-it"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#how-to-use-it">🚀 How to Use It</a></h3>
+<h4 id="option-1-manual-execution"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#option-1-manual-execution">✈️ Option 1: Manual Execution</a></h4>
+<ol>
+<li>Open <strong>PowerShell as Administrator</strong></li>
+<li>Run the script:</li>
+</ol>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">.\</span><span class="nb">Set-UKRegionalSettings</span><span class="p">.</span><span class="n">ps1</span>
+</span></code></pre></div>
+<hr />
+<h4 id="option-2-include-in-build-pipeline-or-image"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#option-2-include-in-build-pipeline-or-image">🔢 Option 2: Include in Build Pipeline or Image</a></h4>
+<p>For Azure VMs or cloud images, consider running this as part of your deployment process via:</p>
+<ul>
+<li><strong>Custom Script Extension</strong> in ARM/Bicep</li>
+<li><strong>cloud-init</strong> or <strong>Terraform provisioners</strong></li>
+<li><strong>Group Policy Startup Script</strong></li>
+</ul>
+<hr />
+<h3 id="quick-tips"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#quick-tips">⚡ Quick Tips</a></h3>
+<ul>
+<li>Reboot after running to ensure all settings apply across UI and system processes.</li>
+<li>For non-UK keyboards (like US physical hardware), you may also want to explicitly set <code>InputLocale</code>.</li>
+<li>Want to validate the settings? Use:</li>
+</ul>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">Get-WinSystemLocale</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">Get-Culture</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nb">Get-WinUserLanguageList</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nb">Get-TimeZone</span>
+</span></code></pre></div>
+<hr />
+<h3 id="registry-verification-per-user-and-default-settings"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#registry-verification-per-user-and-default-settings">📂 Registry Verification: Per-User and Default Settings</a></h3>
+<p><img alt="Registry Editor Screenshot" src="../../server-posts/regional-settings/registry-editor.png" /></p>
+<p>If you're troubleshooting or validating the configuration for specific users, regional settings are stored in the <strong>Windows Registry</strong> under:</p>
+<h4 id="for-each-user-profile"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#for-each-user-profile">👤 For Each User Profile</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>HKEY_USERS\&lt;SID&gt;\Control Panel\International
+</span></code></pre></div>
+<p>You can find the user SIDs by looking under <code>HKEY_USERS</code> or using:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">Get-ChildItem</span> <span class="n">Registry</span><span class="p">::</span><span class="n">HKEY_USERS</span>
+</span></code></pre></div>
+<h4 id="for-new-users-default-profile"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#for-new-users-default-profile">🧵 For New Users (Default Profile)</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>HKEY_USERS\.DEFAULT\Control Panel\International
+</span></code></pre></div>
+<p>This determines what settings new user profiles inherit on first logon.</p>
+<p>You can script changes here if needed, but always test carefully to avoid corrupting profile defaults.</p>
+<hr />
+<h3 id="final-thoughts"><a class="toclink" href="../../configuring-uk-regional-settings-on-windows-servers-with-powershell/#final-thoughts">🌟 Final Thoughts</a></h3>
+<p>Small tweaks like regional settings might seem minor, but they go a long way in making your Windows Server environments feel localised and ready for your users.</p>
+<p>Automating them early in your build pipeline means one less thing to worry about during post-deployment configuration.</p>
+<p>Let me know if you want a version of this that handles <strong>multi-user scenarios</strong> or works across <strong>multiple OS versions</strong>!</p>
+<p><a class="md-button" href="https://x.com/intent/tweet?text=Configuring%20UK%20Regional%20Settings%20on%20Windows%20Servers%20with%20PowerShell%0A&amp;url=https://blog.pollockweb.com/blog/configuring-uk-regional-settings-on-windows-servers-with-powershell/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span></a>
+<a class="md-button" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.pollockweb.com/blog/configuring-uk-regional-settings-on-windows-servers-with-powershell/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"/></svg></span></a></p>
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+  <div class="custom-footer">
+    <div class="custom-footer-left">
+      <p>Copyright &copy; 2025 Matthew Pollock</p>
+    </div>
+    <div class="custom-footer-right">
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="profile.pollockweb.com">
+        <i class="fas fa-globe"></i>
+      </a>
+      <a href="https://blog.pollockweb.com/feed_rss_created.xml" target="_blank" title="RSS Feed">
+        <i class="fa-solid fa-rss"></i>
+      </a>
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.select", "content.code.copy", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
