@@ -44,6 +44,12 @@ SAS tokens are useful, but:
 
 Managed Identity is a much better approach when the copy job is running from within Azure (like an Azure VM or Automation account).
 
+> 📖 *This post is part of my **Managed Identity Series** — replacing secrets with identity-based authentication across Azure services:*
+>
+> - **Blob Storage + AzCopy:** You're reading it.
+> - **SQL Managed Instance:** [Replacing SQL Credentials with UAMI in Azure SQL Managed Instance](../uami-sql/uami-sql.md)
+> - **Azure Files + REST API:** [Ditching Storage Account Keys: OAuth and Managed Identity for Azure Files REST API](../oauth-rest-storage/azure-files-oauth-managed-identity.md)
+
 ---
 
 ## 🌟 Project Goal

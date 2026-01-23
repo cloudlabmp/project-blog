@@ -42,6 +42,12 @@ Hardcoded SQL credentials come with several downsides:
 
 Azure Managed Identity solves this by providing a token-based, identity-first way to connect to services — no secrets required.
 
+> 📖 *This post is part of my **Managed Identity Series** — replacing secrets with identity-based authentication across Azure services:*
+>
+> - **Blob Storage + AzCopy:** [Replacing SAS Tokens with UAMI in AzCopy for Blob Uploads](../uami-storage/uami-storage.md)
+> - **SQL Managed Instance:** You're reading it.
+> - **Azure Files + REST API:** [Ditching Storage Account Keys: OAuth and Managed Identity for Azure Files REST API](../oauth-rest-storage/azure-files-oauth-managed-identity.md)
+
 ---
 
 ## ⚙️ What is a User Assigned Managed Identity?
