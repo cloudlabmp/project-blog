@@ -129,7 +129,7 @@ Before you start, ensure:
 4. **Azure IMDS:** Accessible from VMs (169.254.169.254)
 5. **API Version:** 2022-11-02 or later (2023-11-03 recommended)
 
-💡 **Note:** RBAC propagation can take 5-10 minutes after assignment. Testing immediately after assigning a role may fail — give it time.
+💡 **Note:** RBAC propagation can take 5-30 minutes after assignment. Testing immediately after assigning a role may fail — give it time.
 
 ---
 
@@ -378,7 +378,7 @@ These are **completely separate features**. If you're using REST API calls, you 
 
 **Cause:** RBAC changes take time to propagate
 
-**Solution:** Wait 5-10 minutes before testing. Azure's control plane needs time to replicate permissions.
+**Solution:** Wait 5-30 minutes before testing. Azure's control plane needs time to replicate permissions.
 
 ---
 
