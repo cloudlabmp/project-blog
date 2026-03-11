@@ -1,5 +1,5 @@
 ---
-title: "Vibe Coding My Way to AI Connected Infra: Claude, Terraform title: "🔥 Vibe Coding My Way to AI Connected Infra: Claude, Terraform & Cloud-Native Monitoring" Cloud-Native Monitoring"
+title: "Vibe Coding My Way to AI Connected Infra: Claude, Terraform & Cloud-Native Monitoring"
 description: "Terraform, Claude & Cloud-Native Monitoring"
 author: "Matt Pollock"
 date:
