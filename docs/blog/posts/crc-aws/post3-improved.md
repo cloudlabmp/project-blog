@@ -1,5 +1,5 @@
 ---
-title: "Cloud Resume Challenge with Terraform: Building the Backend API"
+title: "Cloud Resume Challenge with Terraform: Building the Backend API 🚀"
 draft: false
 date:
   created: 2025-03-19
@@ -9,9 +9,8 @@ authors:
 description: "Creating a serverless API with AWS Lambda, API Gateway, and DynamoDB using Terraform."
 categories:
   - AWS
-  - Terraform
-  - Serverless
-  - Cloud Resume Challenge
+  - DevOps
+  - Learning
 tags:
   - lambda
   - api-gateway
@@ -23,6 +22,8 @@ tags:
 # Cloud Resume Challenge with Terraform: Building the Backend API 🚀
 
 In our [previous posts](post2-improved.md), we set up the frontend infrastructure for our resume website using Terraform. Now it's time to build the backend API that will power our visitor counter.
+
+<!-- more -->
 
 ## Backend Architecture Overview 🏗️
 

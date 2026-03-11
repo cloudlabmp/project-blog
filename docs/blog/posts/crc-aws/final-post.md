@@ -1,5 +1,5 @@
 ---
-title: "Cloud Resume Challenge with Terraform: Final Reflections & Future Directions"
+title: "Cloud Resume Challenge with Terraform: Final Reflections & Future Directions 🎯"
 draft: false
 date:
   created: 2025-03-21
@@ -9,10 +9,8 @@ authors:
 description: "Reflecting on lessons learned from the Cloud Resume Challenge, exploring next steps, and discussing how the skills gained apply to real-world cloud engineering roles."
 categories:
   - AWS
-  - Terraform
   - DevOps
-  - Career Development
-  - Cloud Resume Challenge
+  - Learning
 tags:
   - cloud-resume-challenge
   - terraform
@@ -39,6 +37,8 @@ The final architecture we've created looks like this:
 ![Basic Project Diagram](CRCArchitecture.png)
 
 The most valuable aspect of this project is that we've built a **completely automated, production-quality cloud solution**. Every component is defined as code, enabling us to track changes, rollback if needed, and redeploy the entire infrastructure with minimal effort.
+
+<!-- more -->
 
 ## Key Learnings from the Challenge 🧠
 

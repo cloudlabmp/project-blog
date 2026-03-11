@@ -1,5 +1,5 @@
 ---
-title: "Cloud Resume Challenge with Terraform: Automating Deployments with GitHub Actions"
+title: "Cloud Resume Challenge with Terraform: Automating Deployments with GitHub Actions ⚡"
 draft: false
 date:
   created: 2025-03-20
@@ -9,10 +9,8 @@ authors:
 description: "Setting up GitHub Actions for CI/CD automation of Terraform deployments to AWS."
 categories:
   - AWS
-  - Terraform
   - DevOps
-  - CI/CD
-  - Cloud Resume Challenge
+  - Learning
 tags:
   - github-actions
   - terraform
@@ -24,6 +22,8 @@ tags:
 # Cloud Resume Challenge with Terraform: Automating Deployments with GitHub Actions ⚡
 
 In our [previous posts](post3-improved.md), we built the frontend and backend components of our cloud resume project. Now it's time to take our implementation to the next level by implementing **continuous integration and deployment (CI/CD)** with GitHub Actions.
+
+<!-- more -->
 
 ## Why CI/CD Is Critical for Cloud Engineers 🛠️
 

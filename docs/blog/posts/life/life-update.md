@@ -1,5 +1,5 @@
 ---
-title: "Life Update: Projects, Learning, and the Usual Balancing Act"
+title: "📌 Life Update: Projects, Learning, and the Usual Balancing Act"
 date:
   created: 2025-02-04
   updated: 2025-02-04
@@ -19,7 +19,9 @@ tags:
 
 📷 *![My Workspace](laptop.png)*
 
-Life has been ticking along — work, learning, personal projects. Nothing dramatic, but I thought I’d put down some thoughts on what I’ve been up to. Mostly for my own benefit, but if anyone else finds it useful, all the better.  
+Life has been ticking along — work, learning, personal projects. Nothing dramatic, but I thought I’d put down some thoughts on what I’ve been up to. Mostly for my own benefit, but if anyone else finds it useful, all the better.
+
+<!-- more -->
 
 ---
 

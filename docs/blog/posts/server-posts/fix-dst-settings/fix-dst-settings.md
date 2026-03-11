@@ -1,5 +1,5 @@
 ---
-title: "Enforcing Time Zone and DST Compliance on Windows Servers Using GPO and Scheduled Tasks"
+title: "⌚Enforcing Time Zone and DST Compliance on Windows Servers Using GPO and Scheduled Tasks"
 date:
   created: 2025-03-31
   updated: 2025-04-02
@@ -7,10 +7,8 @@ authors:
   - matthew
 description: "Ensure consistent GMT Standard Time configuration and Daylight Saving Time (DST) handling across domain-joined Windows Servers using a scheduled task GPO approach. Includes auditing and remediation scripts for enterprise environments."
 categories:
-  - Windows
+  - Infrastructure
   - Automation
-  - Group Policy
-  - Time Settings
 tags:
   - dst
   - timezone
@@ -33,6 +31,8 @@ Time zone misconfigurations — especially those affecting Daylight Saving Time 
 - Errors in time-sensitive integrations
 
 Windows doesn’t always honour DST automatically, particularly in **Azure VMs**, **automated deployments**, or **custom images**.
+
+<!-- more -->
 
 ---
 

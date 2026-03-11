@@ -1,5 +1,5 @@
 ---
-title: "From PDF Overload to AI Clarity: Building an AI RAG Assistant"
+title: "📚 From PDF Overload to AI Clarity: Building an AI RAG Assistant"
 description: "How I built an AI-powered RAG assistant"
 author: "Matt Pollock"
 date:
@@ -18,15 +18,8 @@ tags:
   - claude
 categories:
   - AI
-  - RAG
-  - Projects
-  - Containers
-  - Docker
-  - Vector Databases
-  - Azure OpenAI
-  - Claude Code
-  - Vibe Coding
-  - Learning Projects
+  - DevOps
+  - Learning
 reading_time: "6 min"
 ---
 
@@ -45,6 +38,8 @@ This project also doubled as a test bed for [Claude Code](https://claude.ai/), w
 I wanted to see how it fared when building something from scratch in an IDE, rather than in a chat window.  
 
 👉 In this post, I’ll give a very high level overview of the four iterations (v1–v4) - what worked, what failed, and what I learned along the way.
+
+<!-- more -->
 
 ---
 

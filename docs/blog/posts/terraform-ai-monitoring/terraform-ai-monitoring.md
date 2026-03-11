@@ -1,5 +1,5 @@
 ---
-title: "Vibe Coding My Way to AI Infra"
+title: "🔥 Vibe Coding My Way to AI Connected Infra: Claude, Terraform & Cloud-Native Monitoring"
 description: "Terraform, Claude & Cloud-Native Monitoring"
 author: "Matt Pollock"
 date:
@@ -20,10 +20,9 @@ tags:
   - AI Slop-Ops
   - Slop-Ops
 categories:
+  - AI
+  - DevOps
   - Infrastructure
-  - AI Integration
-  - Cloud Engineering
-  - Learning Projects
 reading_time: "20 min"
 ---
 
@@ -48,6 +47,8 @@ What followed was a journey to explore whether such a role could be real. I set 
 
 - Use GenAI to design and deploy a full solution
 - Embrace the unknown and lean into the chaos of LLM-based workflows
+
+<!-- more -->
 - Create something reusable, repeatable, and useful
 
 The first phase of the journey was a local prototype using my Pi5 and n8n for AI workflow automation (see my previous post for that). It worked — but it was local, limited, and not exactly enterprise-ready.

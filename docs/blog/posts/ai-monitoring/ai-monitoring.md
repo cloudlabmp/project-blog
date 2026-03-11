@@ -1,5 +1,5 @@
 ---
-title: "Building AI-Powered Infrastructure Monitoring: From Home Lab to Cloud Production"
+title: "🍓 Building AI-Powered Infrastructure Monitoring: From Home Lab to Cloud Production"
 description: "A comprehensive guide to integrating AI into infrastructure monitoring using Prometheus, Grafana, n8n, and Azure OpenAI. Learn to transform traditional alerts into intelligent business insights through hands-on home lab experimentation."
 author: "Matt Pollock"
 date:
@@ -17,10 +17,9 @@ tags:
   - Cloud Infrastructure
   - Workflow Automation
 categories:
-  - Infrastructure
-  - AI Integration
+  - AI
   - Monitoring
-  - Learning Projects
+  - Infrastructure
 reading_time: "25 min"
 ---
 # 🍓 Building AI-Powered Infrastructure Monitoring: From Home Lab to Cloud Production
@@ -38,6 +37,8 @@ After successfully diving into AI automation with n8n (and surviving the OAuth b
 - Practical skills for integrating AI into traditional monitoring workflows
 
 Here's how I built a home lab monitoring system to explore AI integration patterns that can be applied to production cloud infrastructure.
+
+<!-- more -->
 
 *Full disclosure: I'm using a Visual Studio Enterprise subscription which provides £120 monthly Azure credits. This makes Azure OpenAI experimentation cost-effective for learning purposes. I found direct OpenAI API connections too expensive for extensive experimentation.*
 

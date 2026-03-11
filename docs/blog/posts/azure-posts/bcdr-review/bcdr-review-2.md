@@ -1,5 +1,5 @@
 ---
-title: "Azure BCDR – How I Turned a DR Review into a Strategic Recovery Plan"
+title: "🧾 Azure BCDR – How I Turned a DR Review into a Strategic Recovery Plan"
 date:
   created: 2025-05-08
   updated: 2025-05-08
@@ -8,8 +8,6 @@ authors:
 description: "Part 2 of a real-world Azure BCDR journey: how I transformed a discovery-led review into a structured recovery plan with prioritised actions and stakeholder alignment."
 categories:
   - Azure
-  - BCDR
-  - Cloud Architecture
 tags:
   - azure
   - bcdr
@@ -29,6 +27,8 @@ This post outlines how I took that review and turned it into a practical recover
 To provide context, our estate is deployed primarily in the **UK South** Azure region, with **UK West** serving as the designated DR target region.
 
 It’s not a template — it’s a repeatable, real-world approach to structuring a BCDR plan when you’re starting from inherited infrastructure, not a clean slate.
+
+<!-- more -->
 
 ---
 

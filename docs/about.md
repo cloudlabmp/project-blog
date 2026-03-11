@@ -1,95 +1,52 @@
-# Profile
-
-### Hi, I'm Matthew Pollock. 👋
-
-**Lead Infrastructure Engineer | Cloud Engineer | IT Infrastructure Manager**  
-
+---
+hide:
+  - toc
 ---
 
-### About Me
+# About
 
 ![Profile Picture](https://avatars.githubusercontent.com/u/110421070?s=400&v=4){.avatar-left}
 
-- ⚡ I like technology that actually works. Not hype, not complexity for the sake of it – just smart, practical solutions that solve real problems.
-- 🎯 My approach to IT is straightforward: learn what’s useful, implement it properly, and make things better.
-- 🚀 I don’t follow trends just because they’re trends. If a new technology makes sense, I’ll dig into it, test it, and figure out how to use it in a way that improves reliability, efficiency, and security. If it doesn’t? I move on.
+I'm Matthew Pollock, a senior cloud and infrastructure engineer based in the UK. My career spans cloud engineering, infrastructure management, and systems administration across Azure and AWS -- leading cloud migrations, building out identity and security platforms with the Microsoft stack (Entra ID, Defender, Intune, Sentinel), and managing infrastructure teams. More recently, I've been focused on integrating AI tooling into engineering workflows and exploring DevOps practices.
 
-### What I Focus On: 🔍
+This blog documents that work. It started as personal notes on using AI assistants for cloud operations, scripting, and troubleshooting, and turned into something I thought others might find useful. Most of the content reflects real problems I've solved or approaches I've tested, rather than theoretical walkthroughs. I also run a home lab where I experiment with tools and patterns before committing to them professionally -- Terraform deployments, container experiments, and whatever else I'm tinkering with at the time.
 
-- ✅ Learning with purpose – staying ahead, but only where it counts
-- ✅ Making things work – cloud, automation, security, infrastructure
-- ✅ Cutting through the noise – useful tech over pointless buzzwords
-- ✅ Helping others – sharing knowledge when it actually benefits someone
+## Away from the keyboard
 
-💡 IT should be effective, not overcomplicated. If something needs fixing, I’ll fix it. If it can be improved, I’ll improve it. And if it’s just a waste of time? I’ll call it what it is.
+When I'm not working with cloud infrastructure, I'm usually outdoors. I'm a keen patch birder -- most of my birding is done by bike, on foot, or by public transport, following the low-carbon birding approach. I'm passionate about birds and the environment more broadly, and I'd love to find a way to blend my tech skills with conservation work one day.
 
-### Contact Me 📬
+I also spend a lot of time in the garden, where the focus is on wildlife -- native planting, nest boxes, and making the space as useful as possible for birds and pollinators. Jogging rounds out the routine, ideally on routes where there's something worth stopping to look at.
 
-- 📞 [Mobile: +44 7751720891](tel:+447751720891)
-- 📧 [Email: matt.pollock@outlook.com](mailto:matt.pollock@outlook.com)
+You can find my birding posts on [Bluesky](https://bsky.app/profile/mattp1975.bsky.social).
 
-[📥 Download CV](Matthew_Pollock_CV.docx)
+## Certifications
 
----
+- Microsoft Certified: Azure DevOps Engineer Expert (AZ-400)
+- Microsoft Certified: Azure Security Engineer Associate (AZ-500)
+- Microsoft Certified: Azure Solutions Architect Expert (AZ-305)
+- Microsoft Certified: Azure Administrator Associate (AZ-104)
+- AWS Certified: Solutions Architect Associate (SAA-C02)
+- AWS Certified: Cloud Practitioner (CLF-C01)
+- Microsoft Certified: Azure Fundamentals (AZ-900)
+- Legacy Microsoft certifications: MCP, MCSA, MCSE, MCTS, MCITP
 
-## Resume 🏆
+## Skills
 
-### Career 💼
+**Cloud and infrastructure:** Azure, AWS, hybrid cloud, Azure Functions, Azure Data Explorer, Cosmos DB, Application Insights, Log Analytics, Power BI, Windows Server, Active Directory, Entra ID, Exchange Online, Microsoft 365, networking, DNS, firewalls, SD-WAN.
 
-#### **AX Ltd - Cloud & IT Infrastructure Lead**  
+**Security and compliance:** Defender for Endpoint, Intune, Sentinel, Conditional Access, Zero Trust, KQL, Microsoft Graph API, Mimecast.
 
-*📅 December 2024 - Present*
+**DevOps and automation:** Terraform, Bicep, GitHub Actions, Azure DevOps, Azure Pipelines, CI/CD, PowerShell, Python, Bash, C# (.NET 8), Docker, Git.
 
-- ☁️ **Cloud Operations:** Manage and optimize Azure and AWS environments, ensuring secure, scalable, and cost-efficient infrastructure to support business operations.
-- 🔐 **Identity & Security:** Maintain secure identity systems with Azure AD, including MFA, Conditional Access Policies, and Privileged Identity Management.
-- 🛡️ **Governance & Compliance:** Establish and enforce governance policies with Azure Policy, Group Policy, and Defender for Cloud.
-- 🔍 **Monitoring & Performance:** Use tools such as Azure Monitor, AWS CloudWatch, and PRTG Monitoring.
-- 🎯 **Strategic Planning:** Drive innovation and cloud optimization.
-- 🤝 **Collaboration & Mentorship:** Provide mentorship to enhance team expertise and innovation.
+**Data and integration:** Azure Data Explorer (Kusto), Cosmos DB vector search, Event Grid, Blob Storage, REST API integration, CXone real-time data APIs.
 
-#### **AX Ltd - IT Infrastructure Manager**  
+**AI and tooling:** Azure OpenAI, Claude Code, Claude Cowork, Codex, ChatGPT, Gemini, Ollama, RAG pipelines, vector embeddings, prompt engineering, AI-assisted development workflows, LLM integration.
 
-*📅 January 2017 - December 2024*
+## Contact
 
-- 🚀 Led full-scale cloud migration to Microsoft Azure.
-- 👥 Managed and mentored a team of five infrastructure engineers.
-- 🏗️ Designed and implemented infrastructure for remote depot sites.
-- 💰 Optimized vendor relationships and licensing agreements.
-
-#### **AX Ltd - Senior IT Infrastructure Engineer**  
-
-*📅 November 2011 - December 2016*
-
-- 💡 Designed and executed multiple Microsoft Exchange migrations and domain controller refreshes.
-- 🔐 Implemented and optimized Azure AD services.
-- 🛠️ Deployed Microsoft Intune and the Defender suite.
-- 🚀 Led security enhancements, including email hygiene solutions and Active Directory Group Policies.
-
-### Certifications 🎓
-
-#### **Cloud Technologies (2021 - Present) ☁️**
-
-- 🏆 Microsoft Certified: Azure DevOps Engineer Expert (AZ-400)
-- 🏆 Microsoft Certified: Azure Security Engineer Associate (AZ-500)
-- 🏆 Microsoft Certified: Azure Solutions Architect Expert (AZ-305)
-- 🏆 Microsoft Certified: Azure Administrator Associate (AZ-104)
-- 🏆 AWS Certified: Solutions Architect Associate (SAA-C02)
-- 🏆 AWS Certified: Cloud Practitioner (CLF-C01)
-- 🏆 Microsoft Certified: Azure Fundamentals (AZ-900)
-
-#### **Microsoft Server Technologies (2001 - 2019) 🖥️**
-
-- 🏅 MCP, MCSA, MCSE, MCTS, MCITP
-- 🖥️ Microsoft Windows Server 2003/2008/2012
-- 📧 Microsoft Exchange 2010/2013
-
-### Skills 🛠️
-
-- ☁️ **Cloud Technologies:** Azure, AWS, hybrid cloud solutions
-- 🔧 **Systems Administration:** Windows Server, Active Directory, Exchange, M365
-- ⚙️ **Scripting & Automation:** PowerShell, Azure CLI, Python
-- 🛡️ **Security & Compliance:** Defender for Endpoint, Intune, Zero Trust security models
-- 🌍 **Infrastructure Optimization:** Networking, DNS, firewalls, SD-WAN, VPNs
-- 🔄 **DevOps & IaC:** Terraform, Bicep, GitHub Actions, Azure DevOps
+- [Email: matt.pollock@outlook.com](mailto:matt.pollock@outlook.com)
+- [LinkedIn](https://linkedin.com/in/matthew-pollock-76831920/)
 
 ---
+
+[Full career history](work.md) | [Certifications and training log](learn.md)

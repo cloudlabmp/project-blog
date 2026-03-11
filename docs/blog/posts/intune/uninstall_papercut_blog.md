@@ -1,5 +1,5 @@
 ---
-title: "Uninstalling PaperCut MF Client via Intune – A Step-by-Step Guide"
+title: "📢 Uninstalling PaperCut MF Client via Intune – A Step-by-Step Guide 🚀"
 date:
   created: 2025-03-11
   updated: 2025-03-11
@@ -7,9 +7,8 @@ authors:
   - matthew
 description: "A guide to unistalling software using Powershell and Intune"
 categories:
-  - Intune
+  - Security
   - Automation
-  - Scripting
 tags:
   - intune
   - powershell
@@ -24,6 +23,8 @@ tags:
 Managing software across an enterprise can be a headache, especially when it comes to **removing outdated applications**. Recently, I needed to **uninstall the PaperCut MF Client from multiple Windows PCs** in my environment. The challenge? Ensuring a clean removal **without user intervention** and **no leftover files**.
 
 Rather than relying on manual uninstallation, we used **Microsoft Intune** to deploy a **PowerShell script** that handles the removal automatically. This blog post details the full process, from **script development to deployment and testing**.
+
+<!-- more -->
 
 ---
 

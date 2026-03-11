@@ -1,5 +1,5 @@
 ---
-title: "Configuring UK Regional Settings on Windows Servers with PowerShell"
+title: "⏲️ Configuring UK Regional Settings on Windows Servers with PowerShell"
 date:
   created: 2025-03-31
   updated: 2025-03-31
@@ -7,10 +7,8 @@ authors:
   - matthew
 description: "A PowerShell-based guide to applying consistent UK regional settings to Windows Server systems, especially in cloud or automated environments."
 categories:
-  - Windows
-  - PowerShell
+  - Infrastructure
   - Automation
-  - Regional Settings
 tags:
   - powershell
   - windows server
@@ -25,6 +23,8 @@ tags:
 When building out cloud-hosted or automated deployments of Windows Servers, especially for UK-based organisations, it’s easy to overlook **regional settings**. But these seemingly small configurations — like date/time formats, currency symbols, or keyboard layouts — can have a big impact on usability, application compatibility, and user experience.
 
 In this post, I’ll show how I automate this using a simple PowerShell script that sets all relevant UK regional settings in one go.
+
+<!-- more -->
 
 ---
 

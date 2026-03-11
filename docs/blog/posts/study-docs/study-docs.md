@@ -1,5 +1,5 @@
 ---
-title: "How I used ChatGPT to create AZ-400 exam prep notes from MSLearn"
+title: "📝 How I Used ChatGPT to Create AZ-400 Exam Prep Notes from MSLearn"
 date:
   created: 2025-03-09
   updated: 2025-03-09
@@ -8,9 +8,8 @@ authors:
 description: "My experience using AI and GitHub to streamline study notes for Microsoft certification exams."
 
 categories:
-  - DevOps
-  - Microsoft Certifications
-  - AI & Study Techniques
+  - Learning
+  - AI
 tags:
   - azure
   - certification
@@ -25,6 +24,8 @@ tags:
 Using the method detailed in this post, I successfully **passed the AZ-400 exam** while creating a reusable study system. This approach helped me transform **34+ hours of MSLearn content** into structured, searchable revision notes that I could quickly reference during my exam preparation.
 
 Let me walk you through how I developed this system and how you can apply it to your own certification journey.
+
+<!-- more -->
 
 ## The Challenge
 

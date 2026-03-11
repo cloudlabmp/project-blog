@@ -1,3 +1,4 @@
+{% if page.meta.get("comments", true) and page.file.src_path.startswith("blog/posts/") %}
 <script src="https://giscus.app/client.js"
         data-repo="cloudlabmp/project-blog"
         data-repo-id="R_kgDOODgKaQ"
@@ -13,3 +14,4 @@
         crossorigin="anonymous"
         async>
 </script>
+{% endif %}

@@ -1,5 +1,5 @@
 ---
-title: "Replacing SQL Credentials with User Assigned Managed Identity (UAMI) in Azure SQL Managed Instance"
+title: "🔑 Replacing SQL Credentials with User Assigned Managed Identity (UAMI) in Azure SQL Managed Instance"
 date:
   created: 2025-03-27
   updated: 2025-03-27
@@ -8,7 +8,6 @@ authors:
 description: "A step-by-step guide to replacing hardcoded SQL credentials with User Assigned Managed Identity (UAMI) authentication in Azure SQL Managed Instance."
 categories:
   - Azure
-  - SQL
   - Security
 tags:
   - azure
@@ -19,7 +18,7 @@ tags:
   - identity
 ---
 
-# Replacing SQL Credentials with User Assigned Managed Identity (UAMI) in Azure SQL Managed Instance
+# 🔑 Replacing SQL Credentials with User Assigned Managed Identity (UAMI) in Azure SQL Managed Instance
 
 Storing SQL usernames and passwords in application configuration files is still common practice — but it poses a significant security risk. As part of improving our cloud security posture, I recently completed a project to eliminate plain text credentials from our app connection strings by switching to **Azure User Assigned Managed Identity (UAMI)** authentication for our **SQL Managed Instance**.
 
@@ -29,6 +28,8 @@ In this post, I’ll walk through how to:
 - Use a **User Assigned Managed Identity (UAMI)** for authentication
 - Test this connection using the new Go-based `sqlcmd` CLI
 - Update real application code to remove SQL credentials
+
+<!-- more -->
 
 ---
 

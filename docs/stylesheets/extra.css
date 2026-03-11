@@ -1,5 +1,5 @@
 .md-header__button.md-logo {
-    margin-top: 10;
+    margin-top: 10px;
     margin-bottom: 0;
     padding-top: 0;
     padding-bottom: 0;
@@ -82,10 +82,10 @@
 }
 
 .avatar-left {
-    width: 103px;  /* Adjust the size as needed */
-    height: 150px;
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover;  /* Ensures the image covers the area without distortion */
-    display: block;
-    margin: 0 left;     /* Centers the image horizontally */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    float: left;
+    margin: 0 20px 10px 0;
 }

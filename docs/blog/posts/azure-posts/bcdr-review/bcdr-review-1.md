@@ -1,5 +1,5 @@
 ---
-title: "Azure BCDR Review – Turning Inherited Cloud Infrastructure into a Resilient Recovery Strategy"
+title: "⚙️ Azure BCDR Review – Turning Inherited Cloud Infrastructure into a Resilient Recovery Strategy"
 date:
   created: 2025-05-08
   updated: 2025-05-08
@@ -8,8 +8,6 @@ authors:
 description: "A high-level walkthrough of how to assess and formalise a business continuity and disaster recovery (BCDR) posture in Azure, following an inherited landing zone handover."
 categories:
   - Azure
-  - BCDR
-  - Cloud Architecture
 tags:
   - azure
   - bcdr
@@ -29,6 +27,8 @@ There were no formal recovery plans defined in ASR, no clear failover sequences,
 This post shares how I approached the challenge of assessing and strengthening our Azure BCDR readiness. It's not about starting from scratch — it's about applying structure, logic, and realism to an environment that had the right intentions but lacked operational clarity.
 
 Whether you're stepping into a similar setup or planning your first formal DR review, I hope this provides a practical and relatable blueprint.
+
+<!-- more -->
 
 ---
 

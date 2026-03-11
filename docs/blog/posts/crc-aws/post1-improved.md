@@ -1,5 +1,5 @@
 ---
-title: "Cloud Resume Challenge with Terraform: Introduction & Setup"
+title: "Cloud Resume Challenge with Terraform: Introduction & Setup 🚀"
 draft: false
 date:
   created: 2025-03-17
@@ -9,9 +9,8 @@ authors:
 description: "An introduction to the Cloud Resume Challenge and how to set up Terraform for AWS infrastructure as code."
 categories:
   - AWS
-  - Terraform
   - DevOps
-  - Cloud Resume Challenge
+  - Learning
 tags:
   - cloud
   - terraform
@@ -38,6 +37,8 @@ I chose Terraform over AWS SAM or CloudFormation because:
 4. **Strong community** - The extensive module registry and community support made learning easier
 
 This series reflects my personal journey through the challenge, including the obstacles I overcame and the lessons I learned along the way.
+
+<!-- more -->
 
 ### **Why Terraform?** 🛠️
 

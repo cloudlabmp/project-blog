@@ -1,11 +1,11 @@
 ---
-title: "First Steps into AI Automation: My Journey from Trial to Self-Hosted Chaos"
+title: "🤖 First Steps into AI Automation: My Journey from Trial to Self-Hosted Chaos"
 description: "A real-world walkthrough of experimenting with n8n, Ollama, and OpenWebUI - complete with the inevitable OAuth headaches and Docker container migrations."
 author: Matt Pollock
 date:
     created: 2025-06-09
     updated: 2025-06-09
-categories: [AI, Automation, Self-Hosting]
+categories: [AI, Automation]
 tags: [n8n, Ollama, OpenWebUI, Azure OpenAI, Docker, Email Automation, LLM, Self-Hosting]
 ---
 
@@ -24,6 +24,8 @@ After months of reading about AI automation tools and watching everyone else's p
 - Time investment reality: ~10 hours over 1 week for this project
 
 Here's how my first real foray into AI automation unfolded — spoiler alert: it involved more container migrations than I initially planned.
+
+<!-- more -->
 
 **Hardware baseline for this project:**
 

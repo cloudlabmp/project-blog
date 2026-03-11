@@ -1,5 +1,5 @@
 ---
-title: "Replacing SAS Tokens with User Assigned Managed Identity (UAMI) in AzCopy for Blob Uploads"
+title: "🕵️ Replacing SAS Tokens with User Assigned Managed Identity (UAMI) in AzCopy for Blob Uploads"
 date:
   created: 2025-03-28
   updated: 2025-03-28
@@ -8,8 +8,7 @@ authors:
 description: "A step-by-step guide to replacing AzCopy SAS token authentication with User Assigned Managed Identity (UAMI) for uploading files to Azure Blob Storage."
 categories:
   - Azure
-  - Storage
-  - Identity
+  - Security
   - Automation
 tags:
   - azure
@@ -31,6 +30,8 @@ In this post, I’ll walk through how to:
 - Assign the right roles to the UAMI
 - Use `azcopy login` to authenticate non-interactively
 - Automate the whole process in PowerShell
+
+<!-- more -->
 
 ---
 

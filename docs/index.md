@@ -1,45 +1,16 @@
 ---
-title: "Welcome to My Blog!"
-date:
-  created: 2025-01-10
-  updated: 2025-01-10
-description: "An introduction to my blog and what to expect."
-categories:
-  - Introduction
-  - MkDocs
-  - Documentation
-  - Tech
-authors:
-  - matthew
-tags:
-  - technology
-  - learning
+hide:
+  - toc
 ---
 
-# Welcome to My Blog
+# Matthew Pollock
 
-Hello and welcome to my blog! 🎉
+Senior Cloud and Infrastructure Engineer writing about practical experiences with AI-assisted engineering, cloud infrastructure, and homelab experiments.
 
-This blog is a place where I'll be documenting my projects, sharing insights, and keeping track of useful information related to IT, cloud infrastructure, automation, and more. If you're here, chances are you're interested in similar topics, so I hope you find this content helpful!
+## What you'll find here
 
-## Why This Blog?
+- **AI as an engineering assistant** -- Using AI tools to accelerate cloud operations, automate workflows, and solve real infrastructure problems
+- **Cloud infrastructure and DevOps** -- Azure and AWS patterns, automation, security, and lessons learned from production environments
+- **Homelab experiments** -- Testing new tools and approaches in a home lab before they reach production
 
-I've started this blog as a centralized knowledge base for my work and learning experiences. Rather than storing documentation across different platforms, I'll be using **MkDocs** to create my content, and **GitHub** to keep everything structured and easily accessible.
-
-## What to Expect
-
-Here are some of the topics I'll be covering:
-
-- **IT Infrastructure & Cloud Technologies** – Insights on Azure, AWS, and hybrid environments.
-- **Automation & Scripting** – Useful scripts, automation techniques, and efficiency tips.
-- **Cybersecurity & Compliance** – Best practices and lessons learned.
-- **Troubleshooting & Solutions** – Step-by-step guides to solving technical challenges.
-- **Personal Learning & Development** – Certifications, learning resources, and productivity tips.
-
-## Next Steps
-
-I'll be updating this blog regularly with useful content, so stay tuned! If you have any suggestions or topics you'd like me to cover, feel free to reach out.
-
-Thanks for stopping by, and I hope you find this blog useful! 🚀
-
----
+Head over to the [blog](blog/index.md) to browse the latest posts.

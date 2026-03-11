@@ -1,5 +1,5 @@
 ---
-title: "GitOps Project: Automating AWS infrastructure deployment with Terraform and GitHub Actions"
+title: "🔁 GitOps Project: Automating AWS Infrastructure Deployment with Terraform and GitHub Actions"
 date:
   created: 2025-03-06
   updated: 2025-03-06
@@ -11,9 +11,7 @@ read_time: 15
 description: "Step-by-step guide on setting up a GitOps pipeline using Terraform, AWS, and GitHub Actions."
 
 categories:
-  - Terraform
-  - IaC
-  - GitOps
+  - DevOps
 tags:
   - technology
   - iac
@@ -30,6 +28,8 @@ This blog post documents my experience with the [MoreThanCertified GitOps Minica
 This tutorial is meant as an overview "at-a-glance" summary of the steps I took to implement the pipeline from project start, to resource deployment.
 The [MoreThanCertified GitOps Minicamp](https://morethancertified.com/course/gitops-for-terraform-minicamp)
 goes into a lot more detail and covers all the topics in this post in more depth. I would highly recommend checking the course out if you haven't already.
+
+<!-- more -->
 
 In this tutorial, I will guide you through:
 

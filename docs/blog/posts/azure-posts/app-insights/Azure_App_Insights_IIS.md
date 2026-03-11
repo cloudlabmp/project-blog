@@ -1,5 +1,5 @@
 ---
-title: "Monitoring an IIS-Based Web Farm with Azure Application Insights"
+title: "📊 Monitoring an IIS-Based Web Farm with Azure Application Insights"
 date:
   created: 2025-03-12
   updated: 2025-03-12
@@ -8,8 +8,7 @@ authors:
 description: "A step-by-step guide to setting up and configuring Azure Application Insights for IIS-based web farms."
 categories:
   - Azure
-  - IIS
-  - Application Insights
+  - Monitoring
 tags:
   - azure
   - monitoring
@@ -28,6 +27,8 @@ In this guide, you'll learn how to:
 ✅ Monitor **live metrics, failures, performance, and logs** in real-time.  
 
 By the end, you'll have a **fully monitored** IIS-based web farm using Azure! 🎯
+
+<!-- more -->
 
 ---
 

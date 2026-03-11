@@ -1,5 +1,5 @@
 ---
-title: "Cloud Resume Challenge with Terraform: Deploying the Static Website"
+title: "Cloud Resume Challenge with Terraform: Deploying the Static Website 🚀"
 draft: false
 date:
   created: 2025-03-18
@@ -9,9 +9,8 @@ authors:
 description: "Using Terraform to deploy a static website on AWS with S3, CloudFront, Route 53, and SSL encryption."
 categories:
   - AWS
-  - Terraform
-  - Web Hosting
-  - Cloud Resume Challenge
+  - DevOps
+  - Learning
 tags:
   - s3
   - cloudfront
@@ -26,6 +25,8 @@ tags:
 ## Introduction 🌍
 
 In the [previous post](post1-improved.md), we set up our Terraform environment and outlined the architecture for our Cloud Resume Challenge project. Now it's time to start building! In this post, we'll focus on deploying the first component: **the static website** that will host our resume.
+
+<!-- more -->
 
 ## Frontend Architecture Overview 🏗️
 

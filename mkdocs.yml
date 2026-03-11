@@ -1,20 +1,18 @@
-site_name: cloudlabmp
+site_name: Matthew Pollock
 site_url: https://blog.pollockweb.com/
 #site_url: https://cloudlabmp.github.io/project-blog
 #site_url: https://127.0.0.1/project-blog
 site_author: matt.pollock@outlook.com
-site_description: A blog about tech stuff
-repo_url: https://github.com/cloudlabmp/project-blog
-repo_name: "cloudlabmp/project-blog"
+site_description: "Practical experiences using AI as an engineering assistant — cloud infrastructure, DevOps, and homelab experiments"
+#repo_url: https://github.com/cloudlabmp/project-blog
+#repo_name: "cloudlabmp/project-blog"
 
 nav:
   - Home: index.md
   - Blog:
       - Posts: blog/index.md
       - Tags: blog/tags.md
-  - Learn: learn.md
   - About: about.md
-  - Work: work.md
 
 theme:
   name: material
@@ -78,16 +76,16 @@ plugins:
       json_feed_enabled: false  # Reduce complexity
 
   - git-committers:
-      enabled: true
+      enabled: false
       repository: cloudlabmp/project-blog
       branch: main
       token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
 
   - git-revision-date-localized:
       type: date
-      fallback_to_build_date: false
+      fallback_to_build_date: true
       enable_creation_date: true
-      enabled: true
+      enabled: false
   
 extra:
   homepage: https://blog.pollockweb.com/blog/
@@ -114,6 +112,7 @@ hooks:
 
 markdown_extensions:
   - admonition
+  - pymdownx.details
   - attr_list
   - md_in_html
   - pymdownx.emoji:
@@ -139,4 +138,4 @@ markdown_extensions:
 extra_css:
     - stylesheets/extra.css
 
-copyright: Copyright &copy; 2025 Matthew Pollock
+copyright: Copyright &copy; 2026 Matthew Pollock

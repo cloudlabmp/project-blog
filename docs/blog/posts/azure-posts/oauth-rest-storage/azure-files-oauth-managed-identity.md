@@ -1,5 +1,5 @@
 ---
-title: "Ditching Storage Account Keys: OAuth and Managed Identity for Azure Files REST API"
+title: "🔐 Ditching Storage Account Keys: OAuth and Managed Identity for Azure Files REST API"
 description: "How to replace storage account key authentication with managed identity OAuth tokens for Azure Files REST API access — and the critical header that makes it work."
 author: "Matt Pollock"
 date:
@@ -16,8 +16,6 @@ tags:
 categories:
   - Azure
   - Security
-  - Identity
-  - Cloud Infrastructure
 reading_time: "8 min"
 ---
 
@@ -33,6 +31,8 @@ For SMB access, use the dedicated Storage File Data SMB Share roles instead.
 - 📦 **No additional SMB OAuth configuration** is required on the storage account when using OAuth authentication over the REST API.
 
 OAuth-based REST access can be introduced alongside existing Shared Key or SAS usage during migration.
+
+<!-- more -->
 
 ---
 

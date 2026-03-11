@@ -1,5 +1,5 @@
 ---
-title: "Saving Azure Costs with Scheduled VM Start/Stop using Custom Azure Automation Runbooks"
+title: "💰 Saving Azure Costs with Scheduled VM Start/Stop using Custom Azure Automation Runbooks"
 date:
   created: 2025-04-22
   updated: 2025-04-22
@@ -9,8 +9,6 @@ description: "Implement cost-saving automation in Azure using lightweight, tag-d
 categories:
   - Azure
   - Automation
-  - FinOps
-  - PowerShell
 tags:
   - azure automation
   - vm schedule
@@ -25,6 +23,8 @@ tags:
 As part of my ongoing commitment to FinOps practices, I've implemented several strategies to embed cost-efficiency into the way we manage cloud infrastructure. One proven tactic is scheduling virtual machines to shut down during idle periods, avoiding unnecessary spend.
 
 In this post, I’ll share how I’ve built out **custom Azure Automation jobs** to schedule VM start and stop operations. Rather than relying on Microsoft’s pre-packaged solution, I’ve developed a **streamlined, purpose-built PowerShell implementation** that provides maximum flexibility, transparency, and control.
+
+<!-- more -->
 
 ---
 

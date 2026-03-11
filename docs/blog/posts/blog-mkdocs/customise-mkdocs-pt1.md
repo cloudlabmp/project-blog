@@ -1,5 +1,5 @@
 ---
-title: "Customizing Your MkDocs Blog"
+title: "Customizing Your MkDocs Blog 🎨"
 date:
   created: 2025-03-03
   updated: 2025-03-03
@@ -10,10 +10,7 @@ authors:
   - james
 description: "Enhance your MkDocs blog with themes, plugins, and customization options."
 categories:
-  - MkDocs
-  - Customization
   - Blogging
-  - Tech
 tags:
   - technology
   - learning
@@ -24,6 +21,8 @@ tags:
 Once you've set up your MkDocs blog, it's time to personalize it. In this post, I'll cover various customizations, including **social media sharing hooks, changing the blog icon and favicon, adding authors, and using tags**. These modifications will make your blog more interactive and visually appealing.
 
 All of the steps covered in this guide are available in the [MKDocs Documentation](https://squidfunk.github.io/mkdocs-material/getting-started/) or via the superb video tutorials created by [James Willett](https://youtu.be/pPEUhfTZswc?si=AjoyIaM5Ig7MZdgo)
+
+<!-- more -->
 
 ## Adding Social Media Sharing Hooks 🔄
 

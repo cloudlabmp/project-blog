@@ -1,5 +1,5 @@
 ---
-title: "Enhancing My MkDocs Blog with Custom Features"
+title: "Enhancing My MkDocs Blog with Custom Features 🚀"
 date:
   created: 2025-02-25
   updated: 2025-02-25
@@ -7,10 +7,7 @@ authors:
   - matthew
 description: "A guide to customizing an MkDocs blog with navigation links, social media icons, an announcement bar, and a custom footer."
 categories:
-  - MkDocs
-  - Customization
   - Blogging
-  - Tech
 tags:
   - mkdocs
   - material-theme
@@ -21,6 +18,8 @@ tags:
 # Enhancing My MkDocs Blog with Custom Features 🚀
 
 Once I set up my MkDocs blog, I wanted to personalize it by adding **navigation links, social media icons, an announcement bar, and a custom footer**. These enhancements improve user experience, branding, and site functionality. This post walks through each customization step with code examples and configurations.
+
+<!-- more -->
 
 ## **🔗 Adding Navigation Links to the Header**
 

@@ -1,5 +1,5 @@
 ---
-title: "Setting Up MkDocs for Your Blog"
+title: "Setting Up MkDocs for Your Blog 📝"
 date:
   created: 2025-02-15
   updated: 2025-02-15
@@ -10,10 +10,7 @@ authors:
   - squidfunk
 description: "A step-by-step guide to setting up MkDocs for blogging."
 categories:
-  - MkDocs
-  - Documentation
   - Blogging
-  - Tech
 tags:
   - technology
   - learning
@@ -24,6 +21,8 @@ tags:
 If you're looking for a simple yet powerful way to create and manage your documentation or blog, **MkDocs** is a fantastic option. MkDocs is a fast, static site generator that's geared towards building project documentation but works wonderfully for blogs too! In this post, I'll walk you through the steps to set up MkDocs with the popular Material theme and get it hosted on GitHub Pages.
 
 All of the steps covered in this guide are available in the [MkDocs Documentation](https://squidfunk.github.io/mkdocs-material/getting-started/) or via the superb video tutorials created by [James Willett](https://youtu.be/pPEUhfTZswc?si=AjoyIaM5Ig7MZdgo).
+
+<!-- more -->
 
 ## Why I Chose MkDocs 🤔
 
