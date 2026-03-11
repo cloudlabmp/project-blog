@@ -47,7 +47,8 @@ theme:
 
 plugins:
   - search
-  - social
+  - social:
+      cards: true
   - glightbox:
       zoomable: true
   
@@ -99,7 +100,6 @@ extra:
       link: https://profile.pollockweb.com
     - icon: fontawesome/solid/rss
       link: https://blog.pollockweb.com/feed_rss_created.xml
-  cards: true 
   image: assets/icons/logo-512x512.png
 
   analytics:
