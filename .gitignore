@@ -66,3 +66,11 @@ tmp
 # IDEs & Editors
 .idea
 *~
+
+# Claude Code
+CLAUDE.md
+
+# Sensitive / private files
+docs/Matthew_Pollock_CV.docx
+**/Context Notes.txt
+**/*-context.txt
