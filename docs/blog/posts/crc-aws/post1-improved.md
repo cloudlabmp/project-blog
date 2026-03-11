@@ -1,5 +1,5 @@
 ---
-title: "Cloud Resume Challenge with Terraform: Introduction & Setup 🚀"
+title: "Cloud Resume Challenge with Terraform: Introduction title: "Cloud Resume Challenge with Terraform: Introduction & Setup 🚀" Setup"
 draft: false
 date:
   created: 2025-03-17

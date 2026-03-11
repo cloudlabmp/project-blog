@@ -1,5 +1,5 @@
 ---
-title: "🧾 Azure BCDR – How I Turned a DR Review into a Strategic Recovery Plan"
+title: "Azure BCDR – How I Turned a DR Review into a Strategic Recovery Plan"
 date:
   created: 2025-05-08
   updated: 2025-05-08

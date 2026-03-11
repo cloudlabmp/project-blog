@@ -1,5 +1,5 @@
 ---
-title: "⌚Enforcing Time Zone and DST Compliance on Windows Servers Using GPO and Scheduled Tasks"
+title: "Enforcing Time Zone and DST Compliance on Windows Servers Using GPO and Scheduled Tasks"
 date:
   created: 2025-03-31
   updated: 2025-04-02

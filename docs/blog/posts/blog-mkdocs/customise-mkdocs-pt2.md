@@ -1,5 +1,5 @@
 ---
-title: "Enhancing My MkDocs Blog with Custom Features 🚀"
+title: "Enhancing My MkDocs Blog with Custom Features"
 date:
   created: 2025-02-25
   updated: 2025-02-25

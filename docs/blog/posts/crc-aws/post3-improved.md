@@ -1,5 +1,5 @@
 ---
-title: "Cloud Resume Challenge with Terraform: Building the Backend API 🚀"
+title: "Cloud Resume Challenge with Terraform: Building the Backend API"
 draft: false
 date:
   created: 2025-03-19

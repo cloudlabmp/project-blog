@@ -1,5 +1,5 @@
 ---
-title: "🕵️ Replacing SAS Tokens with User Assigned Managed Identity (UAMI) in AzCopy for Blob Uploads"
+title: "Replacing SAS Tokens with User Assigned Managed Identity (UAMI) in AzCopy for Blob Uploads"
 date:
   created: 2025-03-28
   updated: 2025-03-28

@@ -1,5 +1,5 @@
 ---
-title: "Setting Up MkDocs for Your Blog 📝"
+title: "Setting Up MkDocs for Your Blog"
 date:
   created: 2025-02-15
   updated: 2025-02-15
@@ -215,7 +215,7 @@ Each blog post should have frontmatter at the top, like this:
 
 ```yaml
 ---
-title: "Your Post Title"
+title: "Setting Up MkDocs for Your Blog"
 date: 2025-03-09
 authors:
   - yourname

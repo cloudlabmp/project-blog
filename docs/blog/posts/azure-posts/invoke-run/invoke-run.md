@@ -1,5 +1,5 @@
 ---
-title: "🔧 How I Used Claude Code to Deploy a Security Scan Across Many Azure VMs"
+title: "How I Used Claude Code to Deploy a Security Scan Across Many Azure VMs"
 description: "When GPO deployment failed and Intune wasn't an option, I turned to Claude Code and Invoke-AzVMRunCommand to roll out a security scanning agent across multiple Azure subscriptions."
 date:
   created: 2026-03-11

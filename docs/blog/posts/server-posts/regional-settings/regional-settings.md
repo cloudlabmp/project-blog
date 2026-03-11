@@ -1,5 +1,5 @@
 ---
-title: "⏲️ Configuring UK Regional Settings on Windows Servers with PowerShell"
+title: "Configuring UK Regional Settings on Windows Servers with PowerShell"
 date:
   created: 2025-03-31
   updated: 2025-03-31

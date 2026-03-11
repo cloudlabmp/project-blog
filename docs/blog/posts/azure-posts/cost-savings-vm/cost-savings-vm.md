@@ -1,5 +1,5 @@
 ---
-title: "💰 Saving Azure Costs with Scheduled VM Start/Stop using Custom Azure Automation Runbooks"
+title: "Saving Azure Costs with Scheduled VM Start/Stop using Custom Azure Automation Runbooks"
 date:
   created: 2025-04-22
   updated: 2025-04-22

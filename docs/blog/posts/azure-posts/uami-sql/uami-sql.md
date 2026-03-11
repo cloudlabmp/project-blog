@@ -1,5 +1,5 @@
 ---
-title: "🔑 Replacing SQL Credentials with User Assigned Managed Identity (UAMI) in Azure SQL Managed Instance"
+title: "Replacing SQL Credentials with User Assigned Managed Identity (UAMI) in Azure SQL Managed Instance"
 date:
   created: 2025-03-27
   updated: 2025-03-27

@@ -1,5 +1,5 @@
 ---
-title: "🤖 First Steps into AI Automation: My Journey from Trial to Self-Hosted Chaos"
+title: "First Steps into AI Automation: My Journey from Trial to Self-Hosted Chaos"
 description: "A real-world walkthrough of experimenting with n8n, Ollama, and OpenWebUI - complete with the inevitable OAuth headaches and Docker container migrations."
 author: Matt Pollock
 date:

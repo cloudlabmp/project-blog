@@ -1,5 +1,5 @@
 ---
-title: "📊 Monitoring an IIS-Based Web Farm with Azure Application Insights"
+title: "Monitoring an IIS-Based Web Farm with Azure Application Insights"
 date:
   created: 2025-03-12
   updated: 2025-03-12

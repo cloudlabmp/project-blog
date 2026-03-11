@@ -1,5 +1,5 @@
 ---
-title: "🔁 GitOps Project: Automating AWS Infrastructure Deployment with Terraform and GitHub Actions"
+title: "GitOps Project: Automating AWS Infrastructure Deployment with Terraform and GitHub Actions"
 date:
   created: 2025-03-06
   updated: 2025-03-06

@@ -100,7 +100,7 @@ extra:
     - icon: fontawesome/solid/rss
       link: https://blog.pollockweb.com/feed_rss_created.xml
   cards: true 
-  image: assets/icons/logo-48x48.png
+  image: assets/icons/logo-512x512.png
 
   analytics:
     provider: google

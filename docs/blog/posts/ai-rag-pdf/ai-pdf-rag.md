@@ -1,5 +1,5 @@
 ---
-title: "📚 From PDF Overload to AI Clarity: Building an AI RAG Assistant"
+title: "From PDF Overload to AI Clarity: Building an AI RAG Assistant"
 description: "How I built an AI-powered RAG assistant"
 author: "Matt Pollock"
 date:

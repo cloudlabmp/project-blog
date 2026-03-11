@@ -1,5 +1,5 @@
 ---
-title: "Customizing Your MkDocs Blog 🎨"
+title: "Customizing Your MkDocs Blog"
 date:
   created: 2025-03-03
   updated: 2025-03-03

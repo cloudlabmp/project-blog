@@ -1,5 +1,5 @@
 ---
-title: "📌 Life Update: Projects, Learning, and the Usual Balancing Act"
+title: "Life Update: Projects, Learning, and the Usual Balancing Act"
 date:
   created: 2025-02-04
   updated: 2025-02-04

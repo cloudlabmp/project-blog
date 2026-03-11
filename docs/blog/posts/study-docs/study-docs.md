@@ -1,5 +1,5 @@
 ---
-title: "📝 How I Used ChatGPT to Create AZ-400 Exam Prep Notes from MSLearn"
+title: "How I Used ChatGPT to Create AZ-400 Exam Prep Notes from MSLearn"
 date:
   created: 2025-03-09
   updated: 2025-03-09

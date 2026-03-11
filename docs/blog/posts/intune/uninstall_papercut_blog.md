@@ -1,5 +1,5 @@
 ---
-title: "📢 Uninstalling PaperCut MF Client via Intune – A Step-by-Step Guide 🚀"
+title: "Uninstalling PaperCut MF Client via Intune – A Step-by-Step Guide"
 date:
   created: 2025-03-11
   updated: 2025-03-11

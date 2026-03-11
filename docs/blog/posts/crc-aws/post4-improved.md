@@ -1,5 +1,5 @@
 ---
-title: "Cloud Resume Challenge with Terraform: Automating Deployments with GitHub Actions ⚡"
+title: "Cloud Resume Challenge with Terraform: Automating Deployments with GitHub Actions"
 draft: false
 date:
   created: 2025-03-20

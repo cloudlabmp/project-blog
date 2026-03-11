@@ -1,5 +1,5 @@
 ---
-title: "⚙️ Azure BCDR Review – Turning Inherited Cloud Infrastructure into a Resilient Recovery Strategy"
+title: "Azure BCDR Review – Turning Inherited Cloud Infrastructure into a Resilient Recovery Strategy"
 date:
   created: 2025-05-08
   updated: 2025-05-08

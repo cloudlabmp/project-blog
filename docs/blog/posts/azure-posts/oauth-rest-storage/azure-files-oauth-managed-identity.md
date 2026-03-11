@@ -1,5 +1,5 @@
 ---
-title: "🔐 Ditching Storage Account Keys: OAuth and Managed Identity for Azure Files REST API"
+title: "Ditching Storage Account Keys: OAuth and Managed Identity for Azure Files REST API"
 description: "How to replace storage account key authentication with managed identity OAuth tokens for Azure Files REST API access — and the critical header that makes it work."
 author: "Matt Pollock"
 date:
