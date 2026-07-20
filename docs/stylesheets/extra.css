@@ -13,7 +13,7 @@
 
   /* Style the announcement bar */
 .md-banner {
-  background-color: #132b47; /* raised navy-blue - stands off the #0b1220 page bg */
+  background-color: #070d17; /* darkest inset - recedes behind the header */
   color: #e4ecf7;
   border-bottom: 1px solid #1e3a5f;
   text-align: center;
@@ -98,9 +98,9 @@
 
 /* custom primary/accent (declared in mkdocs.yml palette) */
 [data-md-color-primary="custom"] {
-  --md-primary-fg-color: #101a2c;
+  --md-primary-fg-color: #16304f;
   --md-primary-fg-color--light: #16233a;
-  --md-primary-fg-color--dark: #0b1220;
+  --md-primary-fg-color--dark: #132b47;
   --md-primary-bg-color: #e4ecf7;
   --md-primary-bg-color--light: rgba(228, 236, 247, 0.7);
 }
@@ -128,7 +128,7 @@
 
 /* hairline under header/tabs, like the profile topbar */
 .md-header, .md-tabs {
-  border-bottom: 1px solid #162033;
+  border-bottom: 1px solid #1e3a5f;
 }
 
 /* footer social hover: was deep purple, now azure accent */
