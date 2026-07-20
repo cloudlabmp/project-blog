@@ -13,8 +13,9 @@
 
   /* Style the announcement bar */
 .md-banner {
-  background-color: #080700; /* Background color */
-  color: #fefcfc; /* Text color */
+  background-color: #132b47; /* raised navy-blue - stands off the #0b1220 page bg */
+  color: #e4ecf7;
+  border-bottom: 1px solid #1e3a5f;
   text-align: center;
 }
 
