@@ -34,16 +34,16 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-      primary: deep orange
-      accent: deep purple
+      primary: custom
+      accent: custom
 
     # Light Mode (Optional)
     - scheme: default
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-      primary: blue
-      accent: deep orange
+      primary: custom
+      accent: custom
 
 plugins:
   - search

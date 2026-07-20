@@ -89,3 +89,48 @@
     float: left;
     margin: 0 20px 10px 0;
 }
+
+/* ============================================================
+   azure terminal alignment - matches profile.pollockweb.com
+   palette source: profile site css/terminal.css (July 2026)
+   ============================================================ */
+
+/* custom primary/accent (declared in mkdocs.yml palette) */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #101a2c;
+  --md-primary-fg-color--light: #16233a;
+  --md-primary-fg-color--dark: #0b1220;
+  --md-primary-bg-color: #e4ecf7;
+  --md-primary-bg-color--light: rgba(228, 236, 247, 0.7);
+}
+
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: #4aa8ff;
+  --md-accent-fg-color--transparent: rgba(74, 168, 255, 0.1);
+}
+
+/* dark scheme - same surfaces as the profile site */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0b1220;
+  --md-default-fg-color: #e4ecf7;
+  --md-default-fg-color--light: #9fb3cc;
+  --md-default-fg-color--lighter: #5a6b84;
+  --md-default-fg-color--lightest: #1e2c44;
+  --md-typeset-a-color: #7cc4ff;
+  --md-code-bg-color: #070d17;
+  --md-code-fg-color: #e4ecf7;
+  --md-footer-bg-color: #070d17;
+  --md-footer-bg-color--dark: #070d17;
+  --md-footer-fg-color: #9fb3cc;
+  --md-footer-fg-color--light: #5a6b84;
+}
+
+/* hairline under header/tabs, like the profile topbar */
+.md-header, .md-tabs {
+  border-bottom: 1px solid #162033;
+}
+
+/* footer social hover: was deep purple, now azure accent */
+.custom-footer-right a:hover {
+  color: #4aa8ff;
+}
