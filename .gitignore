@@ -74,3 +74,10 @@ CLAUDE.md
 docs/Matthew_Pollock_CV.docx
 **/Context Notes.txt
 **/*-context.txt
+
+# Claude session state - never public
+.claude/
+
+# Post scratch notes - never public
+docs/blog/posts/**/scratch.txt
+scratch.txt

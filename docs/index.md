@@ -5,11 +5,11 @@ hide:
 
 # Matthew Pollock
 
-Senior Cloud and Infrastructure Engineer writing about practical experiences with AI-assisted engineering, cloud infrastructure, and homelab experiments.
+Azure Cloud & Security Architect writing about practical experiences with governed AI operations, enterprise Microsoft estates, and homelab experiments.
 
 ## What you'll find here
 
-- **AI as an engineering assistant** -- Using AI tools to accelerate cloud operations, automate workflows, and solve real infrastructure problems
+- **Agentic AI in IT-Ops** -- Running real operational work through governed AI agents: the setup, the guardrails, and the lessons
 - **Cloud infrastructure and DevOps** -- Azure and AWS patterns, automation, security, and lessons learned from production environments
 - **Homelab experiments** -- Testing new tools and approaches in a home lab before they reach production
 
