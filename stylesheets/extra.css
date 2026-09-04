@@ -1,0 +1,137 @@
+.md-header__button.md-logo {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  .md-header__button.md-logo img,
+  .md-header__button.md-logo svg {
+    height: 110%;
+    width: 110%;
+  }
+
+  /* Style the announcement bar */
+.md-banner {
+  background-color: #070d17; /* darkest inset - recedes behind the header */
+  color: #e4ecf7;
+  border-bottom: 1px solid #1e3a5f;
+  text-align: center;
+}
+
+/* Style the content within the announcement bar */
+.announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Style the text */
+.announcement-content p {
+  margin: 0;
+}
+
+/* Style the images (logos) */
+.announcement-content img {
+  height: 20px;
+  transition: transform 0.3s;
+}
+
+.announcement-content img:hover {
+  transform: scale(1.1);
+}
+
+/* Ensure the footer is structured properly */
+.custom-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  width: 100%;
+  background: var(--md-default-bg-color);
+  border-top: 1px solid var(--md-default-fg-color--light);
+}
+
+/* Left side - Copyright text */
+.custom-footer-left {
+  text-align: left;
+  font-size: 1.3em;
+  color: var(--md-default-fg-color);
+}
+
+/* Right side - Social icons */
+.custom-footer-right {
+  display: flex;
+  gap: 15px;
+}
+
+.custom-footer-right a {
+  font-size: 2.5em;
+  color: var(--md-default-fg-color);
+  transition: transform 0.2s ease-in-out;
+}
+
+.custom-footer-right a:hover {
+  transform: scale(1.2);
+  color: #673AB7; /* Deep Purple */
+}
+
+/* Add padding to the bottom of the page */
+.md-content {
+  padding-bottom: 20px;
+}
+
+.avatar-left {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    float: left;
+    margin: 0 20px 10px 0;
+}
+
+/* ============================================================
+   azure terminal alignment - matches profile.pollockweb.com
+   palette source: profile site css/terminal.css (July 2026)
+   ============================================================ */
+
+/* custom primary/accent (declared in mkdocs.yml palette) */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #16304f;
+  --md-primary-fg-color--light: #16233a;
+  --md-primary-fg-color--dark: #132b47;
+  --md-primary-bg-color: #e4ecf7;
+  --md-primary-bg-color--light: rgba(228, 236, 247, 0.7);
+}
+
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: #4aa8ff;
+  --md-accent-fg-color--transparent: rgba(74, 168, 255, 0.1);
+}
+
+/* dark scheme - same surfaces as the profile site */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0b1220;
+  --md-default-fg-color: #e4ecf7;
+  --md-default-fg-color--light: #9fb3cc;
+  --md-default-fg-color--lighter: #5a6b84;
+  --md-default-fg-color--lightest: #1e2c44;
+  --md-typeset-a-color: #7cc4ff;
+  --md-code-bg-color: #070d17;
+  --md-code-fg-color: #e4ecf7;
+  --md-footer-bg-color: #070d17;
+  --md-footer-bg-color--dark: #070d17;
+  --md-footer-fg-color: #9fb3cc;
+  --md-footer-fg-color--light: #5a6b84;
+}
+
+/* hairline under header/tabs, like the profile topbar */
+.md-header, .md-tabs {
+  border-bottom: 1px solid #1e3a5f;
+}
+
+/* footer social hover: was deep purple, now azure accent */
+.custom-footer-right a:hover {
+  color: #4aa8ff;
+}

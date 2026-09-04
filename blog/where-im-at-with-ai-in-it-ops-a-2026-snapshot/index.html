@@ -1,0 +1,1427 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Production IT-Ops run through agentic AI — a terminal, real credentials, a live tenant. There's no course for this. Here's the setup, the guardrails, and the shepherding that makes it work.">
+      
+      
+        <meta name="author" content="Matthew Pollock">
+      
+      
+        <link rel="canonical" href="https://blog.pollockweb.com/blog/where-im-at-with-ai-in-it-ops-a-2026-snapshot/">
+      
+      
+        <link rel="prev" href="../how-i-used-claude-code-to-deploy-a-security-scan-across-many-azure-vms/">
+      
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/icons/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Where I'm At With AI in IT-Ops: A 2026 Snapshot - Matthew Pollock</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-800NGKWBYL"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-800NGKWBYL",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-800NGKWBYL",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Where I'm At With AI in IT-Ops: A 2026 Snapshot - Matthew Pollock" >
+      
+        <meta  property="og:description"  content="Production IT-Ops run through agentic AI — a terminal, real credentials, a live tenant. There's no course for this. Here's the setup, the guardrails, and the shepherding that makes it work." >
+      
+        <meta  property="og:image"  content="https://blog.pollockweb.com/assets/images/social/blog/posts/ai-ops/ai-ops-2026.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://blog.pollockweb.com/blog/where-im-at-with-ai-in-it-ops-a-2026-snapshot/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Where I'm At With AI in IT-Ops: A 2026 Snapshot - Matthew Pollock" >
+      
+        <meta  name="twitter:description"  content="Production IT-Ops run through agentic AI — a terminal, real credentials, a live tenant. There's no course for this. Here's the setup, the guardrails, and the shepherding that makes it work." >
+      
+        <meta  name="twitter:image"  content="https://blog.pollockweb.com/assets/images/social/blog/posts/ai-ops/ai-ops-2026.png" >
+      
+    
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta property="article:author" content="Matthew Pollock">
+
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#where-im-at-with-ai-in-it-ops-a-2026-snapshot" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+    <div class="announcement-content">
+      <p>AI-assisted cloud engineering | Tried, tested, written up</p>
+      <a href="https://www.linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn" aria-label="LinkedIn profile">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="Portfolio" aria-label="Portfolio website">
+        <i class="fas fa-globe fa-2x"></i>
+      </a>
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub" aria-label="GitHub profile">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://blog.pollockweb.com/feed_rss_created.xml" target="_blank" title="RSS Feed" aria-label="RSS feed">
+        <i class="fa-solid fa-rss fa-2x"></i>
+      </a>
+    </div>
+  
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://blog.pollockweb.com/blog/" title="Matthew Pollock" class="md-header__button md-logo" aria-label="Matthew Pollock" data-md-component="logo">
+      
+  <img src="../../assets/icons/logo-48x48.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Matthew Pollock
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Where I'm At With AI in IT-Ops: A 2026 Snapshot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://blog.pollockweb.com/blog/" title="Matthew Pollock" class="md-nav__button md-logo" aria-label="Matthew Pollock" data-md-component="logo">
+      
+  <img src="../../assets/icons/logo-48x48.png" alt="logo">
+
+    </a>
+    Matthew Pollock
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Posts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Posts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2026/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2026
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/ai-ops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Ops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/aws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/blogging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blogging
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/devops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/infrastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/life-update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Life Update
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-thing-i-keep-seeing" class="md-nav__link">
+    <span class="md-ellipsis">
+      💬 The thing I keep seeing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-boundary-that-moved" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚪 The boundary that moved
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 My setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧰 My setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-clis-on-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two CLIs, on purpose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-agent-every-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      One agent, every surface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaffolding-over-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaffolding over sessions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-on-tap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification on tap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-assistant-shepherd" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐑 Not assistant, shepherd
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-work-actually-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 What the work actually looks like
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-guardrails-because-the-access-is-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ The guardrails, because the access is real
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#right-model-for-the-right-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎛️ Right model for the right job
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-things-from-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Building things from scratch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-i-actually-am" class="md-nav__link">
+    <span class="md-ellipsis">
+      📍 Where I actually am
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/u/110421070?s=400&v=4" alt="Matthew Pollock">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://profile.pollockweb.com">Matthew Pollock</a>
+                        
+                      </strong>
+                      <br>
+                      Azure Cloud & Security Architect | Entra ID · Defender · Intune · Sentinel | AIOps | Automation
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-06-03 00:00:00+00:00" class="md-ellipsis">June 3, 2026</time>
+                      </div>
+                    </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2026-09-04 00:00:00+00:00" class="md-ellipsis">September 4, 2026</time>
+                        </div>
+                      </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/ai-ops/">AI Ops</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              13 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+<h1 id="where-im-at-with-ai-in-it-ops-a-2026-snapshot">🧭 Where I'm At With AI in IT-Ops: A 2026 Snapshot</h1>
+<p>I've read plenty from devs about how they've wired up Claude Code, OpenCode and the rest into their workflows. Folder conventions, custom agents, shell hooks, the lot. Almost nothing from the IT-Ops side.</p>
+<p><a class="glightbox" href="../ai-ops/work-vscode-ai-screenshot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="A typical work session: Claude Code in one terminal pane, OpenCode in the other, with the IT-Ops folder tree open in the explorer." src="../ai-ops/work-vscode-ai-screenshot.png" /></a></p>
+<!-- more -->
+
+<p>There are probably good posts out there from ops people — they just aren't crossing my feed. And I get why the dev write-ups don't quite map. Wide-scale automation for code and infrastructure doesn't really fit an org like ours: we're not shipping vast amounts of code through pipelines, click-ops is still very much a thing, and reducing manual portal work is an ongoing effort rather than a solved problem. The environment is user-focused, not code-focused, and my day can cover identity in the morning, a mailbox oddity at lunch, and, by mid-afternoon, working out what Microsoft has renamed this week.</p>
+<p>That's the context this all runs in. So this is my take after a few years of serious use — just where I've actually landed in 2026.</p>
+<hr />
+<h2 id="the-thing-i-keep-seeing">💬 The thing I keep seeing</h2>
+<p>I'll start here, because it's the context everything else sits in.</p>
+<p>There's a pattern I see on repeat at work. A dev hits an issue they can't explain. They ask infra to check the usual suspects — resource exhaustion, blocked traffic. We check; clean bill of health. They go away to dig further. And here's the modern twist: they come back armed with a Copilot transcript. "Look, this is what the issue is with X."</p>
+<p>The transcript is always missing the same thing: context. The question that produced it was "I have an issue with X, here are the symptoms, what is the fix" — asked by someone who doesn't know how the cloud environment hangs together, to a model that has never seen it. What the situation actually needed was "here are the symptoms, here's how the environment is set up, here are the logs, here's what we've ruled out so far." Nine times out of ten I have to put them right.</p>
+<blockquote>
+<p>The difference was never the tool. It's how hard you question what comes back.</p>
+</blockquote>
+<p>AI hands you back a version of what you bring to it. Run Microsoft estates long enough and you get a nose for a wrong answer — usually because you've had to clean up after a few. Without that, the confident nonsense travels — into a Teams chat today, into production eventually.</p>
+<p>That's not a criticism of the people doing it. It's just the thing that's becoming visible in 2026: the gap between people using AI seriously and people using it superficially is starting to show in the work. It'll keep widening.</p>
+<p>I don't need AI to be brilliant. I need it reliable on the boring stuff so I can spend my own attention on things that actually need it. An extra pair of hands, not a genius in a box. But it only works that way if you already know what you're doing.</p>
+<hr />
+<h2 id="the-boundary-that-moved">🚪 The boundary that moved</h2>
+<p>It's worth being precise about what actually changed, because it wasn't the models.</p>
+<p>The old workflow — and it ran for years — was VS Code as an editor with a chat window open beside it. Claude or ChatGPT helped draft PowerShell for the hybrid AD and Entra estate; I copy-pasted it into a terminal and ran it myself. I never thought of that copy-paste step as a security control, but it was exactly that: the AI wrote text, and a human decided what got executed, every single time.</p>
+<p>Moving to Claude Code and OpenCode — over a year ago now — erased that step. The assistant got a terminal, real credentials, and the ability to act inside a live production tenant — Azure, Entra ID, Exchange Online, on-prem AD. That's the boundary that moved. Everything else in this post — the identity model, the hooks, the way the agents are built — exists because it did.</p>
+<hr />
+<h2 id="my-setup">🧰 My setup</h2>
+<h3 id="two-clis-on-purpose">Two CLIs, on purpose</h3>
+<p>VSCode on the left, two terminal panes on the right. Claude Code in one, OpenCode in the other, both pointed at the same repo. They're not split by task type — they're two entry points into the same workspace. I run both deliberately: I don't want to depend on a single vendor's tool, and I want first-hand experience of how other agentic platforms behave rather than taking other people's write-ups on faith. There's a practical payoff too — when Claude Code hits a session limit mid-task, the same repo, agents and conventions are already loaded in OpenCode, and the work carries on against a different model instead of stopping.</p>
+<h3 id="one-agent-every-surface">One agent, every surface</h3>
+<p>The specialised agents — an IT-Ops investigator, a document auditor, a brutal-critic reviewer, and thirty-odd more — live as templates in a single directory: YAML frontmatter, a system prompt, per-CLI override blocks. A deploy script projects each template into the shape each CLI expects, and Syncthing carries the directory between machines. Two hooks keep it self-healing: edit a template and it redeploys within seconds; start a session and it reconciles the local copies against whatever arrived from the other machines overnight. There's even a back-port step for drift — create an agent outside the template system and the next hook fire detects the orphan, generates a template from it, and folds it back into the source of truth rather than fighting it.</p>
+<h3 id="scaffolding-over-sessions">Scaffolding over sessions</h3>
+<p>Projects sit under <code>~/ai-terminal/projects/</code>, split by work and personal. Each gets its own <code>CLAUDE.md</code> — project-specific context that loads automatically and tells the agent what it's working in.</p>
+<p>And each keeps a <code>session-handoff.md</code> — written at the end of every session, alongside a global one for cross-project state: what changed, what's pending, the exact next step. That's deliberate insurance. I never rely on <code>/resume</code> in Claude Code or <code>/sessions</code> in OpenCode to dig the right chat out of history. A new session, pointed at the project folder, opens with "bring me up to speed with what happened last session" — and it carries on from the file, not from a transcript.</p>
+<p>I spent too long early on over-engineering prompts — tweaking the wording, trying to write the perfect instruction. The scaffolding is what actually made things consistent and portable. The prompts matter less than I thought; the infrastructure around them matters more.</p>
+<h3 id="verification-on-tap">Verification on tap</h3>
+<p>One of the biggest wins has been wiring verification into the tooling itself. The Microsoft Learn MCP server gives the agents live access to official documentation for research and cross-checking. More recently I built an m365-docs skill — a small RAG tool run against the Microsoft 365 for IT Pros ebook series, which covers the real-world behaviour the official docs gloss over. Between the two, an agent's claim about how something works gets checked against an authoritative source in the same session it's made. The agents don't get to cite themselves.</p>
+<hr />
+<h2 id="not-assistant-shepherd">🐑 Not assistant, shepherd</h2>
+<p>Most people I see are using AI as an assistant. They have a task, they ask for help, they get an answer, they move on. I've mostly stopped doing that. What's actually cleared work from my queue is putting agents on long-running jobs while I shepherd — and shepherd is the right word, because they need it.</p>
+<p>Concrete example: we have over a hundred legacy service accounts in AD — years of accumulation, the kind of backlog that sits there because nobody has time to audit it properly. Each account needs looking at from multiple angles: is there a security posture concern with how it's authenticating? Where is it actually used — a scheduled task, a local service, environment variables baked into a VM? Does it have a mailbox? When did it last authenticate? Is it safe to disable, and if so who needs to know?</p>
+<p>Manually, that's a substantial scripting and research project, done account by account. Instead, I built a runbook — a structured investigation workflow — and a custom agent to execute it. The agent works through the list, pulling the relevant data for each account and flagging what needs a decision.</p>
+<p>Here's why the shepherding is not optional. The agents don't know the estate the way an engineer does. Cross-referencing that many accounts — statuses, attributes, logon history — and compiling the findings into reports is a lot to ask an agent and its spawned subagents to get perfect, especially across long sessions where the early context has been pushed out of memory. So every report gets eyeballed. That's how I caught a disabled account, no logon data recorded, classed by the agent as a stale account — which actually belonged to a live shared mailbox, very much in use.</p>
+<blockquote>
+<p>Every attribute the agent could see said dead. The estate knowledge said otherwise.</p>
+</blockquote>
+<p>It cuts the other way too. One mailbox investigation ended with a confident, plausible "root cause: Microsoft" conclusion. I pushed back — this has not been confirmed, has it? It hadn't. The investigation had proven that token issuance succeeded, but never actually exercised the downstream API call that was failing. Re-run with the real credentials, the conclusion changed materially. The workflow doesn't get credit for sounding right; findings get held to the same standard I'd hold my own, and they have been wrong before.</p>
+<p>Each catch goes back into the runbook and the prompts, and the next pass comes back cleaner. It's still a lot of work on my part — anyone who says this kind of project runs itself hasn't tried anything complex. But the nature of the work changed. I stopped doing the repetitive, scriptable parts and stayed focused on the parts that need someone who knows what they're looking at. These things take time.</p>
+<hr />
+<h2 id="what-the-work-actually-looks-like">📋 What the work actually looks like</h2>
+<p>This isn't a lab exercise. The ops repo holds seventy-odd sub-projects, live and archived — real operational work, every one run through the same loop: triage, evidence, hypotheses, remediation, verification, documentation. A representative spread:</p>
+<ul>
+<li>A multi-month privileged-access programme, moving every admin identity off always-on accounts and onto just-in-time elevation — cohort by cohort, live user onboarding, support tickets and all, including a mid-build mistake (a group created with the wrong eligibility model) caught by comparing against a known-good reference rather than trusting the first pass</li>
+<li>A golden-image VM fleet build — sysprep, Compute Gallery, domain join, hybrid Entra join, Intune enrolment — that surfaced a chain of real platform bugs: a PowerShell 7 cmdlet that silently doesn't exist, a Conditional Access policy quietly blocking MDM auto-enrolment with an error code documented in exactly one place</li>
+<li>A live Entra Connect sync outage, root-caused mid-session to a sync wizard left open for eighteen hours (documented behaviour, obscure as anything) — found while working on something unrelated and handled as a same-session pivot</li>
+<li>A certificate deployment end to end — CSR, Key Vault, Application Gateway, DNS cutover — including a small reusable verification tool written after hitting a real bug in a .NET certificate API</li>
+</ul>
+<p>None of these are AI demos. It's just the day job — the AI mostly means the documentation actually gets written.</p>
+<hr />
+<h2 id="the-guardrails-because-the-access-is-real">🛡️ The guardrails, because the access is real</h2>
+<p>The workhorse agent is an Azure and M365 operations specialist — the one I reach for when investigating a sign-in failure, triaging a Defender alert, chasing a licensing oddity, or pulling performance data off a VM. What makes it ops-shaped rather than dev-shaped is the discipline baked in, and the discipline got tighter as trust in the pattern grew — not looser.</p>
+<p>Identity first. The admin identity this work runs under now has zero standing privilege — no permanent Reader, no permanent anything. Every role is PIM-eligible only: justification required, MFA at activation, time-boxed. At any moment it isn't actively mid-task, its default state is no access. I removed the standing Reader baseline deliberately partway through, once the pattern had proved out.</p>
+<p>Execution second. A hook intercepts every shell command before it runs and forces a confirmation on anything matching destructive patterns — I don't trust a model's own judgement about which of its actions are reversible. A parallel hook logs every tool call unconditionally. Subagents were the hard lesson: the hook-based gate silently doesn't bind inside them, so the real control there is a deny list and a restricted tools allowlist baked into each subagent's own template — discovered and hardened after finding out the quiet way. Subagents also refuse high-risk writes on the strength of another agent claiming the human approved; approval comes from me, directly, to the agent that runs the command. That's deadlocked real work more than once. It's the guardrail doing its job.</p>
+<p>Has any of it saved me from disaster? The closest thing I have to a war story isn't damage — it's the safety net firing on legitimate work. An automated account-rename task needed interactive sign-in and generated three device codes in a row for me to enter — a sequence structurally identical to a device-code phishing pattern, even though this instance was legitimate. The platform's own security classifier flagged it, the coordinating session halted the agent, confirmed nothing had landed, and tore the sessions down. I did the task by hand. It's a standing rule now: agents never relay device codes, full stop — browser auth, or report the blocker.</p>
+<p>None of it is clever. Just habits a careful ops engineer builds over years of near-misses, encoded so I stop re-deciding them every session. And the habits predate the AI: anything potentially destructive gets a <code>-WhatIf</code> dry run where the cmdlet supports one, and a manual live test against a single test object where it doesn't. The AI writes more of the scripts now; the school of caution they get tested in hasn't changed.</p>
+<p>Each agent also keeps a <code>MEMORY.md</code> — the durable stuff that should survive across sessions: naming conventions, queries that proved useful, the shape of a particular workspace. The session file is short-term. The memory file is institutional, and it outlives any single conversation. The same template system manages the lot — the agent that drafted most of this post and the one that tore it apart afterwards are two more entries in the same directory.</p>
+<hr />
+<h2 id="right-model-for-the-right-job">🎛️ Right model for the right job</h2>
+<p>Token cost was the surprise. The same task can cost pennies or pounds depending on which model you point at it, and it adds up fast when you're running agents all day. So the routing that now exists in my head looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>The job</th>
+<th>What runs it</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Fetch me this from X" — lookups, log pulls, quick checks</td>
+<td>Claude Sonnet</td>
+<td>Fast, and cheap enough that I don't think about it</td>
+</tr>
+<tr>
+<td>"Investigate this, verify your findings, report back with evidence"</td>
+<td>Claude Opus — or Fable for the hairiest work</td>
+<td>Multi-step investigation is where frontier prices earn their keep</td>
+</tr>
+<tr>
+<td>Claude session limits hit</td>
+<td>OpenCode with ChatGPT 5.5, or a free cloud model — Minimax M2 has held up better than I'd have guessed</td>
+<td>The work doesn't stop because the meter does</td>
+</tr>
+<tr>
+<td>Repetitive PowerShell loops against Azure and AD</td>
+<td>Smaller models in OpenCode</td>
+<td>Not paying frontier prices to format a CSV</td>
+</tr>
+</tbody>
+</table>
+<p>None of that routing existed a year ago.</p>
+<hr />
+<h2 id="building-things-from-scratch">🏗️ Building things from scratch</h2>
+<p>The other use is actual development, and that's where it genuinely surprised me.</p>
+<p>I've taken two proofs of concept from nothing to working, end to end, through Azure DevOps. Repo structure, Bicep for the infrastructure, CI/CD pipelines, tests, all driven through conversation rather than written by hand.</p>
+<p>One is a near-real-time operational data pipeline — pulling live data from an external platform API, normalising the payloads, and surfacing current numbers through a BI dashboard. The other is a document analysis pipeline: an AI model processing structured records and pulling out useful insight in a form the operations side can actually use.</p>
+<p>These are proofs of concept, not production systems. An infrastructure engineer with no formal dev background can take a full solution — functions, IaC, a data pipeline, a dashboard — from a blank repo to something that demonstrably works, alone. A few years ago that wasn't on the table for someone in my seat.</p>
+<p>The boilerplate and first-pass Bicep are fast, and mostly right. What it doesn't carry is the judgement: knowing when "it works" isn't the same as "it's production-ready", catching the architectural decision that'll bite in six months. That's still mine to do.</p>
+<hr />
+<h2 id="where-i-actually-am">📍 Where I actually am</h2>
+<p>It crept up gradually — no eureka moment, just a pattern that emerged over hundreds of hours of use. The interaction is still chat, routed through a terminal instead of a browser. What changed is the posture.</p>
+<p>And here's the part I rarely see anyone admit: I have no idea whether the way I'm working is "correct". I'm a non-coder working in a development environment designed for coders, running AI agents that interact with — and sometimes build — cloud infrastructure. There is no course for this. If one exists, I haven't found it. I'm making it up as I go and bending the tools and platforms to my own purposes.</p>
+<p>Maybe I'm just a regular user. The only difference I can point to is this:</p>
+<blockquote>
+<p>I don't take the output as gospel. I shepherd, challenge, and orchestrate the moving parts until the outcome is how I envisioned it.</p>
+</blockquote>
+<p>What months of this against a production tenant has settled: a human stays in the loop on every material action, and that isn't loosening over time. Partly because the experience is still inconsistent day to day — same task, different model behind the session, different result. Partly because the guardrails cost something, and the cost is the point: every privileged action is an activation, a justification, a confirmation. That friction is the price of running this against production, and I've raised it on purpose as the pattern proved out.</p>
+<p>The open edges are real too. The subagent gating is a hand-built compensating control, not a platform guarantee. The two-CLI setup is a hedge against any one vendor's limits — which is itself a bet that could look wrong in a year, in either direction.</p>
+<p>The challenge from here isn't deciding whether this is worth doing. It's keeping the workflow efficient as the ground moves underneath it — what worked well in March might have a better answer by June, and keeping on top of that without it becoming its own full-time job is the real ongoing work.</p>
+<p>That's where I am in 2026. Ask me again in six months and the details will all have moved.</p>
+<p><a class="md-button" href="https://x.com/intent/tweet?text=Where%20I%27m%20At%20With%20AI%20in%20IT-Ops%3A%20A%202026%20Snapshot%0A&amp;url=https://blog.pollockweb.com/blog/where-im-at-with-ai-in-it-ops-a-2026-snapshot/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span></a>
+<a class="md-button" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.pollockweb.com/blog/where-im-at-with-ai-in-it-ops-a-2026-snapshot/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"/></svg></span></a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="cloudlabmp/project-blog"
+        data-repo-id="R_kgDOODgKaQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOODgKac4Cnldm"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+  <div class="custom-footer">
+    <div class="custom-footer-left">
+      <p>Copyright &copy; 2026 Matthew Pollock</p>
+    </div>
+    <div class="custom-footer-right">
+      <a href="https://github.com/cloudlabmp" target="_blank" title="GitHub" aria-label="GitHub profile">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/matthew-pollock-76831920/" target="_blank" title="LinkedIn" aria-label="LinkedIn profile">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://profile.pollockweb.com" target="_blank" title="Portfolio" aria-label="Portfolio website">
+        <i class="fas fa-globe"></i>
+      </a>
+      <a href="https://blog.pollockweb.com/feed_rss_created.xml" target="_blank" title="RSS Feed" aria-label="RSS feed">
+        <i class="fa-solid fa-rss"></i>
+      </a>
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "content.code.select", "content.code.copy", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
